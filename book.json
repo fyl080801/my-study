@@ -1,3 +1,9 @@
 {
-    "title": "学习笔记"
+    "title": "学习笔记",
+    "plugins": ["disqus"],
+    "pluginsConfig": {
+        "disqus": {
+            "shortName": "introducetogitbook"
+        }
+    }
 }

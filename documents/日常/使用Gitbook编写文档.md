@@ -7,3 +7,5 @@
 ## gitbook
 
 &emsp;&emsp;
+
+详细配置可以去看[gitbook 的官方文档](https://toolchain.gitbook.com/config.html)

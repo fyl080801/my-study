@@ -4,8 +4,8 @@
     "description": "学习笔记",
     "main": "index.js",
     "scripts": {
-        "start": "gitbook serve --port 2233 ./md ./docs",
-        "renew": "gitbook init ./md",
+        "start": "gitbook serve --port 2233 ./ ./docs",
+        "renew": "gitbook init ./",
         "build": "gitbook build"
     },
     "repository": {
@@ -17,5 +17,8 @@
     "bugs": {
         "url": "https://github.com/fyl080801/my-study/issues"
     },
-    "homepage": "https://github.com/fyl080801/my-study#readme"
+    "homepage": "https://github.com/fyl080801/my-study#readme",
+    "dependencies": {
+        "gitbook-plugin-disqus": "^1.0.1"
+    }
 }

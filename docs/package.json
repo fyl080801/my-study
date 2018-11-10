@@ -1,0 +1,24 @@
+{
+    "name": "my-study",
+    "version": "1.0.0",
+    "description": "学习笔记",
+    "main": "index.js",
+    "scripts": {
+        "start": "gitbook serve --port 2233 ./ ./docs",
+        "renew": "gitbook init ./",
+        "build": "gitbook build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/fyl080801/my-study.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/fyl080801/my-study/issues"
+    },
+    "homepage": "https://github.com/fyl080801/my-study#readme",
+    "dependencies": {
+        "gitbook-plugin-disqus": "^1.0.1"
+    }
+}

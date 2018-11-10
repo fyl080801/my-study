@@ -1,3 +1,3 @@
 # my-study
 
-学习笔记
+使用 gitbook 创建的学习笔记系统

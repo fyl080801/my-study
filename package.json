@@ -6,7 +6,7 @@
     "scripts": {
         "start": "gitbook serve --port 2233 ./ ./docs",
         "renew": "gitbook init ./",
-        "build": "gitbook build"
+        "build": "gitbook build ./ ./docs"
     },
     "repository": {
         "type": "git",
@@ -19,6 +19,7 @@
     },
     "homepage": "https://github.com/fyl080801/my-study#readme",
     "dependencies": {
-        "gitbook-plugin-disqus": "^1.0.1"
+        "gitbook-plugin-expandable-chapters": "^0.2.0",
+        "gitbook-plugin-splitter": "0.0.8"
     }
 }

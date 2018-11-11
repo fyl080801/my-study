@@ -37,7 +37,7 @@
 
 &emsp;&emsp;package.json 里的具体定义:
 
-```
+```json
 {
     "name": "my-study",
     "version": "1.0.0",
@@ -69,7 +69,7 @@
 
 &emsp;&emsp;创建 `SUMMARY.md` 文件，这个是项目的目录定义文件，先定义好文档的目录结构以及文档的链接，以便在执行初始化时直接生成好对应的文件，内容如下  
 
-```
+```markdown
 # Summary
 
 *   [介绍](README.md)
@@ -115,7 +115,7 @@
 
 &emsp;&emsp;这里还要说明一下 package.json 文件中 `gitbook-plugin-expandable-chapters` 和 `gitbook-plugin-splitter` 这两个依赖项，分别是 gitbook 的目录折叠插件和目录宽度可拖动插件，除了在 npm 包引用里定义外，还需要在项目根目录下定义一个 book.json 文件，这个是 gitbook 相关的配置文件, 里面 plugins 属性就是要引用的插件  
 
-```
+```json
 {
     "title": "学习笔记",
     "plugins": ["splitter", "expandable-chapters"],

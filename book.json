@@ -2,12 +2,6 @@
     "title": "学习笔记",
     "plugins": ["splitter", "expandable-chapters"],
     "pluginsConfig": {
-        "prism": {
-            "css": ["prismjs/themes/prism-dark.css"],
-            "lang": {
-                "flow": "typescript"
-            }
-        },
         "expandable-chapters": {}
     }
 }

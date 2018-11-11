@@ -37,49 +37,53 @@
 
 &emsp;&emsp;package.json 里的具体定义:
 
-    {
-        "name": "my-study",
-        "version": "1.0.0",
-        "description": "学习笔记",
-        "main": "index.js",
-        "scripts": {
-            "start": "gitbook serve --port 2233 ./ ./docs",
-            "renew": "gitbook init ./",
-            "build": "gitbook build ./ ./docs"
-        },
-        "repository": {
-            "type": "git",
-            "url": "git+https://github.com/fyl080801/my-study.git"
-        },
-        "author": "",
-        "license": "ISC",
-        "bugs": {
-            "url": "https://github.com/fyl080801/my-study/issues"
-        },
-        "homepage": "https://github.com/fyl080801/my-study#readme",
-        "dependencies": {
-            "gitbook-plugin-expandable-chapters": "^0.2.0",
-            "gitbook-plugin-splitter": "0.0.8"
-        }
+```
+{
+    "name": "my-study",
+    "version": "1.0.0",
+    "description": "学习笔记",
+    "main": "index.js",
+    "scripts": {
+        "start": "gitbook serve --port 2233 ./ ./docs",
+        "renew": "gitbook init ./",
+        "build": "gitbook build ./ ./docs"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/fyl080801/my-study.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/fyl080801/my-study/issues"
+    },
+    "homepage": "https://github.com/fyl080801/my-study#readme",
+    "dependencies": {
+        "gitbook-plugin-expandable-chapters": "^0.2.0",
+        "gitbook-plugin-splitter": "0.0.8"
     }
+}
+```
 
 &emsp;&emsp;其中 `gitbook-plugin-expandable-chapters` 和 `gitbook-plugin-splitter` 两个依赖项是 gitbook 插件，之后再做解释  
 
 &emsp;&emsp;创建 `SUMMARY.md` 文件，这个是项目的目录定义文件，先定义好文档的目录结构以及文档的链接，以便在执行初始化时直接生成好对应的文件，内容如下  
 
-    # Summary
-    
-    *   [介绍](README.md)
-    *   日常
-        *   [使用 Gitbook 编写文档](documents/日常/使用Gitbook编写文档.md)
-        *   [测试用文档](documents/日常/测试用文档.md)
-    *   ReactNative
-        *   [使用 vscode 开发 rn](documents/ReactNative/使用vscode开发rn.md)
-        *   [部署 app 到模拟器](documents/ReactNative/部署app到模拟器.md)
-    *   网络
-        *   [如何科学上网](documents/网络/如何科学上网.md)
-    *   总结
-        *   [2018-11-11](documents/总结/2018-11-11.md)
+```
+# Summary
+
+*   [介绍](README.md)
+*   日常
+    *   [使用 Gitbook 编写文档](documents/日常/使用Gitbook编写文档.md)
+    *   [测试用文档](documents/日常/测试用文档.md)
+*   ReactNative
+    *   [使用 vscode 开发 rn](documents/ReactNative/使用vscode开发rn.md)
+    *   [部署 app 到模拟器](documents/ReactNative/部署app到模拟器.md)
+*   网络
+    *   [如何科学上网](documents/网络/如何科学上网.md)
+*   总结
+    *   [2018-11-11](documents/总结/2018-11-11.md)
+```
 
 &emsp;&emsp;这就是一个 markdown 按照层次划分的无序列表，要想生成文件则需要把列表中的项写成链接格式，目录可以是无链接的，直接写成文本
 
@@ -87,35 +91,39 @@
 
 &emsp;&emsp;最后项目的目录及文件结构如下，gitbook 自动生成了 document 目录和相应的 md 文件
 
-    .
-    ├── README.md
-    ├── SUMMARY.md
-    ├── documents
-    │   ├── ReactNative
-    │   │   ├── 使用vscode开发rn.md
-    │   │   └── 部署app到模拟器.md
-    │   ├── 总结
-    │   │   └── 2018-11-11.md
-    │   ├── 日常
-    │   │   ├── 使用Gitbook编写文档.md
-    │   │   └── 测试用文档.md
-    │   └── 网络
-    │       └── 如何科学上网.md
-    ├── images
-    │   └── page-1-�\205��\203��\225�\224�.png
-    └── package.json
+```
+.
+├── README.md
+├── SUMMARY.md
+├── documents
+│   ├── ReactNative
+│   │   ├── 使用vscode开发rn.md
+│   │   └── 部署app到模拟器.md
+│   ├── 总结
+│   │   └── 2018-11-11.md
+│   ├── 日常
+│   │   ├── 使用Gitbook编写文档.md
+│   │   └── 测试用文档.md
+│   └── 网络
+│       └── 如何科学上网.md
+├── images
+│   └── page-1-�\205��\203��\225�\224�.png
+└── package.json
+```
 
 &emsp;&emsp;每次要追加文档内容时可先编辑 `SUMMARY.md` 的内容然后执行命令更新目录，也可安装 vscode 的 gitbook 插件 `Gitbook kit` 来管理目录及文件，具体不多作说明  
 
 &emsp;&emsp;这里还要说明一下 package.json 文件中 `gitbook-plugin-expandable-chapters` 和 `gitbook-plugin-splitter` 这两个依赖项，分别是 gitbook 的目录折叠插件和目录宽度可拖动插件，除了在 npm 包引用里定义外，还需要在项目根目录下定义一个 book.json 文件，这个是 gitbook 相关的配置文件, 里面 plugins 属性就是要引用的插件  
 
-    {
-        "title": "学习笔记",
-        "plugins": ["splitter", "expandable-chapters"],
-        "pluginsConfig": {
-            "expandable-chapters": {}
-        }
+```
+{
+    "title": "学习笔记",
+    "plugins": ["splitter", "expandable-chapters"],
+    "pluginsConfig": {
+        "expandable-chapters": {}
     }
+}
+```
 
 &emsp;&emsp;编辑完内容后可执行命令 `npm start` 启动服务在本地预览网页上的效果，也可以执行 `npm run build` 构建项目，之前在 package.json 中定义了输出目录是 docs（在 github 里只能从项目根目录或一个分支下的 docs 目录访问静态页面），目录下直接生成了一个静态网站  
 
@@ -137,4 +145,4 @@
 
 &emsp;&emsp;没啥好说的，其实有一堆做这种在线文档的平台，自己架设的好处就是不用注册一堆账号，到时候收到一堆推广的邮件和短信，还有就是利用 github 自己动手丰衣足食  
 
-&emsp;&emsp;其实那些做这种文档应用的平台一般都是一个管理界面+在线markdown编辑器，然后在收到用户提交的请求后更新那个 `SUMMARY.md` 再 task 一下调用 gitbook 的命令生成静态内容
+&emsp;&emsp;其实那些做这种文档应用的平台一般都是一个管理界面+在线markdown编辑器，然后在收到用户提交的请求后更新那个 `SUMMARY.md` 和相应的 md 文件，最后再 task 一下调用 gitbook 的命令生成静态内容

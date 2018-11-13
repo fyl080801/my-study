@@ -20,6 +20,7 @@
     "homepage": "https://github.com/fyl080801/my-study#readme",
     "dependencies": {
         "gitbook-plugin-expandable-chapters": "^0.2.0",
-        "gitbook-plugin-splitter": "0.0.8"
+        "gitbook-plugin-splitter": "0.0.8",
+        "gitbook-plugin-sunlight-highlighter": "^0.4.3"
     }
 }

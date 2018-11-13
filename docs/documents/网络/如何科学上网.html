@@ -25,7 +25,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-sunlight-highlighter/sunlight.css">
                 
             
                 
@@ -133,7 +133,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="../日常/测试用文档.html">
+        <li class="chapter " data-level="1.2.2" data-path="../日常/给Gitbook文档中代码加上行号.html">
+            
+                <a href="../日常/给Gitbook文档中代码加上行号.html">
+            
+                    
+                    给 Gitbook 文档中代码加上行号
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../日常/测试用文档.html">
             
                 <a href="../日常/测试用文档.html">
             
@@ -215,7 +228,7 @@
                 <a href="../JDReact/JDRouter实例共享.html">
             
                     
-                    JDRouter实例共享
+                    JDRouter 实例共享
             
                 </a>
             
@@ -337,12 +350,62 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x539F;&#x7406;">&#x539F;&#x7406;</h1>
-<p>&#x2003;shadowsocks &#x662F;&#x4E00;&#x79CD; socks5 &#x7684;&#x4EE3;&#x7406;&#xFF0C;&#x800C; socks5 &#x7684;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x5219;&#x662F;&#x628A;&#x4F60;&#x7684;&#x7F51;&#x7EDC;&#x6570;&#x636E;&#x8BF7;&#x6C42;&#x901A;&#x8FC7;&#x4E00;&#x6761;&#x8FDE;&#x63A5;&#x4F60;&#x548C;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x4E4B;&#x95F4;&#x7684;&#x901A;&#x9053;&#xFF0C;&#x7531;&#x670D;&#x52A1;&#x5668;&#x8F6C;&#x53D1;&#x5230;&#x76EE;&#x7684;&#x5730;&#x3002;&#x4F60;&#x6CA1;&#x6709;&#x52A0;&#x5165;&#x4EFB;&#x4F55;&#x65B0;&#x7684;&#x7F51;&#x7EDC;&#xFF0C;&#x53EA;&#x662F; http/socks &#x6570;&#x636E;&#x7ECF;&#x8FC7;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x7684;&#x8F6C;&#x53D1;&#x9001;&#x51FA;&#xFF0C;&#x5E76;&#x4ECE;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x63A5;&#x6536;&#x56DE;&#x5E94;&#x3002;<br>&#x2003;&#x8981;&#x60F3;&#x79D1;&#x5B66;&#x4E0A;&#x7F51;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x56FD;&#x5916;&#x627E;&#x53F0;&#x670D;&#x52A1;&#x5668;&#x67B6;&#x8BBE; shadowshocks &#x670D;&#x52A1;&#x5B9E;&#x73B0;&#x3002;</p>
-<h1 id="&#x670D;&#x52A1;&#x5668;&#x642D;&#x5EFA;">&#x670D;&#x52A1;&#x5668;&#x642D;&#x5EFA;</h1>
-<p>&#x2003;&#x670D;&#x52A1;&#x5668;&#x9009;&#x7528; vultur &#x7684;&#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x8003;&#x8651;&#x8FD9;&#x5BB6;&#x7684;&#x4E91;&#x670D;&#x52A1;&#x642D;&#x5EFA;&#x8D77;&#x6765;&#x7B80;&#x5355;&#xFF0C;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;<br><img src="https://link" alt="alt"></p>
-<h1 id="&#x670D;&#x52A1;&#x642D;&#x5EFA;">&#x670D;&#x52A1;&#x642D;&#x5EFA;</h1>
-<h1 id="&#x670D;&#x52A1;&#x914D;&#x7F6E;">&#x670D;&#x52A1;&#x914D;&#x7F6E;</h1>
+                                <h1 id="&#x5982;&#x4F55;&#x79D1;&#x5B66;&#x4E0A;&#x7F51;">&#x5982;&#x4F55;&#x79D1;&#x5B66;&#x4E0A;&#x7F51;</h1>
+<h2 id="&#x57FA;&#x672C;&#x539F;&#x7406;">&#x57FA;&#x672C;&#x539F;&#x7406;</h2>
+<p>&#x2003;&#x2003;shadowsocks &#x662F;&#x4E00;&#x79CD; socks5 &#x7684;&#x4EE3;&#x7406;&#xFF0C;&#x800C; socks5 &#x7684;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x5219;&#x662F;&#x628A;&#x4F60;&#x7684;&#x7F51;&#x7EDC;&#x6570;&#x636E;&#x8BF7;&#x6C42;&#x901A;&#x8FC7;&#x4E00;&#x6761;&#x8FDE;&#x63A5;&#x4F60;&#x548C;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x4E4B;&#x95F4;&#x7684;&#x901A;&#x9053;&#xFF0C;&#x7531;&#x670D;&#x52A1;&#x5668;&#x8F6C;&#x53D1;&#x5230;&#x76EE;&#x7684;&#x5730;&#x3002;&#x4F60;&#x6CA1;&#x6709;&#x52A0;&#x5165;&#x4EFB;&#x4F55;&#x65B0;&#x7684;&#x7F51;&#x7EDC;&#xFF0C;&#x53EA;&#x662F; http/socks &#x6570;&#x636E;&#x7ECF;&#x8FC7;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x7684;&#x8F6C;&#x53D1;&#x9001;&#x51FA;&#xFF0C;&#x5E76;&#x4ECE;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x63A5;&#x6536;&#x56DE;&#x5E94;&#x3002;<br>&#x2003;&#x2003;&#x8981;&#x60F3;&#x5B9E;&#x73B0;&#x79D1;&#x5B66;&#x4E0A;&#x7F51;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5728;&#x56FD;&#x5916;&#x627E;&#x53F0;&#x4E91;&#x670D;&#x52A1;&#x5668;&#x67B6;&#x8BBE; shadowshocks &#x670D;&#x52A1;&#x5B9E;&#x73B0;&#xFF0C;&#x672C;&#x5730;&#x5B89;&#x88C5;&#x4E00;&#x4E2A; shadowsocks &#x5BA2;&#x6237;&#x7AEF;&#x5C31;&#x884C;&#x4E86;&#x3002;</p>
+<h2 id="&#x670D;&#x52A1;&#x5668;&#x642D;&#x5EFA;">&#x670D;&#x52A1;&#x5668;&#x642D;&#x5EFA;</h2>
+<p>&#x2003;&#x2003;&#x670D;&#x52A1;&#x5668;&#x9009;&#x7528; vultur &#x63D0;&#x4F9B;&#x7684;&#x865A;&#x62DF;&#x4E3B;&#x673A;&#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x8003;&#x8651;&#x8FD9;&#x5BB6;&#x7684;&#x4E91;&#x670D;&#x52A1;&#x642D;&#x5EFA;&#x8D77;&#x6765;&#x6B65;&#x9AA4;&#x7B80;&#x5355;&#xFF0C;&#x6240;&#x6709;&#x64CD;&#x4F5C;&#x90FD;&#x5728;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x53EA;&#x9700;&#x8981;&#x9009;&#x9009;&#x9009;&#x5C31;&#x80FD;&#x5B8C;&#x6210;&#x4E3B;&#x673A;&#x7684;&#x642D;&#x5EFA;</p>
+<p>&#x2003;&#x2003;&#x9996;&#x5148;&#x8BBF;&#x95EE;<a href="https://www.vultr.com" target="_blank">vultr &#x7684;&#x5B98;&#x7F51;</a>&#xFF0C;&#x6CE8;&#x518C;&#x4E00;&#x4E2A;&#x8D26;&#x53F7;&#x4E4B;&#x540E;&#x8FDB;&#x5165;&#x4E2A;&#x4EBA;&#x4E2D;&#x5FC3;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x865A;&#x62DF;&#x4E3B;&#x673A;&#x4E86;&#xFF0C;&#x6DFB;&#x52A0;&#x7684;&#x6B65;&#x9AA4;&#x4E5F;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x9700;&#x8981;&#x7684;&#x4FE1;&#x606F;&#x5168;&#x5728;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x9009;&#x62E9;&#x670D;&#x52A1;&#x5668;&#x6240;&#x5728;&#x533A;&#x57DF;</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fx6hxtpe2tj31kw0xcdpo.jpg" alt=""></p>
+<p>&#x2003;&#x2003;&#x9009;&#x62E9;&#x670D;&#x52A1;&#x5668;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;&#x8FD9;&#x91CC;&#x9009;&#x7684;&#x662F; ubuntu &#x7684;&#x7CFB;&#x7EDF;&#x7B2C;&#x4E00;&#x4E2A; 18.10 x64</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fx6i19jl1rj31kw0ox11h.jpg" alt=""><br>&#x2003;&#x2003;&#x63A5;&#x4E0B;&#x6765;&#x9009;&#x5957;&#x9910;&#xFF0C; &#x8FD9;&#x91CC;&#x7684;&#x6536;&#x8D39;&#x89C4;&#x5219;&#x662F;&#x53EA;&#x8981;&#x670D;&#x52A1;&#x5668;&#x88AB;&#x521B;&#x5EFA;&#x4E86;&#x5C31;&#x5F00;&#x59CB;&#x8BA1;&#x8D39;&#xFF0C;&#x6309;&#x7167;&#x5C0F;&#x65F6;&#x6263;&#x94B1;&#x4E14;&#x9700;&#x8981;&#x63D0;&#x524D;&#x5145;&#x503C;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x5904;&#x4E8E;&#x5173;&#x95ED;&#x72B6;&#x6001;&#x4E5F;&#x7B97;&#x65F6;&#x95F4;&#xFF0C;&#x4F46;&#x5982;&#x679C;&#x670D;&#x52A1;&#x5668;&#x5220;&#x9664;&#x4E86;&#x5C31;&#x4E0D;&#x8BA1;&#x8D39;&#x4E86;&#x3002;</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fx6i69fgyoj31kw0u6wrx.jpg" alt=""></p>
+<p>&#x2003;&#x2003;&#x5269;&#x4E0B;&#x8FD9;&#x51E0;&#x9879;&#x65E0;&#x5173;&#x7D27;&#x8981;&#xFF0C;&#x6700;&#x540E;&#x5728; Server Hostname &amp; Label &#x90A3;&#x91CC;&#x8F93;&#x5165;&#x4E00;&#x4E0B;&#x670D;&#x52A1;&#x5668;&#x540D;&#x79F0;&#xFF0C;&#x70B9; Deploy Now &#x5C31;&#x884C;&#x4E86;&#x3002;</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fx6ixetpgyj31kw14vagh.jpg" alt=""></p>
+<p>&#x2003;&#x2003;&#x670D;&#x52A1;&#x5668;&#x521D;&#x59CB;&#x5316;&#x5B8C;&#x6210;&#x540E;&#x53EF;&#x4EE5;&#x770B;&#x5230; ip &#x5730;&#x5740;&#xFF0C;&#x8FDC;&#x7A0B; ssh &#x5C31;&#x7528;&#x8FD9;&#x4E2A;&#x5730;&#x5740;&#xFF0C;&#x6BCF;&#x6B21; ip &#x90FD;&#x4F1A;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x4E00;&#x822C;&#x90FD;&#x662F;&#x6362;&#x4E00;&#x6B21; ip &#x6620;&#x5C04;&#x4E00;&#x6B21;&#x57DF;&#x540D;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x4E0D;&#x7528;&#x8001;&#x6539;&#x5BA2;&#x6237;&#x7AEF;&#x767B;&#x9646;&#x7684; ip &#x914D;&#x7F6E;&#x4E86;&#x3002;</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fx6j1parqrj31kw0g8dj6.jpg" alt=""></p>
+<p>&#x2003;&#x2003;&#x70B9;&#x51FB;&#x4E3B;&#x673A;&#x540D;&#x79F0;&#x5C31;&#x8FDB;&#x5165;&#x4E3B;&#x673A;&#x4FE1;&#x606F;&#x754C;&#x9762;&#xFF0C;&#x5BC6;&#x7801;&#x90A3;&#x91CC;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x590D;&#x5236;&#x51FA;&#x6765;&#x767B;&#x9646;&#x7528;</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fx6j6k3a9aj31kw0lhjx4.jpg" alt=""></p>
+<h2 id="&#x521B;&#x5EFA;-shadowsocks-&#x670D;&#x52A1;">&#x521B;&#x5EFA; shadowsocks &#x670D;&#x52A1;</h2>
+<p>&#x2003;&#x2003;&#x5148;&#x7528; ip &#x767B;&#x9646;&#x865A;&#x62DF;&#x4E3B;&#x673A; <code>ssh root@&lt;&#x4F60;&#x7684;ip&#x5730;&#x5740;&gt;</code>&#xFF0C;&#x4E4B;&#x540E;&#x5B89;&#x88C5; shadowsocks &#x670D;&#x52A1;</p>
+<pre><code class="lang-bash+lineNumbers:false"><div class="sunlight-container sunlight-theme-dark"><div class="sunlight-code-container"><pre class="sunlight-highlight-bash sunlight-highlighted"><span class="sunlight-bash"><span class="sunlight-command">sudo</span>&#xA0;<span class="sunlight-ident">apt</span>&#xA0;<span class="sunlight-command">install</span>&#xA0;<span class="sunlight-ident">shadowsocks</span><span class="sunlight-operator">-</span><span class="sunlight-ident">libev</span>
+</span></pre></div></div></code></pre>
+<p>&#x2003;&#x2003;&#x4E4B;&#x540E;&#x4FEE;&#x6539;&#x4E00;&#x4E0B; shadowsocks &#x670D;&#x52A1;&#x7AEF;&#x7684;&#x914D;&#x7F6E;</p>
+<pre><code class="lang-bash+lineNumbers:false"><div class="sunlight-container sunlight-theme-dark"><div class="sunlight-code-container"><pre class="sunlight-highlight-bash sunlight-highlighted"><span class="sunlight-bash"><span class="sunlight-command">sudo</span>&#xA0;<span class="sunlight-ident">vim</span>&#xA0;<span class="sunlight-operator">/</span><span class="sunlight-ident">etc</span><span class="sunlight-operator">/</span><span class="sunlight-ident">shadowsocks</span><span class="sunlight-operator">-</span><span class="sunlight-ident">libev</span><span class="sunlight-operator">/</span><span class="sunlight-ident">config</span><span class="sunlight-operator">.</span><span class="sunlight-ident">json</span>
+</span></pre></div></div></code></pre>
+<p>&#x2003;&#x2003;&#x914D;&#x7F6E;&#x5185;&#x5BB9;&#x5982;&#x4E0B;&#xFF0C;&#x5176;&#x4E2D; server &#x76F4;&#x63A5;&#x5199;&#x6210; 0.0.0.0 &#x5C31;&#x4EE3;&#x8868;&#x672C;&#x673A;&#x5BF9;&#x5916;&#x4F7F;&#x7528;&#x670D;&#x52A1;&#x5668; ip&#xFF0C;method &#x52A0;&#x5BC6;&#x65B9;&#x5F0F;&#x6700;&#x597D;&#x4F7F;&#x7528; aes-256-cfb&#xFF0C;&#x56E0;&#x4E3A; mac &#x4E0B;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x597D;&#x50CF;&#x652F;&#x6301;&#x7684;&#x534F;&#x8BAE;&#x6709;&#x9650;&#xFF0C;&#x8FD9;&#x4E2A;&#x80AF;&#x5B9A;&#x652F;&#x6301;&#x3002;</p>
+<pre><code class="lang-json"><div class="sunlight-container sunlight-theme-dark"><div class="sunlight-code-container" style="border-width: 1px; border-style: solid;"><div class="sunlight-line-number-margin"><a name="sunlight-14-line-1" href="#sunlight-14-line-1">1</a>
+<a name="sunlight-14-line-2" href="#sunlight-14-line-2">2</a>
+<a name="sunlight-14-line-3" href="#sunlight-14-line-3">3</a>
+<a name="sunlight-14-line-4" href="#sunlight-14-line-4">4</a>
+<a name="sunlight-14-line-5" href="#sunlight-14-line-5">5</a>
+<a name="sunlight-14-line-6" href="#sunlight-14-line-6">6</a>
+<a name="sunlight-14-line-7" href="#sunlight-14-line-7">7</a>
+<a name="sunlight-14-line-8" href="#sunlight-14-line-8">8</a>
+</div><pre class="sunlight-highlight-json sunlight-highlighted"><span class="sunlight-plaintext">{
+&#xA0;&#xA0;&#xA0;&#xA0;&quot;server&quot;:&#xA0;&quot;0.0.0.0&quot;,
+&#xA0;&#xA0;&#xA0;&#xA0;&quot;server_port&quot;:&#xA0;8388,
+&#xA0;&#xA0;&#xA0;&#xA0;&quot;local_port&quot;:&#xA0;1080,
+&#xA0;&#xA0;&#xA0;&#xA0;&quot;password&quot;:&#xA0;&quot;&lt;&#x4F60;&#x7684;&#x5BC6;&#x7801;&gt;&quot;,
+&#xA0;&#xA0;&#xA0;&#xA0;&quot;timeout&quot;:&#xA0;300,
+&#xA0;&#xA0;&#xA0;&#xA0;&quot;method&quot;:&#xA0;&quot;aes-256-cfb&quot;
+}
+</span></pre></div></div></code></pre>
+<p>&#x2003;&#x2003;&#x90FD;&#x8BBE;&#x7F6E;&#x5B8C;&#x6210;&#x540E;&#x91CD;&#x542F;&#x4E00;&#x4E0B; shadowsocks &#x670D;&#x52A1;&#x4E4B;&#x540E;&#x5C31;&#x76F4;&#x63A5;&#x63A8;&#x51FA;&#x7EC8;&#x7AEF;&#x5C31;&#x884C;&#x4E86;</p>
+<pre><code class="lang-bash+lineNumbers:false"><div class="sunlight-container sunlight-theme-dark"><div class="sunlight-code-container"><pre class="sunlight-highlight-bash sunlight-highlighted"><span class="sunlight-bash"><span class="sunlight-command">sudo</span>&#xA0;<span class="sunlight-command">service</span>&#xA0;<span class="sunlight-ident">shadowsocks</span><span class="sunlight-operator">-</span><span class="sunlight-ident">libev</span>&#xA0;<span class="sunlight-ident">restart</span>
+</span></pre></div></div></code></pre>
+<p>&#x2003;&#x2003;&#x4E5F;&#x53EF;&#x4EE5;&#x505A;&#x4E00;&#x4E2A; sh &#x811A;&#x672C;&#x4E00;&#x6B21;&#x6027;&#x5B8C;&#x6210;&#x4E0A;&#x9762;&#x7684;&#x914D;&#x7F6E;&#x8FC7;&#x7A0B;&#xFF0C;&#x7136;&#x540E;&#x653E;&#x5230;&#x7279;&#x5B9A;&#x7F51;&#x5740;&#x4E0A;&#xFF0C;&#x6BCF;&#x6B21;&#x521B;&#x5EFA;&#x597D;&#x670D;&#x52A1;&#x5668;&#x76F4;&#x63A5;&#x6267;&#x884C;&#x4E00;&#x4E0B;&#x8FD9;&#x4E2A;&#x811A;&#x672C;&#x5C31;&#x884C;&#x4E86;&#x3002;</p>
+<h2 id="&#x5B89;&#x88C5;&#x53CA;&#x8FD0;&#x884C;-shadowsocks-&#x5BA2;&#x6237;&#x7AEF;">&#x5B89;&#x88C5;&#x53CA;&#x8FD0;&#x884C; shadowsocks &#x5BA2;&#x6237;&#x7AEF;</h2>
+<p>&#x2003;&#x2003;&#x8FDE;&#x63A5; shadowsocks &#x670D;&#x52A1;&#x53EF;&#x4F7F;&#x7528;
+<a href="https://github.com/shadowsocks/shadowsocks-windows/releases" target="_blank">windows</a>
+&#x3001;<a href="https://github.com/shadowsocks/shadowsocks-iOS/releases" target="_blank">MacOS</a>
+&#x4EE5;&#x53CA; Linux &#x5404;&#x5E73;&#x53F0;&#x4E0B;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#xFF0C;&#x5176;&#x4E2D; Linux &#x4E0B;&#x7684;&#x81EA;&#x884C;&#x7528; apt &#x5B89;&#x88C5; shadowsocks-qt5</p>
+<p>&#x2003;&#x2003;&#x5BA2;&#x6237;&#x7AEF;&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x540E;&#x8FD0;&#x884C;&#x8D77;&#x6765;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#xFF0C;&#x5176;&#x4E2D;&#x5730;&#x5740;&#x3001;&#x7AEF;&#x53E3;&#x53F7;&#x548C;&#x52A0;&#x5BC6;&#x65B9;&#x5F0F;&#x8981;  &#x5199;&#x4E4B;&#x524D;&#x670D;&#x52A1;&#x7AEF;&#x5BF9;&#x5E94;&#x7684;&#x914D;&#x7F6E;&#xFF0C;&#x914D;&#x7F6E;&#x5B8C;&#x6210;&#x540E;&#x6253;&#x5F00;&#x670D;&#x52A1;&#x8FDE;&#x63A5;&#x5C31;&#x53EF;&#x4EE5;&#x79D1;&#x5B66;&#x4E0A;&#x7F51;&#x4E86;&#x3002;</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fx6k0di026j30so0i2773.jpg" alt=""></p>
+<h2 id="&#x5173;&#x4E8E;&#x8D39;&#x7528;">&#x5173;&#x4E8E;&#x8D39;&#x7528;</h2>
+<p>&#x2003;&#x2003;&#x8D39;&#x7528;&#x5B9E;&#x9645;&#x662F;&#x6309;&#x5C0F;&#x65F6;&#x6536;&#x8D39;&#x7684;&#xFF0C;&#x6807;&#x662F;$3.50/mo &#x8FD9;&#x91CC;&#x5E76;&#x4E0D;&#x662F;&#x8BF4;&#x4E00;&#x4E2A;&#x6708;&#x8981;&#x4EA4; 3.5 &#x5200;&#xFF0C;&#x800C;&#x662F;&#x6309;&#x7167;&#x4E0B;&#x9762;&#x7684; 0.005 &#x5200;&#x6BCF;&#x5C0F;&#x65F6;&#x7B97;&#xFF08;&#x670D;&#x52A1;&#x5668;&#x5B58;&#x5728;&#x4E00;&#x5C0F;&#x65F6;&#x5C31;&#x6263;&#x4E00;&#x5C0F;&#x65F6;&#x94B1;&#xFF09;&#xFF0C;&#x4E00;&#x4E2A;&#x6708;&#x7B97;&#x4E0B;&#x6765;&#x6210;&#x672C;&#x662F; 3.5 &#x5200;&#xFF08;25 RMB&#xFF09;<br>&#x2003;&#x2003;&#x4E00;&#x822C;&#x82B1;&#x94B1;&#x5305;&#x6708;&#x7684; vpn &#x6BCF;&#x4E2A;&#x6708; 29 RMB &#x5DE6;&#x53F3;&#xFF0C;&#x90A3;&#x5C31;&#x5F97;&#x4E00;&#x4E2A;&#x6708;&#x4EA4;&#x8FD9;&#x4E48;&#x591A;&#xFF0C;&#x4E8B;&#x5B9E;&#x4E0A;&#x4E00;&#x4E2A;&#x6708;&#x4E2D;&#x5E76;&#x4E0D;&#x662F;&#x65F6;&#x65F6;&#x523B;&#x523B;&#x90FD;&#x9700;&#x8981;&#x79D1;&#x5B66;&#x4E0A;&#x7F51;&#x7684;&#xFF0C;&#x6BD4;&#x5982;&#x665A;&#x4E0A;&#x7761;&#x89C9;&#x65F6;&#x80AF;&#x5B9A;&#x4E0D;&#x4F1A;&#x4E0A;&#x7F51;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x4F7F;&#x7528; vultr &#x505A;&#x865A;&#x62DF;&#x4E3B;&#x673A;&#x53EF;&#x4EE5;&#x7761;&#x89C9;&#x524D;&#x628A;&#x670D;&#x52A1;&#x5668;&#x7ED9;&#x5220;&#x4E86;&#xFF0C;&#x7B2C;&#x4E8C;&#x5929;&#x91CD;&#x65B0;&#x521B;&#x5EFA;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x53E6;&#x5916;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x6211;&#x7684;&#x670D;&#x52A1; kexue.fyl080801.top &#x5BC6;&#x7801;&#x5C31;&#x662F;&#x6700;&#x5E38;&#x7528;&#x7684;&#x90A3;&#x4E2A;&#xFF0C;&#x6211;&#x8FD9;&#x8FB9;&#x4E00;&#x822C;&#x767D;&#x5929;&#x4F1A;&#x67B6;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x665A;&#x4E0A;&#x5C31;&#x5173;&#x4E86;&#xFF0C;&#x6709;&#x65F6;&#x5019;&#x5982;&#x679C;&#x5FD8;&#x4E86;&#x5F00;&#x90A3;&#x5C31;&#x4E0A;&#x4E0D;&#x4E86;&#x4E86;&#xFF0C;&#x53CD;&#x6B63;&#x963F;&#x91CC;&#x4E91;&#x6211;&#x4E3B;&#x673A;&#x52A0;&#x57DF;&#x540D;&#x8FD8;&#x5305;&#x7740;&#x5E74;&#x5462;&#xFF0C;&#x4E0D;&#x5DEE;&#x8FD9;&#x70B9;&#x94B1;&#x4E86;</p>
 
                                 
                                 </section>
@@ -378,7 +441,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"如何科学上网","level":"1.5.1","depth":2,"next":{"title":"总结","level":"1.6","depth":1,"ref":"","articles":[{"title":"2018-11-11","level":"1.6.1","depth":2,"path":"documents/总结/2018-11-11.md","ref":"documents/总结/2018-11-11.md","articles":[]}]},"previous":{"title":"网络","level":"1.5","depth":1,"ref":"","articles":[{"title":"如何科学上网","level":"1.5.1","depth":2,"path":"documents/网络/如何科学上网.md","ref":"documents/网络/如何科学上网.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"splitter":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"学习笔记","gitbook":"*"},"file":{"path":"documents/网络/如何科学上网.md","mtime":"2018-11-10T16:44:56.441Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-13T04:24:58.302Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"如何科学上网","level":"1.5.1","depth":2,"next":{"title":"总结","level":"1.6","depth":1,"ref":"","articles":[{"title":"2018-11-11","level":"1.6.1","depth":2,"path":"documents/总结/2018-11-11.md","ref":"documents/总结/2018-11-11.md","articles":[]}]},"previous":{"title":"网络","level":"1.5","depth":1,"ref":"","articles":[{"title":"如何科学上网","level":"1.5.1","depth":2,"path":"documents/网络/如何科学上网.md","ref":"documents/网络/如何科学上网.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters","-highlight","sunlight-highlighter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"sunlight-highlighter":{"theme":"dark","lineNumbers":true},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"学习笔记","gitbook":"*"},"file":{"path":"documents/网络/如何科学上网.md","mtime":"2018-11-13T09:26:01.907Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-13T09:26:21.703Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

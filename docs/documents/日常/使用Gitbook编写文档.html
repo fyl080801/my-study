@@ -25,7 +25,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-sunlight-highlighter/sunlight.css">
                 
             
                 
@@ -65,7 +65,7 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="测试用文档.html" />
+    <link rel="next" href="给Gitbook文档中代码加上行号.html" />
     
     
 
@@ -135,7 +135,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="测试用文档.html">
+        <li class="chapter " data-level="1.2.2" data-path="给Gitbook文档中代码加上行号.html">
+            
+                <a href="给Gitbook文档中代码加上行号.html">
+            
+                    
+                    给 Gitbook 文档中代码加上行号
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="测试用文档.html">
             
                 <a href="测试用文档.html">
             
@@ -217,7 +230,7 @@
                 <a href="../JDReact/JDRouter实例共享.html">
             
                     
-                    JDRouter实例共享
+                    JDRouter 实例共享
             
                 </a>
             
@@ -378,48 +391,86 @@
 <pre><code>npm install gitbook-cli -g
 </code></pre><p>&#x2003;&#x2003;&#x4E4B;&#x540E;&#x5728; github &#x4E0A;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#xFF0C;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A; README.md &#x6587;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x514B;&#x9686;&#x5230;&#x672C;&#x5730;&#xFF0C;&#x5728;&#x672C;&#x5730;&#x6267;&#x884C; <code>npm init</code> &#xFF0C;&#x5728; package.json &#x4E2D;&#x6DFB;&#x52A0; gitbook &#x76F8;&#x5173;&#x7684;&#x811A;&#x672C;&#xFF0C;&#x6267;&#x884C; <code>npm install</code></p>
 <p>&#x2003;&#x2003;package.json &#x91CC;&#x7684;&#x5177;&#x4F53;&#x5B9A;&#x4E49;:</p>
-<pre><code class="lang-json">{
-    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;my-study&quot;</span>,
-    <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;1.0.0&quot;</span>,
-    <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;&#x5B66;&#x4E60;&#x7B14;&#x8BB0;&quot;</span>,
-    <span class="hljs-string">&quot;main&quot;</span>: <span class="hljs-string">&quot;index.js&quot;</span>,
-    <span class="hljs-string">&quot;scripts&quot;</span>: {
-        <span class="hljs-string">&quot;start&quot;</span>: <span class="hljs-string">&quot;gitbook serve --port 2233 ./ ./docs&quot;</span>,
-        <span class="hljs-string">&quot;renew&quot;</span>: <span class="hljs-string">&quot;gitbook init ./&quot;</span>,
-        <span class="hljs-string">&quot;build&quot;</span>: <span class="hljs-string">&quot;gitbook build ./ ./docs&quot;</span>
-    },
-    <span class="hljs-string">&quot;repository&quot;</span>: {
-        <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;git&quot;</span>,
-        <span class="hljs-string">&quot;url&quot;</span>: <span class="hljs-string">&quot;git+https://github.com/fyl080801/my-study.git&quot;</span>
-    },
-    <span class="hljs-string">&quot;author&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
-    <span class="hljs-string">&quot;license&quot;</span>: <span class="hljs-string">&quot;ISC&quot;</span>,
-    <span class="hljs-string">&quot;bugs&quot;</span>: {
-        <span class="hljs-string">&quot;url&quot;</span>: <span class="hljs-string">&quot;https://github.com/fyl080801/my-study/issues&quot;</span>
-    },
-    <span class="hljs-string">&quot;homepage&quot;</span>: <span class="hljs-string">&quot;https://github.com/fyl080801/my-study#readme&quot;</span>,
-    <span class="hljs-string">&quot;dependencies&quot;</span>: {
-        <span class="hljs-string">&quot;gitbook-plugin-expandable-chapters&quot;</span>: <span class="hljs-string">&quot;^0.2.0&quot;</span>,
-        <span class="hljs-string">&quot;gitbook-plugin-splitter&quot;</span>: <span class="hljs-string">&quot;0.0.8&quot;</span>
-    }
+<pre><code class="lang-json"><div class="sunlight-container sunlight-theme-dark"><div class="sunlight-code-container" style="border-width: 1px; border-style: solid;"><div class="sunlight-line-number-margin"><a name="sunlight-1-line-1" href="#sunlight-1-line-1">1</a>
+<a name="sunlight-1-line-2" href="#sunlight-1-line-2">2</a>
+<a name="sunlight-1-line-3" href="#sunlight-1-line-3">3</a>
+<a name="sunlight-1-line-4" href="#sunlight-1-line-4">4</a>
+<a name="sunlight-1-line-5" href="#sunlight-1-line-5">5</a>
+<a name="sunlight-1-line-6" href="#sunlight-1-line-6">6</a>
+<a name="sunlight-1-line-7" href="#sunlight-1-line-7">7</a>
+<a name="sunlight-1-line-8" href="#sunlight-1-line-8">8</a>
+<a name="sunlight-1-line-9" href="#sunlight-1-line-9">9</a>
+<a name="sunlight-1-line-10" href="#sunlight-1-line-10">10</a>
+<a name="sunlight-1-line-11" href="#sunlight-1-line-11">11</a>
+<a name="sunlight-1-line-12" href="#sunlight-1-line-12">12</a>
+<a name="sunlight-1-line-13" href="#sunlight-1-line-13">13</a>
+<a name="sunlight-1-line-14" href="#sunlight-1-line-14">14</a>
+<a name="sunlight-1-line-15" href="#sunlight-1-line-15">15</a>
+<a name="sunlight-1-line-16" href="#sunlight-1-line-16">16</a>
+<a name="sunlight-1-line-17" href="#sunlight-1-line-17">17</a>
+<a name="sunlight-1-line-18" href="#sunlight-1-line-18">18</a>
+<a name="sunlight-1-line-19" href="#sunlight-1-line-19">19</a>
+<a name="sunlight-1-line-20" href="#sunlight-1-line-20">20</a>
+<a name="sunlight-1-line-21" href="#sunlight-1-line-21">21</a>
+<a name="sunlight-1-line-22" href="#sunlight-1-line-22">22</a>
+<a name="sunlight-1-line-23" href="#sunlight-1-line-23">23</a>
+<a name="sunlight-1-line-24" href="#sunlight-1-line-24">24</a>
+<a name="sunlight-1-line-25" href="#sunlight-1-line-25">25</a>
+</div><pre class="sunlight-highlight-json sunlight-highlighted"><span class="sunlight-plaintext">{
+&#xA0;&#xA0;&#xA0;&#xA0;&quot;name&quot;:&#xA0;&quot;my-study&quot;,
+&#xA0;&#xA0;&#xA0;&#xA0;&quot;version&quot;:&#xA0;&quot;1.0.0&quot;,
+&#xA0;&#xA0;&#xA0;&#xA0;&quot;description&quot;:&#xA0;&quot;&#x5B66;&#x4E60;&#x7B14;&#x8BB0;&quot;,
+&#xA0;&#xA0;&#xA0;&#xA0;&quot;main&quot;:&#xA0;&quot;index.js&quot;,
+&#xA0;&#xA0;&#xA0;&#xA0;&quot;scripts&quot;:&#xA0;{
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&quot;start&quot;:&#xA0;&quot;gitbook&#xA0;serve&#xA0;--port&#xA0;2233&#xA0;./&#xA0;./docs&quot;,
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&quot;renew&quot;:&#xA0;&quot;gitbook&#xA0;init&#xA0;./&quot;,
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&quot;build&quot;:&#xA0;&quot;gitbook&#xA0;build&#xA0;./&#xA0;./docs&quot;
+&#xA0;&#xA0;&#xA0;&#xA0;},
+&#xA0;&#xA0;&#xA0;&#xA0;&quot;repository&quot;:&#xA0;{
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&quot;type&quot;:&#xA0;&quot;git&quot;,
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&quot;url&quot;:&#xA0;&quot;git+https://github.com/fyl080801/my-study.git&quot;
+&#xA0;&#xA0;&#xA0;&#xA0;},
+&#xA0;&#xA0;&#xA0;&#xA0;&quot;author&quot;:&#xA0;&quot;&quot;,
+&#xA0;&#xA0;&#xA0;&#xA0;&quot;license&quot;:&#xA0;&quot;ISC&quot;,
+&#xA0;&#xA0;&#xA0;&#xA0;&quot;bugs&quot;:&#xA0;{
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&quot;url&quot;:&#xA0;&quot;https://github.com/fyl080801/my-study/issues&quot;
+&#xA0;&#xA0;&#xA0;&#xA0;},
+&#xA0;&#xA0;&#xA0;&#xA0;&quot;homepage&quot;:&#xA0;&quot;https://github.com/fyl080801/my-study#readme&quot;,
+&#xA0;&#xA0;&#xA0;&#xA0;&quot;dependencies&quot;:&#xA0;{
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&quot;gitbook-plugin-expandable-chapters&quot;:&#xA0;&quot;^0.2.0&quot;,
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&quot;gitbook-plugin-splitter&quot;:&#xA0;&quot;0.0.8&quot;
+&#xA0;&#xA0;&#xA0;&#xA0;}
 }
-</code></pre>
+</span></pre></div></div></code></pre>
 <p>&#x2003;&#x2003;&#x5176;&#x4E2D; <code>gitbook-plugin-expandable-chapters</code> &#x548C; <code>gitbook-plugin-splitter</code> &#x4E24;&#x4E2A;&#x4F9D;&#x8D56;&#x9879;&#x662F; gitbook &#x63D2;&#x4EF6;&#xFF0C;&#x4E4B;&#x540E;&#x518D;&#x505A;&#x89E3;&#x91CA;  </p>
 <p>&#x2003;&#x2003;&#x521B;&#x5EFA; <code>SUMMARY.md</code> &#x6587;&#x4EF6;&#xFF0C;&#x8FD9;&#x4E2A;&#x662F;&#x9879;&#x76EE;&#x7684;&#x76EE;&#x5F55;&#x5B9A;&#x4E49;&#x6587;&#x4EF6;&#xFF0C;&#x5148;&#x5B9A;&#x4E49;&#x597D;&#x6587;&#x6863;&#x7684;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x4EE5;&#x53CA;&#x6587;&#x6863;&#x7684;&#x94FE;&#x63A5;&#xFF0C;&#x4EE5;&#x4FBF;&#x5728;&#x6267;&#x884C;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x76F4;&#x63A5;&#x751F;&#x6210;&#x597D;&#x5BF9;&#x5E94;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x5185;&#x5BB9;&#x5982;&#x4E0B;  </p>
-<pre><code class="lang-markdown"><span class="hljs-section"># Summary</span>
+<pre><code class="lang-markdown"><div class="sunlight-container sunlight-theme-dark"><div class="sunlight-code-container" style="border-width: 1px; border-style: solid;"><div class="sunlight-line-number-margin"><a name="sunlight-2-line-1" href="#sunlight-2-line-1">1</a>
+<a name="sunlight-2-line-2" href="#sunlight-2-line-2">2</a>
+<a name="sunlight-2-line-3" href="#sunlight-2-line-3">3</a>
+<a name="sunlight-2-line-4" href="#sunlight-2-line-4">4</a>
+<a name="sunlight-2-line-5" href="#sunlight-2-line-5">5</a>
+<a name="sunlight-2-line-6" href="#sunlight-2-line-6">6</a>
+<a name="sunlight-2-line-7" href="#sunlight-2-line-7">7</a>
+<a name="sunlight-2-line-8" href="#sunlight-2-line-8">8</a>
+<a name="sunlight-2-line-9" href="#sunlight-2-line-9">9</a>
+<a name="sunlight-2-line-10" href="#sunlight-2-line-10">10</a>
+<a name="sunlight-2-line-11" href="#sunlight-2-line-11">11</a>
+<a name="sunlight-2-line-12" href="#sunlight-2-line-12">12</a>
+<a name="sunlight-2-line-13" href="#sunlight-2-line-13">13</a>
+</div><pre class="sunlight-highlight-markdown sunlight-highlighted"><span class="sunlight-plaintext">#&#xA0;Summary
 
-<span class="hljs-bullet">*   </span>[<span class="hljs-string">&#x4ECB;&#x7ECD;</span>](<span class="hljs-link">README.md</span>)
-<span class="hljs-bullet">*   </span>&#x65E5;&#x5E38;
-<span class="hljs-code">    *   [&#x4F7F;&#x7528; Gitbook &#x7F16;&#x5199;&#x6587;&#x6863;](documents/&#x65E5;&#x5E38;/&#x4F7F;&#x7528;Gitbook&#x7F16;&#x5199;&#x6587;&#x6863;.md)</span>
-<span class="hljs-code">    *   [&#x6D4B;&#x8BD5;&#x7528;&#x6587;&#x6863;](documents/&#x65E5;&#x5E38;/&#x6D4B;&#x8BD5;&#x7528;&#x6587;&#x6863;.md)</span>
-<span class="hljs-bullet">*   </span>ReactNative
-<span class="hljs-code">    *   [&#x4F7F;&#x7528; vscode &#x5F00;&#x53D1; rn](documents/ReactNative/&#x4F7F;&#x7528;vscode&#x5F00;&#x53D1;rn.md)</span>
-<span class="hljs-code">    *   [&#x90E8;&#x7F72; app &#x5230;&#x6A21;&#x62DF;&#x5668;](documents/ReactNative/&#x90E8;&#x7F72;app&#x5230;&#x6A21;&#x62DF;&#x5668;.md)</span>
-<span class="hljs-bullet">*   </span>&#x7F51;&#x7EDC;
-<span class="hljs-code">    *   [&#x5982;&#x4F55;&#x79D1;&#x5B66;&#x4E0A;&#x7F51;](documents/&#x7F51;&#x7EDC;/&#x5982;&#x4F55;&#x79D1;&#x5B66;&#x4E0A;&#x7F51;.md)</span>
-<span class="hljs-bullet">*   </span>&#x603B;&#x7ED3;
-<span class="hljs-code">    *   [2018-11-11](documents/&#x603B;&#x7ED3;/2018-11-11.md)</span>
-</code></pre>
+*&#xA0;&#xA0;&#xA0;[&#x4ECB;&#x7ECD;](README.md)
+*&#xA0;&#xA0;&#xA0;&#x65E5;&#x5E38;
+&#xA0;&#xA0;&#xA0;&#xA0;*&#xA0;&#xA0;&#xA0;[&#x4F7F;&#x7528;&#xA0;Gitbook&#xA0;&#x7F16;&#x5199;&#x6587;&#x6863;](documents/&#x65E5;&#x5E38;/&#x4F7F;&#x7528;Gitbook&#x7F16;&#x5199;&#x6587;&#x6863;.md)
+&#xA0;&#xA0;&#xA0;&#xA0;*&#xA0;&#xA0;&#xA0;[&#x6D4B;&#x8BD5;&#x7528;&#x6587;&#x6863;](documents/&#x65E5;&#x5E38;/&#x6D4B;&#x8BD5;&#x7528;&#x6587;&#x6863;.md)
+*&#xA0;&#xA0;&#xA0;ReactNative
+&#xA0;&#xA0;&#xA0;&#xA0;*&#xA0;&#xA0;&#xA0;[&#x4F7F;&#x7528;&#xA0;vscode&#xA0;&#x5F00;&#x53D1;&#xA0;rn](documents/ReactNative/&#x4F7F;&#x7528;vscode&#x5F00;&#x53D1;rn.md)
+&#xA0;&#xA0;&#xA0;&#xA0;*&#xA0;&#xA0;&#xA0;[&#x90E8;&#x7F72;&#xA0;app&#xA0;&#x5230;&#x6A21;&#x62DF;&#x5668;](documents/ReactNative/&#x90E8;&#x7F72;app&#x5230;&#x6A21;&#x62DF;&#x5668;.md)
+*&#xA0;&#xA0;&#xA0;&#x7F51;&#x7EDC;
+&#xA0;&#xA0;&#xA0;&#xA0;*&#xA0;&#xA0;&#xA0;[&#x5982;&#x4F55;&#x79D1;&#x5B66;&#x4E0A;&#x7F51;](documents/&#x7F51;&#x7EDC;/&#x5982;&#x4F55;&#x79D1;&#x5B66;&#x4E0A;&#x7F51;.md)
+*&#xA0;&#xA0;&#xA0;&#x603B;&#x7ED3;
+&#xA0;&#xA0;&#xA0;&#xA0;*&#xA0;&#xA0;&#xA0;[2018-11-11](documents/&#x603B;&#x7ED3;/2018-11-11.md)
+</span></pre></div></div></code></pre>
 <p>&#x2003;&#x2003;&#x8FD9;&#x5C31;&#x662F;&#x4E00;&#x4E2A; markdown &#x6309;&#x7167;&#x5C42;&#x6B21;&#x5212;&#x5206;&#x7684;&#x65E0;&#x5E8F;&#x5217;&#x8868;&#xFF0C;&#x8981;&#x60F3;&#x751F;&#x6210;&#x6587;&#x4EF6;&#x5219;&#x9700;&#x8981;&#x628A;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x9879;&#x5199;&#x6210;&#x94FE;&#x63A5;&#x683C;&#x5F0F;&#xFF0C;&#x76EE;&#x5F55;&#x53EF;&#x4EE5;&#x662F;&#x65E0;&#x94FE;&#x63A5;&#x7684;&#xFF0C;&#x76F4;&#x63A5;&#x5199;&#x6210;&#x6587;&#x672C;</p>
 <p>&#x2003;&#x2003;&#x5B9A;&#x4E49;&#x5B8C;&#x6210;&#x76EE;&#x5F55;&#x540E;&#x6267;&#x884C; <code>npm run renew</code> &#x5B9E;&#x9645;&#x4E0A;&#x5C31;&#x662F;&#x5728; package.json &#x4E2D;&#x5B9A;&#x4E49;&#x7684; <code>gitbook init ./</code> &#x547D;&#x4EE4;</p>
 <p>&#x2003;&#x2003;&#x6700;&#x540E;&#x9879;&#x76EE;&#x7684;&#x76EE;&#x5F55;&#x53CA;&#x6587;&#x4EF6;&#x7ED3;&#x6784;&#x5982;&#x4E0B;&#xFF0C;gitbook &#x81EA;&#x52A8;&#x751F;&#x6210;&#x4E86; document &#x76EE;&#x5F55;&#x548C;&#x76F8;&#x5E94;&#x7684; md &#x6587;&#x4EF6;</p>
@@ -442,14 +493,21 @@
 &#x2514;&#x2500;&#x2500; package.json
 </code></pre><p>&#x2003;&#x2003;&#x6BCF;&#x6B21;&#x8981;&#x8FFD;&#x52A0;&#x6587;&#x6863;&#x5185;&#x5BB9;&#x65F6;&#x53EF;&#x5148;&#x7F16;&#x8F91; <code>SUMMARY.md</code> &#x7684;&#x5185;&#x5BB9;&#x7136;&#x540E;&#x6267;&#x884C;&#x547D;&#x4EE4;&#x66F4;&#x65B0;&#x76EE;&#x5F55;&#xFF0C;&#x4E5F;&#x53EF;&#x5B89;&#x88C5; vscode &#x7684; gitbook &#x63D2;&#x4EF6; <code>Gitbook kit</code> &#x6765;&#x7BA1;&#x7406;&#x76EE;&#x5F55;&#x53CA;&#x6587;&#x4EF6;&#xFF0C;&#x5177;&#x4F53;&#x4E0D;&#x591A;&#x4F5C;&#x8BF4;&#x660E;  </p>
 <p>&#x2003;&#x2003;&#x8FD9;&#x91CC;&#x8FD8;&#x8981;&#x8BF4;&#x660E;&#x4E00;&#x4E0B; package.json &#x6587;&#x4EF6;&#x4E2D; <code>gitbook-plugin-expandable-chapters</code> &#x548C; <code>gitbook-plugin-splitter</code> &#x8FD9;&#x4E24;&#x4E2A;&#x4F9D;&#x8D56;&#x9879;&#xFF0C;&#x5206;&#x522B;&#x662F; gitbook &#x7684;&#x76EE;&#x5F55;&#x6298;&#x53E0;&#x63D2;&#x4EF6;&#x548C;&#x76EE;&#x5F55;&#x5BBD;&#x5EA6;&#x53EF;&#x62D6;&#x52A8;&#x63D2;&#x4EF6;&#xFF0C;&#x9664;&#x4E86;&#x5728; npm &#x5305;&#x5F15;&#x7528;&#x91CC;&#x5B9A;&#x4E49;&#x5916;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x5728;&#x9879;&#x76EE;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A; book.json &#x6587;&#x4EF6;&#xFF0C;&#x8FD9;&#x4E2A;&#x662F; gitbook &#x76F8;&#x5173;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;, &#x91CC;&#x9762; plugins &#x5C5E;&#x6027;&#x5C31;&#x662F;&#x8981;&#x5F15;&#x7528;&#x7684;&#x63D2;&#x4EF6;  </p>
-<pre><code class="lang-json">{
-    <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;&#x5B66;&#x4E60;&#x7B14;&#x8BB0;&quot;</span>,
-    <span class="hljs-string">&quot;plugins&quot;</span>: [<span class="hljs-string">&quot;splitter&quot;</span>, <span class="hljs-string">&quot;expandable-chapters&quot;</span>],
-    <span class="hljs-string">&quot;pluginsConfig&quot;</span>: {
-        <span class="hljs-string">&quot;expandable-chapters&quot;</span>: {}
-    }
+<pre><code class="lang-json"><div class="sunlight-container sunlight-theme-dark"><div class="sunlight-code-container" style="border-width: 1px; border-style: solid;"><div class="sunlight-line-number-margin"><a name="sunlight-3-line-1" href="#sunlight-3-line-1">1</a>
+<a name="sunlight-3-line-2" href="#sunlight-3-line-2">2</a>
+<a name="sunlight-3-line-3" href="#sunlight-3-line-3">3</a>
+<a name="sunlight-3-line-4" href="#sunlight-3-line-4">4</a>
+<a name="sunlight-3-line-5" href="#sunlight-3-line-5">5</a>
+<a name="sunlight-3-line-6" href="#sunlight-3-line-6">6</a>
+<a name="sunlight-3-line-7" href="#sunlight-3-line-7">7</a>
+</div><pre class="sunlight-highlight-json sunlight-highlighted"><span class="sunlight-plaintext">{
+&#xA0;&#xA0;&#xA0;&#xA0;&quot;title&quot;:&#xA0;&quot;&#x5B66;&#x4E60;&#x7B14;&#x8BB0;&quot;,
+&#xA0;&#xA0;&#xA0;&#xA0;&quot;plugins&quot;:&#xA0;[&quot;splitter&quot;,&#xA0;&quot;expandable-chapters&quot;],
+&#xA0;&#xA0;&#xA0;&#xA0;&quot;pluginsConfig&quot;:&#xA0;{
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&quot;expandable-chapters&quot;:&#xA0;{}
+&#xA0;&#xA0;&#xA0;&#xA0;}
 }
-</code></pre>
+</span></pre></div></div></code></pre>
 <p>&#x2003;&#x2003;&#x7F16;&#x8F91;&#x5B8C;&#x5185;&#x5BB9;&#x540E;&#x53EF;&#x6267;&#x884C;&#x547D;&#x4EE4; <code>npm start</code> &#x542F;&#x52A8;&#x670D;&#x52A1;&#x5728;&#x672C;&#x5730;&#x9884;&#x89C8;&#x7F51;&#x9875;&#x4E0A;&#x7684;&#x6548;&#x679C;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x6267;&#x884C; <code>npm run build</code> &#x6784;&#x5EFA;&#x9879;&#x76EE;&#xFF0C;&#x4E4B;&#x524D;&#x5728; package.json &#x4E2D;&#x5B9A;&#x4E49;&#x4E86;&#x8F93;&#x51FA;&#x76EE;&#x5F55;&#x662F; docs&#xFF08;&#x5728; github &#x91CC;&#x53EA;&#x80FD;&#x4ECE;&#x9879;&#x76EE;&#x6839;&#x76EE;&#x5F55;&#x6216;&#x4E00;&#x4E2A;&#x5206;&#x652F;&#x4E0B;&#x7684; docs &#x76EE;&#x5F55;&#x8BBF;&#x95EE;&#x9759;&#x6001;&#x9875;&#x9762;&#xFF09;&#xFF0C;&#x76EE;&#x5F55;&#x4E0B;&#x76F4;&#x63A5;&#x751F;&#x6210;&#x4E86;&#x4E00;&#x4E2A;&#x9759;&#x6001;&#x7F51;&#x7AD9;  </p>
 <p><img src="../../images/0E60DCA9-8271-4B66-99F5-0E63257FF927.png" alt="&#x5B9E;&#x9645;&#x6548;&#x679C;">  </p>
 <p>&#x2003;&#x2003;&#x751F;&#x6210;&#x597D;&#x4E86;&#x4E4B;&#x540E;&#x53EA;&#x8981;&#x6267;&#x884C; git &#x547D;&#x4EE4;&#x5C06;&#x9879;&#x76EE;&#x540C;&#x6B65;&#x5230; github&#x4E0A; &#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x5C31;&#x662F;&#x5982;&#x4F55;&#x5728; github &#x4E0A;&#x663E;&#x793A;&#x9759;&#x6001;&#x5185;&#x5BB9;</p>
@@ -489,7 +547,7 @@
             
                 
                 
-                <a href="测试用文档.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 测试用文档">
+                <a href="给Gitbook文档中代码加上行号.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 给 Gitbook 文档中代码加上行号">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -500,7 +558,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"使用 Gitbook 编写文档","level":"1.2.1","depth":2,"next":{"title":"测试用文档","level":"1.2.2","depth":2,"path":"documents/日常/测试用文档.md","ref":"documents/日常/测试用文档.md","articles":[]},"previous":{"title":"日常","level":"1.2","depth":1,"ref":"","articles":[{"title":"使用 Gitbook 编写文档","level":"1.2.1","depth":2,"path":"documents/日常/使用Gitbook编写文档.md","ref":"documents/日常/使用Gitbook编写文档.md","articles":[]},{"title":"测试用文档","level":"1.2.2","depth":2,"path":"documents/日常/测试用文档.md","ref":"documents/日常/测试用文档.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"splitter":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"学习笔记","gitbook":"*"},"file":{"path":"documents/日常/使用Gitbook编写文档.md","mtime":"2018-11-11T16:45:04.378Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-13T04:24:58.302Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"使用 Gitbook 编写文档","level":"1.2.1","depth":2,"next":{"title":"给 Gitbook 文档中代码加上行号","level":"1.2.2","depth":2,"path":"documents/日常/给Gitbook文档中代码加上行号.md","ref":"documents/日常/给Gitbook文档中代码加上行号.md","articles":[]},"previous":{"title":"日常","level":"1.2","depth":1,"ref":"","articles":[{"title":"使用 Gitbook 编写文档","level":"1.2.1","depth":2,"path":"documents/日常/使用Gitbook编写文档.md","ref":"documents/日常/使用Gitbook编写文档.md","articles":[]},{"title":"给 Gitbook 文档中代码加上行号","level":"1.2.2","depth":2,"path":"documents/日常/给Gitbook文档中代码加上行号.md","ref":"documents/日常/给Gitbook文档中代码加上行号.md","articles":[]},{"title":"测试用文档","level":"1.2.3","depth":2,"path":"documents/日常/测试用文档.md","ref":"documents/日常/测试用文档.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters","-highlight","sunlight-highlighter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"sunlight-highlighter":{"theme":"dark","lineNumbers":true},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"学习笔记","gitbook":"*"},"file":{"path":"documents/日常/使用Gitbook编写文档.md","mtime":"2018-11-11T16:45:04.378Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-13T09:26:21.703Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

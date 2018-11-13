@@ -7,6 +7,8 @@
 * ReactNative
     * [使用 vscode 开发 rn](documents/ReactNative/使用vscode开发rn.md)
     * [部署 app 到模拟器](documents/ReactNative/部署app到模拟器.md)
+* JDReact
+    * [JDRouter实例共享](documents/JDReact/JDRouter实例共享.md)
 * 网络
     * [如何科学上网](documents/网络/如何科学上网.md)
 * 总结

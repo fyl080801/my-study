@@ -62,7 +62,8 @@ exports.default = Base;
 var __extends =
     (this && this.__extends) ||
     (function() {
-        // 这是一个递归调用的过程，目的是将基类里的成员的所有属性深度复制到派生类原型（prototype）中
+        // 这是一个递归调用的过程
+        // 目的是将基类里的成员的所有属性深度复制到派生类原型（prototype）中
         // 这个方法接收两个参数，d - 派生类， b - 基类
         var extendStatics = function(d, b) {
             extendStatics =
@@ -140,7 +141,8 @@ export default class ShareRouter extends Router<RouteProps> {
     }
 
     // 这里直接 override，在被调用时不会执行这个 override 后的方法的
-    // 因为经过 typescript 编译后基类 prototype 不存在这个成员，基类中这个法在派生类中还是指向了原方法
+    // 因为经过 typescript 编译后基类 prototype 不存在这个成员
+    // 基类中这个法在派生类中还是指向了原方法
     setNavState(navState: any) {
         super.setNavState(navState);
         (this.props.onNavStateChanged || ((navState: any) => {}))(navState);
@@ -180,7 +182,7 @@ export default class ShareRouter extends Router<RouteProps> {
     constructor(props: RouteProps) {
         super(props);
 
-        // 需要把 this（本类型实例）中 setNavState 手动指向派生类中定义的方法
+        // 需要把 this（本类型实例）中 setNavState 手动指向 override 的方法
         this.setNavState = this._setNavState.bind(this);
     }
 
@@ -190,7 +192,7 @@ export default class ShareRouter extends Router<RouteProps> {
         (this.props.onNavStateChanged || ((navState: any) => {}))(navState);
     }
 
-    // 这种 react 原生的方法会在 React.createClass 过程中完成指向的这个过程，因此不需做处理
+    // react 原生的方法会在 React.createClass 过程中完成指向的这个过程，因此不需做处理
     componentDidMount() {
         super.componentDidMount();
         (this.props.onRouterReady || ((router: any) => {}))(this.router);

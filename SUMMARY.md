@@ -13,6 +13,8 @@
     * [JDRouter 实例共享](documents/JDReact/JDRouter实例共享.md)
 * 网络
     * [如何科学上网](documents/网络/如何科学上网.md)
+* 问题
+    * [react 类型继承问题](documents/问题/react类型继承问题.md)
 * 总结
     * [2018-11-11](documents/总结/2018-11-11.md)
     * [2018-11-15](documents/总结/2018-11-15.md)

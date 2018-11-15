@@ -370,19 +370,19 @@
                                 <h1 id="typescript-&#x7C7B;&#x7EE7;&#x627F;&#x539F;&#x7406;">typescript &#x7C7B;&#x7EE7;&#x627F;&#x539F;&#x7406;</h1>
 <h2 id="&#x5B9E;&#x73B0;&#x7EE7;&#x627F;">&#x5B9E;&#x73B0;&#x7EE7;&#x627F;</h2>
 <p>&#x5728; typescript &#x4E2D;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x7C7B;&#x578B;&#x7684;&#x7EE7;&#x627F;&#xFF0C;&#x4F8B;&#x5982;&#x6709;&#x4E00;&#x4E2A;&#x57FA;&#x7C7B;&#x5177;&#x6709;&#x5982;&#x4E0B;&#x5B9A;&#x4E49;</p>
-<pre><code class="lang-typescript"><div class="sunlight-container sunlight-theme-dark"><div class="sunlight-code-container" style="border-width: 1px; border-style: solid;"><div class="sunlight-line-number-margin"><a name="sunlight-7-line-1" href="#sunlight-7-line-1">1</a>
+<pre><code class="lang-javascript"><div class="sunlight-container sunlight-theme-dark"><div class="sunlight-code-container" style="border-width: 1px; border-style: solid;"><div class="sunlight-line-number-margin"><a name="sunlight-7-line-1" href="#sunlight-7-line-1">1</a>
 <a name="sunlight-7-line-2" href="#sunlight-7-line-2">2</a>
 <a name="sunlight-7-line-3" href="#sunlight-7-line-3">3</a>
 <a name="sunlight-7-line-4" href="#sunlight-7-line-4">4</a>
 <a name="sunlight-7-line-5" href="#sunlight-7-line-5">5</a>
-</div><pre class="sunlight-highlight-typescript sunlight-highlighted"><span class="sunlight-plaintext">export&#xA0;default&#xA0;class&#xA0;Base&#xA0;{
-&#xA0;&#xA0;&#xA0;&#xA0;testFunc()&#xA0;{
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;console.log(&quot;base&#xA0;class&quot;);
-&#xA0;&#xA0;&#xA0;&#xA0;}
-}
+</div><pre class="sunlight-highlight-javascript sunlight-highlighted"><span class="sunlight-javascript"><span class="sunlight-ident">export</span>&#xA0;<span class="sunlight-keyword">default</span>&#xA0;<span class="sunlight-reservedWord">class</span>&#xA0;<span class="sunlight-ident">Base</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">testFunc</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">console</span><span class="sunlight-operator">.</span><span class="sunlight-ident">log</span><span class="sunlight-punctuation">(</span><span class="sunlight-string">&quot;base&#xA0;class&quot;</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+<span class="sunlight-punctuation">}</span>
 </span></pre></div></div></code></pre>
 <p>&#x73B0;&#x5728;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6D3E;&#x751F;&#x7C7B;</p>
-<pre><code class="lang-typescript"><div class="sunlight-container sunlight-theme-dark"><div class="sunlight-code-container" style="border-width: 1px; border-style: solid;"><div class="sunlight-line-number-margin"><a name="sunlight-8-line-1" href="#sunlight-8-line-1">1</a>
+<pre><code class="lang-javascript"><div class="sunlight-container sunlight-theme-dark"><div class="sunlight-code-container" style="border-width: 1px; border-style: solid;"><div class="sunlight-line-number-margin"><a name="sunlight-8-line-1" href="#sunlight-8-line-1">1</a>
 <a name="sunlight-8-line-2" href="#sunlight-8-line-2">2</a>
 <a name="sunlight-8-line-3" href="#sunlight-8-line-3">3</a>
 <a name="sunlight-8-line-4" href="#sunlight-8-line-4">4</a>
@@ -391,15 +391,15 @@
 <a name="sunlight-8-line-7" href="#sunlight-8-line-7">7</a>
 <a name="sunlight-8-line-8" href="#sunlight-8-line-8">8</a>
 <a name="sunlight-8-line-9" href="#sunlight-8-line-9">9</a>
-</div><pre class="sunlight-highlight-typescript sunlight-highlighted"><span class="sunlight-plaintext">import&#xA0;Base&#xA0;from&#xA0;&quot;./base&quot;;
+</div><pre class="sunlight-highlight-javascript sunlight-highlighted"><span class="sunlight-javascript"><span class="sunlight-reservedWord">import</span>&#xA0;<span class="sunlight-ident">Base</span>&#xA0;<span class="sunlight-ident">from</span>&#xA0;<span class="sunlight-string">&quot;./base&quot;</span><span class="sunlight-punctuation">;</span>
 
-export&#xA0;default&#xA0;class&#xA0;aClass&#xA0;extends&#xA0;Base&#xA0;{
-&#xA0;&#xA0;&#xA0;&#xA0;//&#xA0;override&#xA0;&#x4E86;&#xA0;testFunc&#xA0;&#x65B9;&#x6CD5;
-&#xA0;&#xA0;&#xA0;&#xA0;testFunc()&#xA0;{
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;super.testFunc();
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;console.log(&quot;a&#xA0;class&quot;);
-&#xA0;&#xA0;&#xA0;&#xA0;}
-}
+<span class="sunlight-ident">export</span>&#xA0;<span class="sunlight-keyword">default</span>&#xA0;<span class="sunlight-reservedWord">class</span>&#xA0;<span class="sunlight-ident">aClass</span>&#xA0;<span class="sunlight-reservedWord">extends</span>&#xA0;<span class="sunlight-ident">Base</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;override&#xA0;&#x4E86;&#xA0;testFunc&#xA0;&#x65B9;&#x6CD5;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">testFunc</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-reservedWord">super</span><span class="sunlight-operator">.</span><span class="sunlight-ident">testFunc</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">console</span><span class="sunlight-operator">.</span><span class="sunlight-ident">log</span><span class="sunlight-punctuation">(</span><span class="sunlight-string">&quot;a&#xA0;class&quot;</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+<span class="sunlight-punctuation">}</span>
 </span></pre></div></div></code></pre>
 <p>&#x5728;&#x7C7B;&#x578B; Base &#x7684;&#x6D3E;&#x751F;&#x7C7B; aClass &#x4E2D;&#x7684; testFunc &#x65B9;&#x6CD5;&#x4F7F;&#x7528; super &#x6765;&#x8C03;&#x7528;&#x57FA;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;</p>
 <p>&#x4F7F;&#x7528; tsc &#x5BF9; typescript &#x6E90;&#x7801;&#x8FDB;&#x884C;&#x7F16;&#x8BD1;&#xFF0C; &#x53EF;&#x5F97;&#x5230;&#x7F16;&#x8BD1;&#x540E;&#x6700;&#x7EC8;&#x7684; javascript &#x8F93;&#x51FA;</p>
@@ -577,7 +577,7 @@ export&#xA0;default&#xA0;class&#xA0;aClass&#xA0;extends&#xA0;Base&#xA0;{
 &#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
 <span class="sunlight-punctuation">}</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
 </span></pre></div></div></code></pre>
-<pre><code class="lang-typescript"><div class="sunlight-container sunlight-theme-dark"><div class="sunlight-code-container" style="border-width: 1px; border-style: solid;"><div class="sunlight-line-number-margin"><a name="sunlight-12-line-1" href="#sunlight-12-line-1">1</a>
+<pre><code class="lang-javascript"><div class="sunlight-container sunlight-theme-dark"><div class="sunlight-code-container" style="border-width: 1px; border-style: solid;"><div class="sunlight-line-number-margin"><a name="sunlight-12-line-1" href="#sunlight-12-line-1">1</a>
 <a name="sunlight-12-line-2" href="#sunlight-12-line-2">2</a>
 <a name="sunlight-12-line-3" href="#sunlight-12-line-3">3</a>
 <a name="sunlight-12-line-4" href="#sunlight-12-line-4">4</a>
@@ -615,47 +615,47 @@ export&#xA0;default&#xA0;class&#xA0;aClass&#xA0;extends&#xA0;Base&#xA0;{
 <a name="sunlight-12-line-36" href="#sunlight-12-line-36">36</a>
 <a name="sunlight-12-line-37" href="#sunlight-12-line-37">37</a>
 <a name="sunlight-12-line-38" href="#sunlight-12-line-38">38</a>
-</div><pre class="sunlight-highlight-typescript sunlight-highlighted"><span class="sunlight-plaintext">//&#xA0;&#x7528;&#xA0;typescript&#xA0;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x6D3E;&#x751F;&#x7C7B;
-export&#xA0;default&#xA0;class&#xA0;ShareRouter&#xA0;extends&#xA0;Router&lt;RouteProps&gt;&#xA0;{
-&#xA0;&#xA0;&#xA0;&#xA0;constructor(props:&#xA0;RouteProps)&#xA0;{
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;super(props);
-&#xA0;&#xA0;&#xA0;&#xA0;}
+</div><pre class="sunlight-highlight-javascript sunlight-highlighted"><span class="sunlight-javascript"><span class="sunlight-comment">//&#xA0;&#x7528;&#xA0;typescript&#xA0;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x6D3E;&#x751F;&#x7C7B;</span>
+<span class="sunlight-ident">export</span>&#xA0;<span class="sunlight-keyword">default</span>&#xA0;<span class="sunlight-reservedWord">class</span>&#xA0;<span class="sunlight-ident">ShareRouter</span>&#xA0;<span class="sunlight-reservedWord">extends</span>&#xA0;<span class="sunlight-ident">Router</span><span class="sunlight-operator">&lt;</span><span class="sunlight-ident">RouteProps</span><span class="sunlight-operator">&gt;</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">constructor</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">props</span><span class="sunlight-operator">:</span>&#xA0;<span class="sunlight-ident">RouteProps</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-reservedWord">super</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">props</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
 
-&#xA0;&#xA0;&#xA0;&#xA0;//&#xA0;&#x8FD9;&#x91CC;&#x76F4;&#x63A5;&#xA0;override&#xFF0C;&#x5728;&#x88AB;&#x8C03;&#x7528;&#x65F6;&#x4E0D;&#x4F1A;&#x6267;&#x884C;&#x8FD9;&#x4E2A;&#xA0;override&#xA0;&#x540E;&#x7684;&#x65B9;&#x6CD5;&#x7684;
-&#xA0;&#xA0;&#xA0;&#xA0;//&#xA0;&#x56E0;&#x4E3A;&#x7ECF;&#x8FC7;&#xA0;typescript&#xA0;&#x7F16;&#x8BD1;&#x540E;&#x57FA;&#x7C7B;&#xA0;prototype&#xA0;&#x4E0D;&#x5B58;&#x5728;&#x8FD9;&#x4E2A;&#x6210;&#x5458;&#xFF0C;&#x57FA;&#x7C7B;&#x4E2D;&#x8FD9;&#x4E2A;&#x6CD5;&#x5728;&#x6D3E;&#x751F;&#x7C7B;&#x4E2D;&#x8FD8;&#x662F;&#x6307;&#x5411;&#x4E86;&#x539F;&#x65B9;&#x6CD5;
-&#xA0;&#xA0;&#xA0;&#xA0;setNavState(navState:&#xA0;any)&#xA0;{
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;super.setNavState(navState);
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;(this.props.onNavStateChanged&#xA0;||&#xA0;((navState:&#xA0;any)&#xA0;=&gt;&#xA0;{}))(navState);
-&#xA0;&#xA0;&#xA0;&#xA0;}
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;&#x8FD9;&#x91CC;&#x76F4;&#x63A5;&#xA0;override&#xFF0C;&#x5728;&#x88AB;&#x8C03;&#x7528;&#x65F6;&#x4E0D;&#x4F1A;&#x6267;&#x884C;&#x8FD9;&#x4E2A;&#xA0;override&#xA0;&#x540E;&#x7684;&#x65B9;&#x6CD5;&#x7684;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;&#x56E0;&#x4E3A;&#x7ECF;&#x8FC7;&#xA0;typescript&#xA0;&#x7F16;&#x8BD1;&#x540E;&#x57FA;&#x7C7B;&#xA0;prototype&#xA0;&#x4E0D;&#x5B58;&#x5728;&#x8FD9;&#x4E2A;&#x6210;&#x5458;&#xFF0C;&#x57FA;&#x7C7B;&#x4E2D;&#x8FD9;&#x4E2A;&#x6CD5;&#x5728;&#x6D3E;&#x751F;&#x7C7B;&#x4E2D;&#x8FD8;&#x662F;&#x6307;&#x5411;&#x4E86;&#x539F;&#x65B9;&#x6CD5;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">setNavState</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">navState</span><span class="sunlight-operator">:</span>&#xA0;<span class="sunlight-ident">any</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-reservedWord">super</span><span class="sunlight-operator">.</span><span class="sunlight-ident">setNavState</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">navState</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-keyword">this</span><span class="sunlight-operator">.</span><span class="sunlight-ident">props</span><span class="sunlight-operator">.</span><span class="sunlight-ident">onNavStateChanged</span>&#xA0;<span class="sunlight-operator">||</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">navState</span><span class="sunlight-operator">:</span>&#xA0;<span class="sunlight-ident">any</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-operator">=</span><span class="sunlight-operator">&gt;</span>&#xA0;<span class="sunlight-punctuation">{</span><span class="sunlight-punctuation">}</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">navState</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
 
-&#xA0;&#xA0;&#xA0;&#xA0;componentDidMount()&#xA0;{
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;super.componentDidMount();
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;(this.props.onRouterReady&#xA0;||&#xA0;((router:&#xA0;any)&#xA0;=&gt;&#xA0;{}))(this.router);
-&#xA0;&#xA0;&#xA0;&#xA0;}
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">componentDidMount</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-reservedWord">super</span><span class="sunlight-operator">.</span><span class="sunlight-ident">componentDidMount</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-keyword">this</span><span class="sunlight-operator">.</span><span class="sunlight-ident">props</span><span class="sunlight-operator">.</span><span class="sunlight-ident">onRouterReady</span>&#xA0;<span class="sunlight-operator">||</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">router</span><span class="sunlight-operator">:</span>&#xA0;<span class="sunlight-ident">any</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-operator">=</span><span class="sunlight-operator">&gt;</span>&#xA0;<span class="sunlight-punctuation">{</span><span class="sunlight-punctuation">}</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">(</span><span class="sunlight-keyword">this</span><span class="sunlight-operator">.</span><span class="sunlight-ident">router</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
 
-&#xA0;&#xA0;&#xA0;&#xA0;render()&#xA0;{
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;return&#xA0;super.render();
-&#xA0;&#xA0;&#xA0;&#xA0;}
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">render</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">return</span>&#xA0;<span class="sunlight-reservedWord">super</span><span class="sunlight-operator">.</span><span class="sunlight-ident">render</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
 
-&#xA0;&#xA0;&#xA0;&#xA0;setState(
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;state:
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;|&#xA0;((
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;prevState:&#xA0;Readonly&lt;any&gt;,
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;props:&#xA0;Readonly&lt;RouteProps&gt;
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;)&#xA0;=&gt;&#xA0;Pick&lt;any,&#xA0;any&gt;&#xA0;|&#xA0;RouteProps&#xA0;|&#xA0;null)
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;|&#xA0;(Pick&lt;any,&#xA0;any&gt;&#xA0;|&#xA0;any&#xA0;|&#xA0;null),
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;callback?:&#xA0;()&#xA0;=&gt;&#xA0;void
-&#xA0;&#xA0;&#xA0;&#xA0;)&#xA0;{
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;super.setState(state,&#xA0;callback);
-&#xA0;&#xA0;&#xA0;&#xA0;}
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">setState</span><span class="sunlight-punctuation">(</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">state</span><span class="sunlight-operator">:</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-operator">|</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">(</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">prevState</span><span class="sunlight-operator">:</span>&#xA0;<span class="sunlight-ident">Readonly</span><span class="sunlight-operator">&lt;</span><span class="sunlight-ident">any</span><span class="sunlight-operator">&gt;</span><span class="sunlight-punctuation">,</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">props</span><span class="sunlight-operator">:</span>&#xA0;<span class="sunlight-ident">Readonly</span><span class="sunlight-operator">&lt;</span><span class="sunlight-ident">RouteProps</span><span class="sunlight-operator">&gt;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-operator">=</span><span class="sunlight-operator">&gt;</span>&#xA0;<span class="sunlight-ident">Pick</span><span class="sunlight-operator">&lt;</span><span class="sunlight-ident">any</span><span class="sunlight-punctuation">,</span>&#xA0;<span class="sunlight-ident">any</span><span class="sunlight-operator">&gt;</span>&#xA0;<span class="sunlight-operator">|</span>&#xA0;<span class="sunlight-ident">RouteProps</span>&#xA0;<span class="sunlight-operator">|</span>&#xA0;<span class="sunlight-keyword">null</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-operator">|</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-ident">Pick</span><span class="sunlight-operator">&lt;</span><span class="sunlight-ident">any</span><span class="sunlight-punctuation">,</span>&#xA0;<span class="sunlight-ident">any</span><span class="sunlight-operator">&gt;</span>&#xA0;<span class="sunlight-operator">|</span>&#xA0;<span class="sunlight-ident">any</span>&#xA0;<span class="sunlight-operator">|</span>&#xA0;<span class="sunlight-keyword">null</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">,</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">callback</span><span class="sunlight-operator">?</span><span class="sunlight-operator">:</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-operator">=</span><span class="sunlight-operator">&gt;</span>&#xA0;<span class="sunlight-keyword">void</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-reservedWord">super</span><span class="sunlight-operator">.</span><span class="sunlight-ident">setState</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">state</span><span class="sunlight-punctuation">,</span>&#xA0;<span class="sunlight-ident">callback</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
 
-&#xA0;&#xA0;&#xA0;&#xA0;forceUpdate(callBack?:&#xA0;()&#xA0;=&gt;&#xA0;void)&#xA0;{
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;super.forceUpdate(callBack);
-&#xA0;&#xA0;&#xA0;&#xA0;}
-}
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">forceUpdate</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">callBack</span><span class="sunlight-operator">?</span><span class="sunlight-operator">:</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-operator">=</span><span class="sunlight-operator">&gt;</span>&#xA0;<span class="sunlight-keyword">void</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-reservedWord">super</span><span class="sunlight-operator">.</span><span class="sunlight-ident">forceUpdate</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">callBack</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+<span class="sunlight-punctuation">}</span>
 </span></pre></div></div></code></pre>
 <p>&#x56E0;&#x6B64;&#xFF0C;&#x5982;&#x679C;&#x60F3; override &#x8FD9;&#x6837;&#x7684;&#x65B9;&#x6CD5;&#x53EA;&#x80FD;&#x5728;&#x6D3E;&#x751F;&#x7C7B;&#x4E2D;&#x624B;&#x52A8;&#x5B8C;&#x6210; typescript &#x7F16;&#x8BD1;&#x7ED3;&#x679C;&#x7684;&#x6307;&#x5411;&#x5B9E;&#x73B0;</p>
-<pre><code class="lang-typescript"><div class="sunlight-container sunlight-theme-dark"><div class="sunlight-code-container" style="border-width: 1px; border-style: solid;"><div class="sunlight-line-number-margin"><a name="sunlight-13-line-1" href="#sunlight-13-line-1">1</a>
+<pre><code class="lang-javascript"><div class="sunlight-container sunlight-theme-dark"><div class="sunlight-code-container" style="border-width: 1px; border-style: solid;"><div class="sunlight-line-number-margin"><a name="sunlight-13-line-1" href="#sunlight-13-line-1">1</a>
 <a name="sunlight-13-line-2" href="#sunlight-13-line-2">2</a>
 <a name="sunlight-13-line-3" href="#sunlight-13-line-3">3</a>
 <a name="sunlight-13-line-4" href="#sunlight-13-line-4">4</a>
@@ -695,46 +695,46 @@ export&#xA0;default&#xA0;class&#xA0;ShareRouter&#xA0;extends&#xA0;Router&lt;Rout
 <a name="sunlight-13-line-38" href="#sunlight-13-line-38">38</a>
 <a name="sunlight-13-line-39" href="#sunlight-13-line-39">39</a>
 <a name="sunlight-13-line-40" href="#sunlight-13-line-40">40</a>
-</div><pre class="sunlight-highlight-typescript sunlight-highlighted"><span class="sunlight-plaintext">export&#xA0;default&#xA0;class&#xA0;ShareRouter&#xA0;extends&#xA0;Router&lt;RouteProps&gt;&#xA0;{
-&#xA0;&#xA0;&#xA0;&#xA0;constructor(props:&#xA0;RouteProps)&#xA0;{
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;super(props);
+</div><pre class="sunlight-highlight-javascript sunlight-highlighted"><span class="sunlight-javascript"><span class="sunlight-ident">export</span>&#xA0;<span class="sunlight-keyword">default</span>&#xA0;<span class="sunlight-reservedWord">class</span>&#xA0;<span class="sunlight-ident">ShareRouter</span>&#xA0;<span class="sunlight-reservedWord">extends</span>&#xA0;<span class="sunlight-ident">Router</span><span class="sunlight-operator">&lt;</span><span class="sunlight-ident">RouteProps</span><span class="sunlight-operator">&gt;</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">constructor</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">props</span><span class="sunlight-operator">:</span>&#xA0;<span class="sunlight-ident">RouteProps</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-reservedWord">super</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">props</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
 
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;//&#xA0;&#x9700;&#x8981;&#x628A;&#xA0;this&#xFF08;&#x672C;&#x7C7B;&#x578B;&#x5B9E;&#x4F8B;&#xFF09;&#x4E2D;&#xA0;setNavState&#xA0;&#x624B;&#x52A8;&#x6307;&#x5411;&#x6D3E;&#x751F;&#x7C7B;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x65B9;&#x6CD5;
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;this.setNavState&#xA0;=&#xA0;this._setNavState.bind(this);
-&#xA0;&#xA0;&#xA0;&#xA0;}
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;&#x9700;&#x8981;&#x628A;&#xA0;this&#xFF08;&#x672C;&#x7C7B;&#x578B;&#x5B9E;&#x4F8B;&#xFF09;&#x4E2D;&#xA0;setNavState&#xA0;&#x624B;&#x52A8;&#x6307;&#x5411;&#x6D3E;&#x751F;&#x7C7B;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x65B9;&#x6CD5;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">this</span><span class="sunlight-operator">.</span><span class="sunlight-ident">setNavState</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">this</span><span class="sunlight-operator">.</span><span class="sunlight-ident">_setNavState</span><span class="sunlight-operator">.</span><span class="sunlight-ident">bind</span><span class="sunlight-punctuation">(</span><span class="sunlight-keyword">this</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
 
-&#xA0;&#xA0;&#xA0;&#xA0;//&#xA0;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#xA0;override&#xA0;&#x540E;&#x7684;&#x65B9;&#x6CD5;
-&#xA0;&#xA0;&#xA0;&#xA0;_setNavState(navState:&#xA0;any)&#xA0;{
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;super.setNavState(navState);
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;(this.props.onNavStateChanged&#xA0;||&#xA0;((navState:&#xA0;any)&#xA0;=&gt;&#xA0;{}))(navState);
-&#xA0;&#xA0;&#xA0;&#xA0;}
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#xA0;override&#xA0;&#x540E;&#x7684;&#x65B9;&#x6CD5;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">_setNavState</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">navState</span><span class="sunlight-operator">:</span>&#xA0;<span class="sunlight-ident">any</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-reservedWord">super</span><span class="sunlight-operator">.</span><span class="sunlight-ident">setNavState</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">navState</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-keyword">this</span><span class="sunlight-operator">.</span><span class="sunlight-ident">props</span><span class="sunlight-operator">.</span><span class="sunlight-ident">onNavStateChanged</span>&#xA0;<span class="sunlight-operator">||</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">navState</span><span class="sunlight-operator">:</span>&#xA0;<span class="sunlight-ident">any</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-operator">=</span><span class="sunlight-operator">&gt;</span>&#xA0;<span class="sunlight-punctuation">{</span><span class="sunlight-punctuation">}</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">navState</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
 
-&#xA0;&#xA0;&#xA0;&#xA0;//&#xA0;&#x8FD9;&#x79CD;&#xA0;react&#xA0;&#x539F;&#x751F;&#x7684;&#x65B9;&#x6CD5;&#x4F1A;&#x5728;&#xA0;React.createClass&#xA0;&#x8FC7;&#x7A0B;&#x4E2D;&#x5B8C;&#x6210;&#x6307;&#x5411;&#x7684;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#xFF0C;&#x56E0;&#x6B64;&#x4E0D;&#x9700;&#x505A;&#x5904;&#x7406;
-&#xA0;&#xA0;&#xA0;&#xA0;componentDidMount()&#xA0;{
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;super.componentDidMount();
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;(this.props.onRouterReady&#xA0;||&#xA0;((router:&#xA0;any)&#xA0;=&gt;&#xA0;{}))(this.router);
-&#xA0;&#xA0;&#xA0;&#xA0;}
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;&#x8FD9;&#x79CD;&#xA0;react&#xA0;&#x539F;&#x751F;&#x7684;&#x65B9;&#x6CD5;&#x4F1A;&#x5728;&#xA0;React.createClass&#xA0;&#x8FC7;&#x7A0B;&#x4E2D;&#x5B8C;&#x6210;&#x6307;&#x5411;&#x7684;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#xFF0C;&#x56E0;&#x6B64;&#x4E0D;&#x9700;&#x505A;&#x5904;&#x7406;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">componentDidMount</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-reservedWord">super</span><span class="sunlight-operator">.</span><span class="sunlight-ident">componentDidMount</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-keyword">this</span><span class="sunlight-operator">.</span><span class="sunlight-ident">props</span><span class="sunlight-operator">.</span><span class="sunlight-ident">onRouterReady</span>&#xA0;<span class="sunlight-operator">||</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">router</span><span class="sunlight-operator">:</span>&#xA0;<span class="sunlight-ident">any</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-operator">=</span><span class="sunlight-operator">&gt;</span>&#xA0;<span class="sunlight-punctuation">{</span><span class="sunlight-punctuation">}</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">(</span><span class="sunlight-keyword">this</span><span class="sunlight-operator">.</span><span class="sunlight-ident">router</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
 
-&#xA0;&#xA0;&#xA0;&#xA0;render()&#xA0;{
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;return&#xA0;super.render();
-&#xA0;&#xA0;&#xA0;&#xA0;}
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">render</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">return</span>&#xA0;<span class="sunlight-reservedWord">super</span><span class="sunlight-operator">.</span><span class="sunlight-ident">render</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
 
-&#xA0;&#xA0;&#xA0;&#xA0;setState(
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;state:
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;|&#xA0;((
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;prevState:&#xA0;Readonly&lt;any&gt;,
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;props:&#xA0;Readonly&lt;RouteProps&gt;
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;)&#xA0;=&gt;&#xA0;Pick&lt;any,&#xA0;any&gt;&#xA0;|&#xA0;RouteProps&#xA0;|&#xA0;null)
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;|&#xA0;(Pick&lt;any,&#xA0;any&gt;&#xA0;|&#xA0;any&#xA0;|&#xA0;null),
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;callback?:&#xA0;()&#xA0;=&gt;&#xA0;void
-&#xA0;&#xA0;&#xA0;&#xA0;)&#xA0;{
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;super.setState(state,&#xA0;callback);
-&#xA0;&#xA0;&#xA0;&#xA0;}
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">setState</span><span class="sunlight-punctuation">(</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">state</span><span class="sunlight-operator">:</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-operator">|</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">(</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">prevState</span><span class="sunlight-operator">:</span>&#xA0;<span class="sunlight-ident">Readonly</span><span class="sunlight-operator">&lt;</span><span class="sunlight-ident">any</span><span class="sunlight-operator">&gt;</span><span class="sunlight-punctuation">,</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">props</span><span class="sunlight-operator">:</span>&#xA0;<span class="sunlight-ident">Readonly</span><span class="sunlight-operator">&lt;</span><span class="sunlight-ident">RouteProps</span><span class="sunlight-operator">&gt;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-operator">=</span><span class="sunlight-operator">&gt;</span>&#xA0;<span class="sunlight-ident">Pick</span><span class="sunlight-operator">&lt;</span><span class="sunlight-ident">any</span><span class="sunlight-punctuation">,</span>&#xA0;<span class="sunlight-ident">any</span><span class="sunlight-operator">&gt;</span>&#xA0;<span class="sunlight-operator">|</span>&#xA0;<span class="sunlight-ident">RouteProps</span>&#xA0;<span class="sunlight-operator">|</span>&#xA0;<span class="sunlight-keyword">null</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-operator">|</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-ident">Pick</span><span class="sunlight-operator">&lt;</span><span class="sunlight-ident">any</span><span class="sunlight-punctuation">,</span>&#xA0;<span class="sunlight-ident">any</span><span class="sunlight-operator">&gt;</span>&#xA0;<span class="sunlight-operator">|</span>&#xA0;<span class="sunlight-ident">any</span>&#xA0;<span class="sunlight-operator">|</span>&#xA0;<span class="sunlight-keyword">null</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">,</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">callback</span><span class="sunlight-operator">?</span><span class="sunlight-operator">:</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-operator">=</span><span class="sunlight-operator">&gt;</span>&#xA0;<span class="sunlight-keyword">void</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-reservedWord">super</span><span class="sunlight-operator">.</span><span class="sunlight-ident">setState</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">state</span><span class="sunlight-punctuation">,</span>&#xA0;<span class="sunlight-ident">callback</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
 
-&#xA0;&#xA0;&#xA0;&#xA0;forceUpdate(callBack?:&#xA0;()&#xA0;=&gt;&#xA0;void)&#xA0;{
-&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;super.forceUpdate(callBack);
-&#xA0;&#xA0;&#xA0;&#xA0;}
-}
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">forceUpdate</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">callBack</span><span class="sunlight-operator">?</span><span class="sunlight-operator">:</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-operator">=</span><span class="sunlight-operator">&gt;</span>&#xA0;<span class="sunlight-keyword">void</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-reservedWord">super</span><span class="sunlight-operator">.</span><span class="sunlight-ident">forceUpdate</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">callBack</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+<span class="sunlight-punctuation">}</span>
 </span></pre></div></div></code></pre>
 
                                 
@@ -779,7 +779,7 @@ export&#xA0;default&#xA0;class&#xA0;ShareRouter&#xA0;extends&#xA0;Router&lt;Rout
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"typescript 类继承原理","level":"1.2.3","depth":2,"next":{"title":"测试用文档","level":"1.2.4","depth":2,"path":"documents/日常/测试用文档.md","ref":"documents/日常/测试用文档.md","articles":[]},"previous":{"title":"给 Gitbook 文档中代码加上行号","level":"1.2.2","depth":2,"path":"documents/日常/给Gitbook文档中代码加上行号.md","ref":"documents/日常/给Gitbook文档中代码加上行号.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters","-highlight","sunlight-highlighter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"sunlight-highlighter":{"theme":"dark","lineNumbers":true},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"学习笔记","gitbook":"*"},"file":{"path":"documents/日常/typescript类继承原理.md","mtime":"2018-11-15T05:25:40.990Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-15T05:25:53.851Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"typescript 类继承原理","level":"1.2.3","depth":2,"next":{"title":"测试用文档","level":"1.2.4","depth":2,"path":"documents/日常/测试用文档.md","ref":"documents/日常/测试用文档.md","articles":[]},"previous":{"title":"给 Gitbook 文档中代码加上行号","level":"1.2.2","depth":2,"path":"documents/日常/给Gitbook文档中代码加上行号.md","ref":"documents/日常/给Gitbook文档中代码加上行号.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters","-highlight","sunlight-highlighter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"sunlight-highlighter":{"theme":"dark","lineNumbers":true},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"学习笔记","gitbook":"*"},"file":{"path":"documents/日常/typescript类继承原理.md","mtime":"2018-11-15T05:27:42.588Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-15T05:27:47.448Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

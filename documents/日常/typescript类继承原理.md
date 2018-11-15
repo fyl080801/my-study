@@ -4,7 +4,7 @@
 
 在 typescript 中可以实现类型的继承，例如有一个基类具有如下定义
 
-```typescript
+```javascript
 export default class Base {
     testFunc() {
         console.log("base class");
@@ -14,7 +14,7 @@ export default class Base {
 
 现在创建一个派生类
 
-```typescript
+```javascript
 import Base from "./base";
 
 export default class aClass extends Base {
@@ -132,7 +132,7 @@ React.createClass({
 });
 ```
 
-```typescript
+```javascript
 // 用 typescript 实现一个派生类
 export default class ShareRouter extends Router<RouteProps> {
     constructor(props: RouteProps) {
@@ -175,7 +175,7 @@ export default class ShareRouter extends Router<RouteProps> {
 
 因此，如果想 override 这样的方法只能在派生类中手动完成 typescript 编译结果的指向实现
 
-```typescript
+```javascript
 export default class ShareRouter extends Router<RouteProps> {
     constructor(props: RouteProps) {
         super(props);

@@ -4,6 +4,7 @@
 * 日常
     * [使用 Gitbook 编写文档](documents/日常/使用Gitbook编写文档.md)
     * [给 Gitbook 文档中代码加上行号](documents/日常/给Gitbook文档中代码加上行号.md)
+    * [typescript 类继承原理](documents/日常/typescript类继承原理.md)
     * [测试用文档](documents/日常/测试用文档.md)
 * ReactNative
     * [使用 vscode 调试 rn 应用](documents/ReactNative/使用vscode调试rn应用.md)

@@ -1,0 +1,826 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>typescript 类继承原理 · 学习笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-sunlight-highlighter/sunlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="测试用文档.html" />
+    
+    
+    <link rel="prev" href="给Gitbook文档中代码加上行号.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    日常
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="使用Gitbook编写文档.html">
+            
+                <a href="使用Gitbook编写文档.html">
+            
+                    
+                    使用 Gitbook 编写文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="给Gitbook文档中代码加上行号.html">
+            
+                <a href="给Gitbook文档中代码加上行号.html">
+            
+                    
+                    给 Gitbook 文档中代码加上行号
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.3" data-path="typescript类继承原理.html">
+            
+                <a href="typescript类继承原理.html">
+            
+                    
+                    typescript 类继承原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="测试用文档.html">
+            
+                <a href="测试用文档.html">
+            
+                    
+                    测试用文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    ReactNative
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../ReactNative/使用vscode调试rn应用.html">
+            
+                <a href="../ReactNative/使用vscode调试rn应用.html">
+            
+                    
+                    使用 vscode 调试 rn 应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../ReactNative/部署app到ios模拟器.html">
+            
+                <a href="../ReactNative/部署app到ios模拟器.html">
+            
+                    
+                    部署 app 到 ios 模拟器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    JDReact
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../JDReact/JDRouter实例共享.html">
+            
+                <a href="../JDReact/JDRouter实例共享.html">
+            
+                    
+                    JDRouter 实例共享
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    网络
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../网络/如何科学上网.html">
+            
+                <a href="../网络/如何科学上网.html">
+            
+                    
+                    如何科学上网
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    总结
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../总结/2018-11-11.html">
+            
+                <a href="../总结/2018-11-11.html">
+            
+                    
+                    2018-11-11
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >typescript 类继承原理</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="typescript-&#x7C7B;&#x7EE7;&#x627F;&#x539F;&#x7406;">typescript &#x7C7B;&#x7EE7;&#x627F;&#x539F;&#x7406;</h1>
+<h2 id="&#x5B9E;&#x73B0;&#x7EE7;&#x627F;">&#x5B9E;&#x73B0;&#x7EE7;&#x627F;</h2>
+<p>&#x5728; typescript &#x4E2D;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x7C7B;&#x578B;&#x7684;&#x7EE7;&#x627F;&#xFF0C;&#x4F8B;&#x5982;&#x6709;&#x4E00;&#x4E2A;&#x57FA;&#x7C7B;&#x5177;&#x6709;&#x5982;&#x4E0B;&#x5B9A;&#x4E49;</p>
+<pre><code class="lang-typescript"><div class="sunlight-container sunlight-theme-dark"><div class="sunlight-code-container" style="border-width: 1px; border-style: solid;"><div class="sunlight-line-number-margin"><a name="sunlight-7-line-1" href="#sunlight-7-line-1">1</a>
+<a name="sunlight-7-line-2" href="#sunlight-7-line-2">2</a>
+<a name="sunlight-7-line-3" href="#sunlight-7-line-3">3</a>
+<a name="sunlight-7-line-4" href="#sunlight-7-line-4">4</a>
+<a name="sunlight-7-line-5" href="#sunlight-7-line-5">5</a>
+</div><pre class="sunlight-highlight-typescript sunlight-highlighted"><span class="sunlight-plaintext">export&#xA0;default&#xA0;class&#xA0;Base&#xA0;{
+&#xA0;&#xA0;&#xA0;&#xA0;testFunc()&#xA0;{
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;console.log(&quot;base&#xA0;class&quot;);
+&#xA0;&#xA0;&#xA0;&#xA0;}
+}
+</span></pre></div></div></code></pre>
+<p>&#x73B0;&#x5728;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6D3E;&#x751F;&#x7C7B;</p>
+<pre><code class="lang-typescript"><div class="sunlight-container sunlight-theme-dark"><div class="sunlight-code-container" style="border-width: 1px; border-style: solid;"><div class="sunlight-line-number-margin"><a name="sunlight-8-line-1" href="#sunlight-8-line-1">1</a>
+<a name="sunlight-8-line-2" href="#sunlight-8-line-2">2</a>
+<a name="sunlight-8-line-3" href="#sunlight-8-line-3">3</a>
+<a name="sunlight-8-line-4" href="#sunlight-8-line-4">4</a>
+<a name="sunlight-8-line-5" href="#sunlight-8-line-5">5</a>
+<a name="sunlight-8-line-6" href="#sunlight-8-line-6">6</a>
+<a name="sunlight-8-line-7" href="#sunlight-8-line-7">7</a>
+<a name="sunlight-8-line-8" href="#sunlight-8-line-8">8</a>
+<a name="sunlight-8-line-9" href="#sunlight-8-line-9">9</a>
+</div><pre class="sunlight-highlight-typescript sunlight-highlighted"><span class="sunlight-plaintext">import&#xA0;Base&#xA0;from&#xA0;&quot;./base&quot;;
+
+export&#xA0;default&#xA0;class&#xA0;aClass&#xA0;extends&#xA0;Base&#xA0;{
+&#xA0;&#xA0;&#xA0;&#xA0;//&#xA0;override&#xA0;&#x4E86;&#xA0;testFunc&#xA0;&#x65B9;&#x6CD5;
+&#xA0;&#xA0;&#xA0;&#xA0;testFunc()&#xA0;{
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;super.testFunc();
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;console.log(&quot;a&#xA0;class&quot;);
+&#xA0;&#xA0;&#xA0;&#xA0;}
+}
+</span></pre></div></div></code></pre>
+<p>&#x5728;&#x7C7B;&#x578B; Base &#x7684;&#x6D3E;&#x751F;&#x7C7B; aClass &#x4E2D;&#x7684; testFunc &#x65B9;&#x6CD5;&#x4F7F;&#x7528; super &#x6765;&#x8C03;&#x7528;&#x57FA;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;</p>
+<p>&#x4F7F;&#x7528; tsc &#x5BF9; typescript &#x6E90;&#x7801;&#x8FDB;&#x884C;&#x7F16;&#x8BD1;&#xFF0C; &#x53EF;&#x5F97;&#x5230;&#x7F16;&#x8BD1;&#x540E;&#x6700;&#x7EC8;&#x7684; javascript &#x8F93;&#x51FA;</p>
+<p>&#x5176;&#x4E2D;&#x57FA;&#x7C7B; Base.js &#x4E2D;&#x53EF;&#x4EE5;&#x770B;&#x51FA; typescript &#x5BF9;&#x4E8E;&#x7C7B;&#x7684;&#x5B9A;&#x4E49;&#x5B9E;&#x9645;&#x4E0A;&#x5C31;&#x662F;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x7C7B;&#x578B;&#x7684;&#x65B9;&#x6CD5;&#x5168;&#x90E8;&#x5B9A;&#x4E49;&#x5728;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x7684; prototype &#x4E2D;&#xFF0C;prototype &#x8868;&#x793A;&#x8BE5;&#x51FD;&#x6570;&#x7684;&#x539F;&#x578B;&#xFF0C;&#x5728;&#x7C7B;&#x578B;&#x88AB;&#x5B9E;&#x4F8B;&#x5316;&#x540E; prototype &#x5BF9;&#x8C61;&#x7684;&#x6210;&#x5458;&#x90FD;&#x6210;&#x4E3A;&#x5B9E;&#x4F8B;&#x5316;&#x5BF9;&#x8C61;&#x7684;&#x6210;&#x5458;</p>
+<pre><code class="lang-javascript"><div class="sunlight-container sunlight-theme-dark"><div class="sunlight-code-container" style="border-width: 1px; border-style: solid;"><div class="sunlight-line-number-margin"><a name="sunlight-9-line-1" href="#sunlight-9-line-1">1</a>
+<a name="sunlight-9-line-2" href="#sunlight-9-line-2">2</a>
+<a name="sunlight-9-line-3" href="#sunlight-9-line-3">3</a>
+<a name="sunlight-9-line-4" href="#sunlight-9-line-4">4</a>
+<a name="sunlight-9-line-5" href="#sunlight-9-line-5">5</a>
+<a name="sunlight-9-line-6" href="#sunlight-9-line-6">6</a>
+<a name="sunlight-9-line-7" href="#sunlight-9-line-7">7</a>
+<a name="sunlight-9-line-8" href="#sunlight-9-line-8">8</a>
+<a name="sunlight-9-line-9" href="#sunlight-9-line-9">9</a>
+<a name="sunlight-9-line-10" href="#sunlight-9-line-10">10</a>
+<a name="sunlight-9-line-11" href="#sunlight-9-line-11">11</a>
+<a name="sunlight-9-line-12" href="#sunlight-9-line-12">12</a>
+<a name="sunlight-9-line-13" href="#sunlight-9-line-13">13</a>
+<a name="sunlight-9-line-14" href="#sunlight-9-line-14">14</a>
+<a name="sunlight-9-line-15" href="#sunlight-9-line-15">15</a>
+<a name="sunlight-9-line-16" href="#sunlight-9-line-16">16</a>
+</div><pre class="sunlight-highlight-javascript sunlight-highlighted"><span class="sunlight-javascript"><span class="sunlight-string">&quot;use&#xA0;strict&quot;</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-globalObject">Object</span><span class="sunlight-operator">.</span><span class="sunlight-ident">defineProperty</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">exports</span><span class="sunlight-punctuation">,</span>&#xA0;<span class="sunlight-string">&quot;__esModule&quot;</span><span class="sunlight-punctuation">,</span>&#xA0;<span class="sunlight-punctuation">{</span>&#xA0;<span class="sunlight-ident">value</span><span class="sunlight-operator">:</span>&#xA0;<span class="sunlight-keyword">true</span>&#xA0;<span class="sunlight-punctuation">}</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-keyword">var</span>&#xA0;<span class="sunlight-ident">Base</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-comment">/**&#xA0;@class&#xA0;*/</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-keyword">function</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xA0;Base</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-named-ident">Base</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span><span class="sunlight-punctuation">}</span>
+
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;&#x51FD;&#x6570;&#x7684;&#xA0;prototype&#xA0;&#x5C5E;&#x6027;&#x52A0;&#x4E00;&#x4E2A;&#x6210;&#x5458;&#x51FD;&#x6570;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">Base</span><span class="sunlight-operator">.</span><span class="sunlight-ident">prototype</span><span class="sunlight-operator">.</span><span class="sunlight-ident">testFunc</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">function</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">console</span><span class="sunlight-operator">.</span><span class="sunlight-ident">log</span><span class="sunlight-punctuation">(</span><span class="sunlight-string">&quot;base&quot;</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span><span class="sunlight-punctuation">;</span>
+
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;&#x8FD4;&#x56DE;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#xA0;Base</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">return</span>&#xA0;<span class="sunlight-ident">Base</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-punctuation">}</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-ident">exports</span><span class="sunlight-operator">.</span><span class="sunlight-keyword">default</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-ident">Base</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-comment">//#&#xA0;sourceMappingURL=base.js.map</span>
+</span></pre></div></div></code></pre>
+<p>&#x7F16;&#x8BD1;&#x540E;&#x751F;&#x6210;&#x7684;&#x6D3E;&#x751F;&#x7C7B; aClass.js &#x4E2D;&#x9996;&#x5148;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A; __extends &#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x5B9E;&#x9645;&#x4E0A;&#x5C31;&#x662F;&#x4E3A;&#x4E86;&#x5B9E;&#x73B0;&#x7EE7;&#x627F;&#x7528;&#x7684;&#xFF0C;&#x63A5;&#x6536;&#x6D3E;&#x751F;&#x7C7B;&#x548C;&#x57FA;&#x7C7B;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x91CC;&#x9762;&#x5BF9;&#x57FA;&#x7C7B;&#x7684; prototype &#x6307;&#x5411;&#x8FDB;&#x884C;&#x4E86;&#x5904;&#x7406;&#xFF0C;&#x5C06;&#x57FA;&#x7C7B;&#x7684; prototype &#x91CC;&#x7684;&#x6240;&#x6709;&#x6210;&#x5458;&#x590D;&#x5236;&#x4E00;&#x4EFD;&#x5230;&#x6D3E;&#x751F;&#x7C7B;&#x578B;&#x4E2D;&#xFF0C;&#x8FD9;&#x6837;&#x4F1A;&#x5728;&#x521B;&#x5EFA;&#x6D3E;&#x751F;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x65F6;&#x4F7F;&#x5F97;&#x6D3E;&#x751F;&#x7C7B;&#x5177;&#x6709;&#x57FA;&#x7C7B;&#x6240;&#x6709;&#x6210;&#x5458;&#xFF08;&#x8FD9;&#x91CC;&#x5148;&#x4E0D;&#x8003;&#x8651;&#x57FA;&#x7C7B;&#x91CC;&#x7684;&#x79C1;&#x6709;&#x6210;&#x5458;&#xFF09;&#xFF0C;&#x8FD9;&#x4E9B;&#x662F;&#x57FA;&#x7C7B;&#x6210;&#x5458;&#x7684;&#x6D45;&#x526F;&#x672C;</p>
+<p>&#x5982;&#x679C;&#x6D3E;&#x751F;&#x7C7B;&#x4E2D;&#x8981; override &#x57FA;&#x7C7B;&#x4E2D;&#x7684;&#x6210;&#x5458;&#x51FD;&#x6570;&#xFF0C;&#x5219;&#x5148;&#x8C03;&#x7528; __extends &#x83B7;&#x5F97;&#x4E86;&#x57FA;&#x7C7B;&#x4E2D; prototype &#x7684;&#x6D45;&#x526F;&#x672C;&#xFF0C;&#x4E4B;&#x540E;&#x5728;&#x672C;&#x8EAB;&#x7684; prototype &#x4E2D;&#x91CD;&#x65B0;&#x5B9A;&#x4E49;&#x8981; override &#x6210;&#x5458;&#x51FD;&#x6570;&#xFF0C;override &#x7684;&#x65B9;&#x6CD5;&#x91CC;&#x53EF;&#x4F7F;&#x7528; super &#x83B7;&#x53D6;&#x57FA;&#x7C7B;&#x7684;&#x5F15;&#x7528;&#x6267;&#x884C;&#x57FA;&#x7C7B;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x8C03;&#x7528;&#x4E86;&#x57FA;&#x7C7B;&#x7684; prototype &#x4E2D;&#x7684;&#x6210;&#x5458;&#x51FD;&#x6570;</p>
+<pre><code class="lang-javascript"><div class="sunlight-container sunlight-theme-dark"><div class="sunlight-code-container" style="border-width: 1px; border-style: solid;"><div class="sunlight-line-number-margin"><a name="sunlight-10-line-1" href="#sunlight-10-line-1">1</a>
+<a name="sunlight-10-line-2" href="#sunlight-10-line-2">2</a>
+<a name="sunlight-10-line-3" href="#sunlight-10-line-3">3</a>
+<a name="sunlight-10-line-4" href="#sunlight-10-line-4">4</a>
+<a name="sunlight-10-line-5" href="#sunlight-10-line-5">5</a>
+<a name="sunlight-10-line-6" href="#sunlight-10-line-6">6</a>
+<a name="sunlight-10-line-7" href="#sunlight-10-line-7">7</a>
+<a name="sunlight-10-line-8" href="#sunlight-10-line-8">8</a>
+<a name="sunlight-10-line-9" href="#sunlight-10-line-9">9</a>
+<a name="sunlight-10-line-10" href="#sunlight-10-line-10">10</a>
+<a name="sunlight-10-line-11" href="#sunlight-10-line-11">11</a>
+<a name="sunlight-10-line-12" href="#sunlight-10-line-12">12</a>
+<a name="sunlight-10-line-13" href="#sunlight-10-line-13">13</a>
+<a name="sunlight-10-line-14" href="#sunlight-10-line-14">14</a>
+<a name="sunlight-10-line-15" href="#sunlight-10-line-15">15</a>
+<a name="sunlight-10-line-16" href="#sunlight-10-line-16">16</a>
+<a name="sunlight-10-line-17" href="#sunlight-10-line-17">17</a>
+<a name="sunlight-10-line-18" href="#sunlight-10-line-18">18</a>
+<a name="sunlight-10-line-19" href="#sunlight-10-line-19">19</a>
+<a name="sunlight-10-line-20" href="#sunlight-10-line-20">20</a>
+<a name="sunlight-10-line-21" href="#sunlight-10-line-21">21</a>
+<a name="sunlight-10-line-22" href="#sunlight-10-line-22">22</a>
+<a name="sunlight-10-line-23" href="#sunlight-10-line-23">23</a>
+<a name="sunlight-10-line-24" href="#sunlight-10-line-24">24</a>
+<a name="sunlight-10-line-25" href="#sunlight-10-line-25">25</a>
+<a name="sunlight-10-line-26" href="#sunlight-10-line-26">26</a>
+<a name="sunlight-10-line-27" href="#sunlight-10-line-27">27</a>
+<a name="sunlight-10-line-28" href="#sunlight-10-line-28">28</a>
+<a name="sunlight-10-line-29" href="#sunlight-10-line-29">29</a>
+<a name="sunlight-10-line-30" href="#sunlight-10-line-30">30</a>
+<a name="sunlight-10-line-31" href="#sunlight-10-line-31">31</a>
+<a name="sunlight-10-line-32" href="#sunlight-10-line-32">32</a>
+<a name="sunlight-10-line-33" href="#sunlight-10-line-33">33</a>
+<a name="sunlight-10-line-34" href="#sunlight-10-line-34">34</a>
+<a name="sunlight-10-line-35" href="#sunlight-10-line-35">35</a>
+<a name="sunlight-10-line-36" href="#sunlight-10-line-36">36</a>
+<a name="sunlight-10-line-37" href="#sunlight-10-line-37">37</a>
+<a name="sunlight-10-line-38" href="#sunlight-10-line-38">38</a>
+<a name="sunlight-10-line-39" href="#sunlight-10-line-39">39</a>
+<a name="sunlight-10-line-40" href="#sunlight-10-line-40">40</a>
+<a name="sunlight-10-line-41" href="#sunlight-10-line-41">41</a>
+<a name="sunlight-10-line-42" href="#sunlight-10-line-42">42</a>
+<a name="sunlight-10-line-43" href="#sunlight-10-line-43">43</a>
+<a name="sunlight-10-line-44" href="#sunlight-10-line-44">44</a>
+<a name="sunlight-10-line-45" href="#sunlight-10-line-45">45</a>
+<a name="sunlight-10-line-46" href="#sunlight-10-line-46">46</a>
+<a name="sunlight-10-line-47" href="#sunlight-10-line-47">47</a>
+<a name="sunlight-10-line-48" href="#sunlight-10-line-48">48</a>
+<a name="sunlight-10-line-49" href="#sunlight-10-line-49">49</a>
+<a name="sunlight-10-line-50" href="#sunlight-10-line-50">50</a>
+<a name="sunlight-10-line-51" href="#sunlight-10-line-51">51</a>
+<a name="sunlight-10-line-52" href="#sunlight-10-line-52">52</a>
+<a name="sunlight-10-line-53" href="#sunlight-10-line-53">53</a>
+<a name="sunlight-10-line-54" href="#sunlight-10-line-54">54</a>
+<a name="sunlight-10-line-55" href="#sunlight-10-line-55">55</a>
+<a name="sunlight-10-line-56" href="#sunlight-10-line-56">56</a>
+<a name="sunlight-10-line-57" href="#sunlight-10-line-57">57</a>
+<a name="sunlight-10-line-58" href="#sunlight-10-line-58">58</a>
+<a name="sunlight-10-line-59" href="#sunlight-10-line-59">59</a>
+<a name="sunlight-10-line-60" href="#sunlight-10-line-60">60</a>
+</div><pre class="sunlight-highlight-javascript sunlight-highlighted"><span class="sunlight-javascript"><span class="sunlight-string">&quot;use&#xA0;strict&quot;</span><span class="sunlight-punctuation">;</span>
+
+<span class="sunlight-comment">//&#xA0;&#x7528;&#x4E8E;&#x4E4B;&#x540E;&#x6D3E;&#x751F;&#x7C7B;&#x578B;&#x4E2D;&#x6269;&#x5C55;&#x7528;</span>
+<span class="sunlight-keyword">var</span>&#xA0;<span class="sunlight-ident">__extends</span>&#xA0;<span class="sunlight-operator">=</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-keyword">this</span>&#xA0;<span class="sunlight-operator">&amp;&amp;</span>&#xA0;<span class="sunlight-keyword">this</span><span class="sunlight-operator">.</span><span class="sunlight-ident">__extends</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-operator">||</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-keyword">function</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x9012;&#x5F52;&#x8C03;&#x7528;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x76EE;&#x7684;&#x662F;&#x5C06;&#x57FA;&#x7C7B;&#x91CC;&#x7684;&#x6210;&#x5458;&#x7684;&#x6240;&#x6709;&#x5C5E;&#x6027;&#x6DF1;&#x5EA6;&#x590D;&#x5236;&#x5230;&#x6D3E;&#x751F;&#x7C7B;&#x539F;&#x578B;&#xFF08;prototype&#xFF09;&#x4E2D;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x63A5;&#x6536;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;d&#xA0;-&#xA0;&#x6D3E;&#x751F;&#x7C7B;&#xFF0C;&#xA0;b&#xA0;-&#xA0;&#x57FA;&#x7C7B;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">var</span>&#xA0;<span class="sunlight-ident">extendStatics</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">function</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">d</span><span class="sunlight-punctuation">,</span>&#xA0;<span class="sunlight-ident">b</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">extendStatics</span>&#xA0;<span class="sunlight-operator">=</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-globalObject">Object</span><span class="sunlight-operator">.</span><span class="sunlight-ident">setPrototypeOf</span>&#xA0;<span class="sunlight-operator">||</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">{</span>&#xA0;<span class="sunlight-ident">__proto__</span><span class="sunlight-operator">:</span>&#xA0;<span class="sunlight-punctuation">[</span><span class="sunlight-punctuation">]</span>&#xA0;<span class="sunlight-punctuation">}</span>&#xA0;<span class="sunlight-keyword">instanceof</span>&#xA0;<span class="sunlight-globalObject">Array</span>&#xA0;<span class="sunlight-operator">&amp;&amp;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">function</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">d</span><span class="sunlight-punctuation">,</span>&#xA0;<span class="sunlight-ident">b</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">d</span><span class="sunlight-operator">.</span><span class="sunlight-ident">__proto__</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-ident">b</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-operator">||</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">function</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">d</span><span class="sunlight-punctuation">,</span>&#xA0;<span class="sunlight-ident">b</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;&#x8FD9;&#x91CC;&#x662F;&#x590D;&#x5236;&#x8FC7;&#x7A0B;&#xA0;d[p]&#xA0;=&#xA0;b[p]</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">for</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-keyword">var</span>&#xA0;<span class="sunlight-ident">p</span>&#xA0;<span class="sunlight-keyword">in</span>&#xA0;<span class="sunlight-ident">b</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-keyword">if</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-ident">b</span><span class="sunlight-operator">.</span><span class="sunlight-ident">hasOwnProperty</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">p</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-ident">d</span><span class="sunlight-punctuation">[</span><span class="sunlight-ident">p</span><span class="sunlight-punctuation">]</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-ident">b</span><span class="sunlight-punctuation">[</span><span class="sunlight-ident">p</span><span class="sunlight-punctuation">]</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span><span class="sunlight-punctuation">;</span>
+
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;&#x8FD4;&#x56DE;&#xA0;extendStatics&#xA0;&#x505A;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x9012;&#x5F52;&#xFF0C;&#x5B9E;&#x73B0;&#x904D;&#x5386;&#x590D;&#x5236;&#x57FA;&#x7C7B;&#x91CC;&#x6240;&#x6709;&#x6210;&#x5458;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">return</span>&#xA0;<span class="sunlight-ident">extendStatics</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">d</span><span class="sunlight-punctuation">,</span>&#xA0;<span class="sunlight-ident">b</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">return</span>&#xA0;<span class="sunlight-keyword">function</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">d</span><span class="sunlight-punctuation">,</span>&#xA0;<span class="sunlight-ident">b</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">extendStatics</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">d</span><span class="sunlight-punctuation">,</span>&#xA0;<span class="sunlight-ident">b</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-named-ident">__</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">this</span><span class="sunlight-operator">.</span><span class="sunlight-ident">constructor</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-ident">d</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">d</span><span class="sunlight-operator">.</span><span class="sunlight-ident">prototype</span>&#xA0;<span class="sunlight-operator">=</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">b</span>&#xA0;<span class="sunlight-operator">===</span>&#xA0;<span class="sunlight-keyword">null</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-operator">?</span>&#xA0;<span class="sunlight-globalObject">Object</span><span class="sunlight-operator">.</span><span class="sunlight-ident">create</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">b</span><span class="sunlight-punctuation">)</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-operator">:</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">__</span><span class="sunlight-operator">.</span><span class="sunlight-ident">prototype</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-ident">b</span><span class="sunlight-operator">.</span><span class="sunlight-ident">prototype</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">,</span>&#xA0;<span class="sunlight-keyword">new</span>&#xA0;<span class="sunlight-ident">__</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-keyword">var</span>&#xA0;<span class="sunlight-ident">__importDefault</span>&#xA0;<span class="sunlight-operator">=</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-keyword">this</span>&#xA0;<span class="sunlight-operator">&amp;&amp;</span>&#xA0;<span class="sunlight-keyword">this</span><span class="sunlight-operator">.</span><span class="sunlight-ident">__importDefault</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-operator">||</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">function</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">mod</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">return</span>&#xA0;<span class="sunlight-ident">mod</span>&#xA0;<span class="sunlight-operator">&amp;&amp;</span>&#xA0;<span class="sunlight-ident">mod</span><span class="sunlight-operator">.</span><span class="sunlight-ident">__esModule</span>&#xA0;<span class="sunlight-operator">?</span>&#xA0;<span class="sunlight-ident">mod</span>&#xA0;<span class="sunlight-operator">:</span>&#xA0;<span class="sunlight-punctuation">{</span>&#xA0;<span class="sunlight-keyword">default</span><span class="sunlight-operator">:</span>&#xA0;<span class="sunlight-ident">mod</span>&#xA0;<span class="sunlight-punctuation">}</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-globalObject">Object</span><span class="sunlight-operator">.</span><span class="sunlight-ident">defineProperty</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">exports</span><span class="sunlight-punctuation">,</span>&#xA0;<span class="sunlight-string">&quot;__esModule&quot;</span><span class="sunlight-punctuation">,</span>&#xA0;<span class="sunlight-punctuation">{</span>&#xA0;<span class="sunlight-ident">value</span><span class="sunlight-operator">:</span>&#xA0;<span class="sunlight-keyword">true</span>&#xA0;<span class="sunlight-punctuation">}</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-keyword">var</span>&#xA0;<span class="sunlight-ident">base_1</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-ident">__importDefault</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">require</span><span class="sunlight-punctuation">(</span><span class="sunlight-string">&quot;./base&quot;</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-keyword">var</span>&#xA0;<span class="sunlight-ident">aClass</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-comment">/**&#xA0;@class&#xA0;*/</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-keyword">function</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">_super</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;&#x8C03;&#x7528;&#xA0;__extends&#xA0;&#x65B9;&#x6CD5;&#x5BF9;&#xA0;aClass&#xA0;&#x505A;&#x6D3E;&#x751F;&#x5904;&#x7406;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;_super&#xA0;&#x662F;&#x57FA;&#x7C7B;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">__extends</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">aClass</span><span class="sunlight-punctuation">,</span>&#xA0;<span class="sunlight-ident">_super</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-named-ident">aClass</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">return</span>&#xA0;<span class="sunlight-punctuation">(</span><span class="sunlight-ident">_super</span>&#xA0;<span class="sunlight-operator">!==</span>&#xA0;<span class="sunlight-keyword">null</span>&#xA0;<span class="sunlight-operator">&amp;&amp;</span>&#xA0;<span class="sunlight-ident">_super</span><span class="sunlight-operator">.</span><span class="sunlight-ident">apply</span><span class="sunlight-punctuation">(</span><span class="sunlight-keyword">this</span><span class="sunlight-punctuation">,</span>&#xA0;<span class="sunlight-ident">arguments</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-operator">||</span>&#xA0;<span class="sunlight-keyword">this</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;&#x6D3E;&#x751F;&#x7C7B;&#x91CC;&#x91CD;&#x65B0;&#x5B9A;&#x4E49;&#xA0;prototype&#xA0;&#x4E2D;&#x6210;&#x5458;&#x51FD;&#x6570;&#xA0;testFunc&#xA0;&#x5B9E;&#x73B0;&#xA0;override</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">aClass</span><span class="sunlight-operator">.</span><span class="sunlight-ident">prototype</span><span class="sunlight-operator">.</span><span class="sunlight-ident">testFunc</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-keyword">function</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;&#x6D3E;&#x751F;&#x7C7B;&#xA0;override&#xA0;&#x540E;&#x7684;&#x65B9;&#x6CD5;&#x4E2D;&#x6709;&#x4E2A;&#xA0;super.testFunc()</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;&#x5176;&#x5B9E;&#x662F;&#x8C03;&#x7528;&#x57FA;&#x7C7B;&#xA0;prototype&#xA0;&#x7684;&#x6210;&#x5458;&#x51FD;&#x6570;&#xFF0C;&#x5E76;&#x5C06;&#x5F53;&#x524D;&#x6D3E;&#x751F;&#x7C7B;&#x7684;&#xA0;this&#xA0;&#x4F20;&#x8FC7;&#x53BB;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">_super</span><span class="sunlight-operator">.</span><span class="sunlight-ident">prototype</span><span class="sunlight-operator">.</span><span class="sunlight-ident">testFunc</span><span class="sunlight-operator">.</span><span class="sunlight-ident">call</span><span class="sunlight-punctuation">(</span><span class="sunlight-keyword">this</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">console</span><span class="sunlight-operator">.</span><span class="sunlight-ident">log</span><span class="sunlight-punctuation">(</span><span class="sunlight-string">&quot;a&#xA0;class&quot;</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span><span class="sunlight-punctuation">;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">return</span>&#xA0;<span class="sunlight-ident">aClass</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-punctuation">}</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">base_1</span><span class="sunlight-operator">.</span><span class="sunlight-keyword">default</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-ident">exports</span><span class="sunlight-operator">.</span><span class="sunlight-keyword">default</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-ident">aClass</span><span class="sunlight-punctuation">;</span>
+<span class="sunlight-comment">//#&#xA0;sourceMappingURL=aClass.js.map</span>
+</span></pre></div></div></code></pre>
+<h2 id="&#x4E4B;&#x524D;&#x5728;-reactnative-&#x7684;&#x95EE;&#x9898;">&#x4E4B;&#x524D;&#x5728; ReactNative &#x7684;&#x95EE;&#x9898;</h2>
+<p>&#x4E4B;&#x524D;&#x5728; ReactNative &#x4E2D;&#x5982;&#x679C;&#x662F;&#x4F7F;&#x7528; React.createClass &#x521B;&#x5EFA;&#x7684;&#x7EC4;&#x4EF6;&#x7C7B;&#x578B;&#xFF0C;&#x4F1A;&#x5728; createClass &#x4F20;&#x9012;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x76F4;&#x63A5;&#x5728;&#x5BF9;&#x8C61;&#x91CC;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x6210;&#x5458;&#x65B9;&#x6CD5;&#xFF0C;&#x867D;&#x7136;&#x53E6;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E; typescript &#x5199;&#x7684;&#x7EC4;&#x4EF6;&#x53EF;&#x4EE5;&#x7EE7;&#x627F;&#x8FD9;&#x4E2A;&#x7C7B;&#xFF0C; &#x4F46;&#x662F;&#x7531;&#x4E8E;&#x6210;&#x5458;&#x65B9;&#x6CD5;&#x4E0D;&#x662F;&#x5199;&#x5728; prototype &#x4E2D;&#x7684;&#xFF0C;&#x5728; typescript &#x7F16;&#x8BD1;&#x540E;&#x6267;&#x884C;&#x65F6; prototype &#x91CC;&#x83B7;&#x53D6;&#x4E0D;&#x5230;&#x8FD9;&#x4E2A;&#x6210;&#x5458;&#xFF0C;&#x5728;&#x88AB;&#x8C03;&#x7528;&#x65F6;&#x539F;&#x65B9;&#x6CD5;&#x53EA;&#x5B58;&#x5728;&#x4E8E;&#x57FA;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x4E2D;&#xFF0C;&#x56E0;&#x6B64;&#x6D3E;&#x751F;&#x7C7B;&#x4E2D; override &#x7684;&#x65B9;&#x6CD5;&#x4E0D;&#x4F1A;&#x88AB;&#x8C03;&#x7528;&#xFF0C;&#x800C;&#x539F;&#x751F;&#x7684;&#x65B9;&#x6CD5;&#x4F8B;&#x5982; componentDidMount&#x3001;render &#x7B49;&#x662F;&#x5728; React.createClass &#x8FC7;&#x7A0B;&#x4E2D;&#x505A;&#x4E86;&#x5904;&#x7406;</p>
+<pre><code class="lang-javascript"><div class="sunlight-container sunlight-theme-dark"><div class="sunlight-code-container" style="border-width: 1px; border-style: solid;"><div class="sunlight-line-number-margin"><a name="sunlight-11-line-1" href="#sunlight-11-line-1">1</a>
+<a name="sunlight-11-line-2" href="#sunlight-11-line-2">2</a>
+<a name="sunlight-11-line-3" href="#sunlight-11-line-3">3</a>
+<a name="sunlight-11-line-4" href="#sunlight-11-line-4">4</a>
+<a name="sunlight-11-line-5" href="#sunlight-11-line-5">5</a>
+<a name="sunlight-11-line-6" href="#sunlight-11-line-6">6</a>
+<a name="sunlight-11-line-7" href="#sunlight-11-line-7">7</a>
+</div><pre class="sunlight-highlight-javascript sunlight-highlighted"><span class="sunlight-javascript"><span class="sunlight-comment">//&#xA0;Router&#xA0;&#x662F;&#x901A;&#x8FC7;&#xA0;React.createClass&#xA0;&#x5B9A;&#x4E49;&#x7684;</span>
+<span class="sunlight-ident">React</span><span class="sunlight-operator">.</span><span class="sunlight-ident">createClass</span><span class="sunlight-punctuation">(</span><span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;&#x91CC;&#x9762;&#x6709;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">setNavState</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">navState</span><span class="sunlight-operator">:</span>&#xA0;<span class="sunlight-ident">any</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;...</span>
+&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-punctuation">}</span>
+<span class="sunlight-punctuation">}</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
+</span></pre></div></div></code></pre>
+<pre><code class="lang-typescript"><div class="sunlight-container sunlight-theme-dark"><div class="sunlight-code-container" style="border-width: 1px; border-style: solid;"><div class="sunlight-line-number-margin"><a name="sunlight-12-line-1" href="#sunlight-12-line-1">1</a>
+<a name="sunlight-12-line-2" href="#sunlight-12-line-2">2</a>
+<a name="sunlight-12-line-3" href="#sunlight-12-line-3">3</a>
+<a name="sunlight-12-line-4" href="#sunlight-12-line-4">4</a>
+<a name="sunlight-12-line-5" href="#sunlight-12-line-5">5</a>
+<a name="sunlight-12-line-6" href="#sunlight-12-line-6">6</a>
+<a name="sunlight-12-line-7" href="#sunlight-12-line-7">7</a>
+<a name="sunlight-12-line-8" href="#sunlight-12-line-8">8</a>
+<a name="sunlight-12-line-9" href="#sunlight-12-line-9">9</a>
+<a name="sunlight-12-line-10" href="#sunlight-12-line-10">10</a>
+<a name="sunlight-12-line-11" href="#sunlight-12-line-11">11</a>
+<a name="sunlight-12-line-12" href="#sunlight-12-line-12">12</a>
+<a name="sunlight-12-line-13" href="#sunlight-12-line-13">13</a>
+<a name="sunlight-12-line-14" href="#sunlight-12-line-14">14</a>
+<a name="sunlight-12-line-15" href="#sunlight-12-line-15">15</a>
+<a name="sunlight-12-line-16" href="#sunlight-12-line-16">16</a>
+<a name="sunlight-12-line-17" href="#sunlight-12-line-17">17</a>
+<a name="sunlight-12-line-18" href="#sunlight-12-line-18">18</a>
+<a name="sunlight-12-line-19" href="#sunlight-12-line-19">19</a>
+<a name="sunlight-12-line-20" href="#sunlight-12-line-20">20</a>
+<a name="sunlight-12-line-21" href="#sunlight-12-line-21">21</a>
+<a name="sunlight-12-line-22" href="#sunlight-12-line-22">22</a>
+<a name="sunlight-12-line-23" href="#sunlight-12-line-23">23</a>
+<a name="sunlight-12-line-24" href="#sunlight-12-line-24">24</a>
+<a name="sunlight-12-line-25" href="#sunlight-12-line-25">25</a>
+<a name="sunlight-12-line-26" href="#sunlight-12-line-26">26</a>
+<a name="sunlight-12-line-27" href="#sunlight-12-line-27">27</a>
+<a name="sunlight-12-line-28" href="#sunlight-12-line-28">28</a>
+<a name="sunlight-12-line-29" href="#sunlight-12-line-29">29</a>
+<a name="sunlight-12-line-30" href="#sunlight-12-line-30">30</a>
+<a name="sunlight-12-line-31" href="#sunlight-12-line-31">31</a>
+<a name="sunlight-12-line-32" href="#sunlight-12-line-32">32</a>
+<a name="sunlight-12-line-33" href="#sunlight-12-line-33">33</a>
+<a name="sunlight-12-line-34" href="#sunlight-12-line-34">34</a>
+<a name="sunlight-12-line-35" href="#sunlight-12-line-35">35</a>
+<a name="sunlight-12-line-36" href="#sunlight-12-line-36">36</a>
+<a name="sunlight-12-line-37" href="#sunlight-12-line-37">37</a>
+<a name="sunlight-12-line-38" href="#sunlight-12-line-38">38</a>
+</div><pre class="sunlight-highlight-typescript sunlight-highlighted"><span class="sunlight-plaintext">//&#xA0;&#x7528;&#xA0;typescript&#xA0;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x6D3E;&#x751F;&#x7C7B;
+export&#xA0;default&#xA0;class&#xA0;ShareRouter&#xA0;extends&#xA0;Router&lt;RouteProps&gt;&#xA0;{
+&#xA0;&#xA0;&#xA0;&#xA0;constructor(props:&#xA0;RouteProps)&#xA0;{
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;super(props);
+&#xA0;&#xA0;&#xA0;&#xA0;}
+
+&#xA0;&#xA0;&#xA0;&#xA0;//&#xA0;&#x8FD9;&#x91CC;&#x76F4;&#x63A5;&#xA0;override&#xFF0C;&#x5728;&#x88AB;&#x8C03;&#x7528;&#x65F6;&#x4E0D;&#x4F1A;&#x6267;&#x884C;&#x8FD9;&#x4E2A;&#xA0;override&#xA0;&#x540E;&#x7684;&#x65B9;&#x6CD5;&#x7684;
+&#xA0;&#xA0;&#xA0;&#xA0;//&#xA0;&#x56E0;&#x4E3A;&#x7ECF;&#x8FC7;&#xA0;typescript&#xA0;&#x7F16;&#x8BD1;&#x540E;&#x57FA;&#x7C7B;&#xA0;prototype&#xA0;&#x4E0D;&#x5B58;&#x5728;&#x8FD9;&#x4E2A;&#x6210;&#x5458;&#xFF0C;&#x57FA;&#x7C7B;&#x4E2D;&#x8FD9;&#x4E2A;&#x6CD5;&#x5728;&#x6D3E;&#x751F;&#x7C7B;&#x4E2D;&#x8FD8;&#x662F;&#x6307;&#x5411;&#x4E86;&#x539F;&#x65B9;&#x6CD5;
+&#xA0;&#xA0;&#xA0;&#xA0;setNavState(navState:&#xA0;any)&#xA0;{
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;super.setNavState(navState);
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;(this.props.onNavStateChanged&#xA0;||&#xA0;((navState:&#xA0;any)&#xA0;=&gt;&#xA0;{}))(navState);
+&#xA0;&#xA0;&#xA0;&#xA0;}
+
+&#xA0;&#xA0;&#xA0;&#xA0;componentDidMount()&#xA0;{
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;super.componentDidMount();
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;(this.props.onRouterReady&#xA0;||&#xA0;((router:&#xA0;any)&#xA0;=&gt;&#xA0;{}))(this.router);
+&#xA0;&#xA0;&#xA0;&#xA0;}
+
+&#xA0;&#xA0;&#xA0;&#xA0;render()&#xA0;{
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;return&#xA0;super.render();
+&#xA0;&#xA0;&#xA0;&#xA0;}
+
+&#xA0;&#xA0;&#xA0;&#xA0;setState(
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;state:
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;|&#xA0;((
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;prevState:&#xA0;Readonly&lt;any&gt;,
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;props:&#xA0;Readonly&lt;RouteProps&gt;
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;)&#xA0;=&gt;&#xA0;Pick&lt;any,&#xA0;any&gt;&#xA0;|&#xA0;RouteProps&#xA0;|&#xA0;null)
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;|&#xA0;(Pick&lt;any,&#xA0;any&gt;&#xA0;|&#xA0;any&#xA0;|&#xA0;null),
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;callback?:&#xA0;()&#xA0;=&gt;&#xA0;void
+&#xA0;&#xA0;&#xA0;&#xA0;)&#xA0;{
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;super.setState(state,&#xA0;callback);
+&#xA0;&#xA0;&#xA0;&#xA0;}
+
+&#xA0;&#xA0;&#xA0;&#xA0;forceUpdate(callBack?:&#xA0;()&#xA0;=&gt;&#xA0;void)&#xA0;{
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;super.forceUpdate(callBack);
+&#xA0;&#xA0;&#xA0;&#xA0;}
+}
+</span></pre></div></div></code></pre>
+<p>&#x56E0;&#x6B64;&#xFF0C;&#x5982;&#x679C;&#x60F3; override &#x8FD9;&#x6837;&#x7684;&#x65B9;&#x6CD5;&#x53EA;&#x80FD;&#x5728;&#x6D3E;&#x751F;&#x7C7B;&#x4E2D;&#x624B;&#x52A8;&#x5B8C;&#x6210; typescript &#x7F16;&#x8BD1;&#x7ED3;&#x679C;&#x7684;&#x6307;&#x5411;&#x5B9E;&#x73B0;</p>
+<pre><code class="lang-typescript"><div class="sunlight-container sunlight-theme-dark"><div class="sunlight-code-container" style="border-width: 1px; border-style: solid;"><div class="sunlight-line-number-margin"><a name="sunlight-13-line-1" href="#sunlight-13-line-1">1</a>
+<a name="sunlight-13-line-2" href="#sunlight-13-line-2">2</a>
+<a name="sunlight-13-line-3" href="#sunlight-13-line-3">3</a>
+<a name="sunlight-13-line-4" href="#sunlight-13-line-4">4</a>
+<a name="sunlight-13-line-5" href="#sunlight-13-line-5">5</a>
+<a name="sunlight-13-line-6" href="#sunlight-13-line-6">6</a>
+<a name="sunlight-13-line-7" href="#sunlight-13-line-7">7</a>
+<a name="sunlight-13-line-8" href="#sunlight-13-line-8">8</a>
+<a name="sunlight-13-line-9" href="#sunlight-13-line-9">9</a>
+<a name="sunlight-13-line-10" href="#sunlight-13-line-10">10</a>
+<a name="sunlight-13-line-11" href="#sunlight-13-line-11">11</a>
+<a name="sunlight-13-line-12" href="#sunlight-13-line-12">12</a>
+<a name="sunlight-13-line-13" href="#sunlight-13-line-13">13</a>
+<a name="sunlight-13-line-14" href="#sunlight-13-line-14">14</a>
+<a name="sunlight-13-line-15" href="#sunlight-13-line-15">15</a>
+<a name="sunlight-13-line-16" href="#sunlight-13-line-16">16</a>
+<a name="sunlight-13-line-17" href="#sunlight-13-line-17">17</a>
+<a name="sunlight-13-line-18" href="#sunlight-13-line-18">18</a>
+<a name="sunlight-13-line-19" href="#sunlight-13-line-19">19</a>
+<a name="sunlight-13-line-20" href="#sunlight-13-line-20">20</a>
+<a name="sunlight-13-line-21" href="#sunlight-13-line-21">21</a>
+<a name="sunlight-13-line-22" href="#sunlight-13-line-22">22</a>
+<a name="sunlight-13-line-23" href="#sunlight-13-line-23">23</a>
+<a name="sunlight-13-line-24" href="#sunlight-13-line-24">24</a>
+<a name="sunlight-13-line-25" href="#sunlight-13-line-25">25</a>
+<a name="sunlight-13-line-26" href="#sunlight-13-line-26">26</a>
+<a name="sunlight-13-line-27" href="#sunlight-13-line-27">27</a>
+<a name="sunlight-13-line-28" href="#sunlight-13-line-28">28</a>
+<a name="sunlight-13-line-29" href="#sunlight-13-line-29">29</a>
+<a name="sunlight-13-line-30" href="#sunlight-13-line-30">30</a>
+<a name="sunlight-13-line-31" href="#sunlight-13-line-31">31</a>
+<a name="sunlight-13-line-32" href="#sunlight-13-line-32">32</a>
+<a name="sunlight-13-line-33" href="#sunlight-13-line-33">33</a>
+<a name="sunlight-13-line-34" href="#sunlight-13-line-34">34</a>
+<a name="sunlight-13-line-35" href="#sunlight-13-line-35">35</a>
+<a name="sunlight-13-line-36" href="#sunlight-13-line-36">36</a>
+<a name="sunlight-13-line-37" href="#sunlight-13-line-37">37</a>
+<a name="sunlight-13-line-38" href="#sunlight-13-line-38">38</a>
+<a name="sunlight-13-line-39" href="#sunlight-13-line-39">39</a>
+<a name="sunlight-13-line-40" href="#sunlight-13-line-40">40</a>
+</div><pre class="sunlight-highlight-typescript sunlight-highlighted"><span class="sunlight-plaintext">export&#xA0;default&#xA0;class&#xA0;ShareRouter&#xA0;extends&#xA0;Router&lt;RouteProps&gt;&#xA0;{
+&#xA0;&#xA0;&#xA0;&#xA0;constructor(props:&#xA0;RouteProps)&#xA0;{
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;super(props);
+
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;//&#xA0;&#x9700;&#x8981;&#x628A;&#xA0;this&#xFF08;&#x672C;&#x7C7B;&#x578B;&#x5B9E;&#x4F8B;&#xFF09;&#x4E2D;&#xA0;setNavState&#xA0;&#x624B;&#x52A8;&#x6307;&#x5411;&#x6D3E;&#x751F;&#x7C7B;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x65B9;&#x6CD5;
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;this.setNavState&#xA0;=&#xA0;this._setNavState.bind(this);
+&#xA0;&#xA0;&#xA0;&#xA0;}
+
+&#xA0;&#xA0;&#xA0;&#xA0;//&#xA0;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#xA0;override&#xA0;&#x540E;&#x7684;&#x65B9;&#x6CD5;
+&#xA0;&#xA0;&#xA0;&#xA0;_setNavState(navState:&#xA0;any)&#xA0;{
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;super.setNavState(navState);
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;(this.props.onNavStateChanged&#xA0;||&#xA0;((navState:&#xA0;any)&#xA0;=&gt;&#xA0;{}))(navState);
+&#xA0;&#xA0;&#xA0;&#xA0;}
+
+&#xA0;&#xA0;&#xA0;&#xA0;//&#xA0;&#x8FD9;&#x79CD;&#xA0;react&#xA0;&#x539F;&#x751F;&#x7684;&#x65B9;&#x6CD5;&#x4F1A;&#x5728;&#xA0;React.createClass&#xA0;&#x8FC7;&#x7A0B;&#x4E2D;&#x5B8C;&#x6210;&#x6307;&#x5411;&#x7684;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#xFF0C;&#x56E0;&#x6B64;&#x4E0D;&#x9700;&#x505A;&#x5904;&#x7406;
+&#xA0;&#xA0;&#xA0;&#xA0;componentDidMount()&#xA0;{
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;super.componentDidMount();
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;(this.props.onRouterReady&#xA0;||&#xA0;((router:&#xA0;any)&#xA0;=&gt;&#xA0;{}))(this.router);
+&#xA0;&#xA0;&#xA0;&#xA0;}
+
+&#xA0;&#xA0;&#xA0;&#xA0;render()&#xA0;{
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;return&#xA0;super.render();
+&#xA0;&#xA0;&#xA0;&#xA0;}
+
+&#xA0;&#xA0;&#xA0;&#xA0;setState(
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;state:
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;|&#xA0;((
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;prevState:&#xA0;Readonly&lt;any&gt;,
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;props:&#xA0;Readonly&lt;RouteProps&gt;
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;)&#xA0;=&gt;&#xA0;Pick&lt;any,&#xA0;any&gt;&#xA0;|&#xA0;RouteProps&#xA0;|&#xA0;null)
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;|&#xA0;(Pick&lt;any,&#xA0;any&gt;&#xA0;|&#xA0;any&#xA0;|&#xA0;null),
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;callback?:&#xA0;()&#xA0;=&gt;&#xA0;void
+&#xA0;&#xA0;&#xA0;&#xA0;)&#xA0;{
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;super.setState(state,&#xA0;callback);
+&#xA0;&#xA0;&#xA0;&#xA0;}
+
+&#xA0;&#xA0;&#xA0;&#xA0;forceUpdate(callBack?:&#xA0;()&#xA0;=&gt;&#xA0;void)&#xA0;{
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;super.forceUpdate(callBack);
+&#xA0;&#xA0;&#xA0;&#xA0;}
+}
+</span></pre></div></div></code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="给Gitbook文档中代码加上行号.html" class="navigation navigation-prev " aria-label="Previous page: 给 Gitbook 文档中代码加上行号">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="测试用文档.html" class="navigation navigation-next " aria-label="Next page: 测试用文档">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"typescript 类继承原理","level":"1.2.3","depth":2,"next":{"title":"测试用文档","level":"1.2.4","depth":2,"path":"documents/日常/测试用文档.md","ref":"documents/日常/测试用文档.md","articles":[]},"previous":{"title":"给 Gitbook 文档中代码加上行号","level":"1.2.2","depth":2,"path":"documents/日常/给Gitbook文档中代码加上行号.md","ref":"documents/日常/给Gitbook文档中代码加上行号.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters","-highlight","sunlight-highlighter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"sunlight-highlighter":{"theme":"dark","lineNumbers":true},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"学习笔记","gitbook":"*"},"file":{"path":"documents/日常/typescript类继承原理.md","mtime":"2018-11-15T05:25:40.990Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-15T05:25:53.851Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

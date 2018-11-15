@@ -94,6 +94,7 @@ ts 派生
 
 > 为什么使用 React.createClass 创建的类派生后不走 override 方法 testFunc  
 > 为什么使用 class 定义的类派生后可以走 override 方法
+> 我知道这个跟用不用 ts 写没关系，但就是想知道为什么 React.createClass 的不行，还有 js 派生的原理
 
 获取项目
 

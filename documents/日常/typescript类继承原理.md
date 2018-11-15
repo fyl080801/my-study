@@ -2,7 +2,7 @@
 
 ## 实现继承
 
-在 typescript 中可以实现类型的继承，例如有一个基类具有如下定义
+&emsp;&emsp;在 typescript 中可以实现类型的继承，例如有一个基类具有如下定义
 
 ```javascript
 export default class Base {
@@ -12,7 +12,7 @@ export default class Base {
 }
 ```
 
-现在创建一个派生类
+&emsp;&emsp;现在创建一个派生类
 
 ```javascript
 import Base from "./base";
@@ -26,11 +26,11 @@ export default class aClass extends Base {
 }
 ```
 
-在类型 Base 的派生类 aClass 中的 testFunc 方法使用 super 来调用基类的方法
+&emsp;&emsp;在类型 Base 的派生类 aClass 中的 testFunc 方法使用 super 来调用基类的方法
 
-使用 tsc 对 typescript 源码进行编译， 可得到编译后最终的 javascript 输出
+&emsp;&emsp;使用 tsc 对 typescript 源码进行编译， 可得到编译后最终的 javascript 输出
 
-其中基类 Base.js 中可以看出 typescript 对于类的定义实际上就是返回一个函数，类型的方法全部定义在这个函数的 prototype 中，prototype 表示该函数的原型，在类型被实例化后 prototype 对象的成员都成为实例化对象的成员
+&emsp;&emsp;其中基类 Base.js 中可以看出 typescript 对于类的定义实际上就是返回一个函数，类型的方法全部定义在这个函数的 prototype 中，prototype 表示该函数的原型，在类型被实例化后 prototype 对象的成员都成为实例化对象的成员
 
 ```javascript
 "use strict";
@@ -51,9 +51,9 @@ exports.default = Base;
 //# sourceMappingURL=base.js.map
 ```
 
-编译后生成的派生类 aClass.js 中首先定义了一个 \_\_extends 方法，这个方法实际上就是为了实现继承用的，接收派生类和基类两个参数，里面对基类的 prototype 指向进行了处理，将基类的 prototype 里的所有成员复制一份到派生类型中，这样会在创建派生类的实例时使得派生类具有基类所有成员（这里先不考虑基类里的私有成员），这些是基类成员的浅副本
+&emsp;&emsp;编译后生成的派生类 aClass.js 中首先定义了一个 \_\_extends 方法，这个方法实际上就是为了实现继承用的，接收派生类和基类两个参数，里面对基类的 prototype 指向进行了处理，将基类的 prototype 里的所有成员复制一份到派生类型中，这样会在创建派生类的实例时使得派生类具有基类所有成员（这里先不考虑基类里的私有成员），这些是基类成员的浅副本
 
-如果派生类中要 override 基类中的成员函数，则先调用 \_\_extends 获得了基类中 prototype 的浅副本，之后在本身的 prototype 中重新定义要 override 成员函数，override 的方法里可使用 super 获取基类的引用执行基类的操作，实际上是调用了基类的 prototype 中的成员函数
+&emsp;&emsp;如果派生类中要 override 基类中的成员函数，则先调用 \_\_extends 获得了基类中 prototype 的浅副本，之后在本身的 prototype 中重新定义要 override 成员函数，override 的方法里可使用 super 获取基类的引用执行基类的操作，实际上是调用了基类的 prototype 中的成员函数
 
 ```javascript
 "use strict";
@@ -121,7 +121,7 @@ exports.default = aClass;
 
 ## 之前在 ReactNative 的问题
 
-之前在 ReactNative 中如果是使用 React.createClass 创建的组件类型，会在 createClass 传递一个对象，直接在对象里定义了一个成员方法，虽然另一个基于 typescript 写的组件可以继承这个类， 但是由于成员方法不是写在 prototype 中的，在 typescript 编译后执行时 prototype 里获取不到这个成员，在被调用时原方法只存在于基类的实例中，因此派生类中 override 的方法不会被调用，而原生的方法例如 componentDidMount、render 等是在 React.createClass 过程中做了处理
+&emsp;&emsp;之前在 ReactNative 中如果是使用 React.createClass 创建的组件类型，会在 createClass 传递一个对象，直接在对象里定义了一个成员方法，虽然另一个基于 typescript 写的组件可以继承这个类， 但是由于成员方法不是写在 prototype 中的，在 typescript 编译后执行时 prototype 里获取不到这个成员，在被调用时原方法只存在于基类的实例中，因此派生类中 override 的方法不会被调用，而原生的方法例如 componentDidMount、render 等是在 React.createClass 过程中做了处理
 
 ```javascript
 // Router 是通过 React.createClass 定义的
@@ -175,7 +175,7 @@ export default class ShareRouter extends Router<RouteProps> {
 }
 ```
 
-因此，如果想 override 这样的方法只能在派生类中手动完成 typescript 编译结果的指向实现
+&emsp;&emsp;因此，如果想 override 这样的方法只能在派生类中手动完成 typescript 编译结果的指向实现
 
 ```javascript
 export default class ShareRouter extends Router<RouteProps> {

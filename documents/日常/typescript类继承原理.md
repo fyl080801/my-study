@@ -62,8 +62,7 @@ exports.default = Base;
 var __extends =
     (this && this.__extends) ||
     (function() {
-        // 这是一个递归调用的过程
-        // 目的是将基类里的成员的所有属性深度复制到派生类原型（prototype）中
+        // 这个是将基类里的成员的所有属性复制到派生类原型（prototype）中
         // 这个方法接收两个参数，d - 派生类， b - 基类
         var extendStatics = function(d, b) {
             extendStatics =
@@ -77,7 +76,7 @@ var __extends =
                     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
                 };
 
-            // 返回 extendStatics 做方法调用递归，实现遍历复制基类里所有成员
+            // 返回 extendStatics，实现遍历复制基类里所有成员
             return extendStatics(d, b);
         };
         return function(d, b) {

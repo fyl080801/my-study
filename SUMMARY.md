@@ -12,13 +12,14 @@
 * Flutter
     * [开发环境搭建](documents/Flutter/环境搭建.md)
 * JDReact
-    * [JDRouter 实例共享](documents/JDReact/JDRouter实例共享.md)
+    * [JDRouter 实例共享](documents/JDReact/JDRouter实例共享.md)
 * 网络
     * [如何科学上网](documents/网络/如何科学上网.md)
     * [nodejs 简单 http 转发](documents/网络/nodejs简单http转发.md)
 * 问题
     * [react 类型继承问题](documents/问题/react类型继承问题.md)
 * 总结
+    * [自我介绍](documents/总结/自我介绍.md)
     * [2018-11-11](documents/总结/2018-11-11.md)
     * [2018-11-15](documents/总结/2018-11-15.md)
     * [2018-11-22](documents/总结/2018-11-22.md)

@@ -577,6 +577,182 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="eggjs-&#x52A8;&#x6001;&#x8DEF;&#x7531;">eggjs &#x52A8;&#x6001;&#x8DEF;&#x7531;</h1>
+<h2 id="&#x8BF4;&#x660E;">&#x8BF4;&#x660E;</h2>
+<h3 id="&#x52A8;&#x673A;">&#x52A8;&#x673A;</h3>
+<p>eggjs &#x4E2D;&#x5B9A;&#x4E49;&#x8DEF;&#x7531;&#x9700;&#x8981;&#x624D; controller &#x4E2D;&#x52A0; js &#x6587;&#x4EF6;&#xFF0C;&#x4E4B;&#x540E;&#x518D; router &#x4E2D;&#x5F15;&#x7528;</p>
+<p>&#x5B58;&#x5728;&#x4E09;&#x4E2A;&#x95EE;&#x9898;</p>
+<ul>
+<li>&#x6BCF;&#x52A0;&#x4E00;&#x4E2A; controller &#x5C31;&#x8981;&#x5728; router &#x91CC;&#x624B;&#x52A8;&#x5F15;&#x7528;</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-meta">&apos;use strict&apos;</span>
+
+<span class="hljs-built_in">module</span>.exports = app =&gt; {
+  <span class="hljs-keyword">const</span> { router, controller } = app
+  router.get(<span class="hljs-string">&apos;/&apos;</span>, controller.home.index)
+}
+</code></pre>
+<ul>
+<li>&#x6BCF;&#x4E2A; router &#x90FD;&#x9700;&#x8981;&#x5B9A;&#x4E49; http &#x8BF7;&#x6C42;&#x65B9;&#x6CD5;&#x3001;&#x8BF7;&#x6C42;&#x8DEF;&#x5F84;&#x548C;&#x4F7F;&#x7528;&#x54EA;&#x4E2A; controller</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-meta">&apos;use strict&apos;</span>
+
+<span class="hljs-built_in">module</span>.exports = app =&gt; {
+  <span class="hljs-keyword">const</span> { router, controller } = app
+  router.get(<span class="hljs-string">&apos;/&apos;</span>, controller.home.index)
+  router.post(<span class="hljs-string">&apos;/dopost&apos;</span>, controller.home.dopost)
+  router.put(<span class="hljs-string">&apos;/doput&apos;</span>, controller.home.doput)
+  router.delete(<span class="hljs-string">&apos;/dodelete/:id&apos;</span>, controller.home.dodelete)
+}
+</code></pre>
+<ul>
+<li>&#x5982;&#x679C;&#x591A;&#x4E2A;&#x4EBA;&#x540C;&#x65F6;&#x589E;&#x52A0; controller &#x53EF;&#x80FD;&#x8981;&#x540C;&#x65F6;&#x4FEE;&#x6539; router &#x6587;&#x4EF6;</li>
+</ul>
+<h3 id="&#x65B9;&#x6848;">&#x65B9;&#x6848;</h3>
+<p>&#x5B9E;&#x73B0;&#x4E00;&#x4E2A; <code>controller</code> &#x65B9;&#x6CD5;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x8DEF;&#x7531;&#x751F;&#x6210;&#x5668;&#xFF0C;&#x5BF9;&#x8C61;&#x5305;&#x542B; <code>get</code> <code>post</code> <code>put</code> <code>patch</code> <code>delete</code> &#x65B9;&#x6CD5;&#xFF0C;&#x6BCF;&#x4E2A;&#x65B9;&#x6CD5;&#x63A5;&#x6536;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x5206;&#x522B;&#x662F;&#x6700;&#x540E;&#x4E00;&#x7EA7;&#x8DEF;&#x5F84;&#x7684;&#x540D;&#x79F0;&#x548C;&#x8DEF;&#x7531;&#x7684;&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x8DEF;&#x7531;&#x7684;&#x539F;&#x578B;&#x5BF9;&#x8C61;</p>
+<p>&#x5B9E;&#x73B0;&#x4E00;&#x4E2A; <code>resolveRouters</code> &#x7528;&#x4E8E;&#x5728; <code>router</code> &#x4E2D;&#x8C03;&#x7528;&#xFF0C;&#x6784;&#x5EFA;&#x8DEF;&#x7531;</p>
+<h2 id="&#x5B9E;&#x73B0;">&#x5B9E;&#x73B0;</h2>
+<h3 id="&#x81EA;&#x52A8;&#x8DEF;&#x7531;&#x5B9E;&#x73B0;">&#x81EA;&#x52A8;&#x8DEF;&#x7531;&#x5B9E;&#x73B0;</h3>
+<pre><code class="lang-javascript"><span class="hljs-meta">&apos;use strict&apos;</span>
+
+<span class="hljs-keyword">const</span> pathUtl = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;path&apos;</span>)
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;fs&apos;</span>)
+
+<span class="hljs-keyword">const</span> factory = () =&gt; {
+  <span class="hljs-keyword">var</span> stores = []
+
+  <span class="hljs-keyword">var</span> func = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> (app, path) =&gt; {
+      <span class="hljs-keyword">var</span> { router } = app
+
+      stores.forEach(item =&gt; {
+        <span class="hljs-keyword">var</span> uripath =
+          <span class="hljs-string">&apos;/&apos;</span> +
+          (<span class="hljs-built_in">Array</span>.isArray(path) ? path : [path])
+            .concat([item.name])
+            .filter(val =&gt; {
+              <span class="hljs-keyword">return</span> val !== <span class="hljs-string">&apos;&apos;</span>
+            })
+            .join(<span class="hljs-string">&apos;/&apos;</span>)
+
+        <span class="hljs-comment">// &#x53EF;&#x5426;&#x6539;&#x8FDB;&#x4E00;&#x4E0B;&#xFF0C;&#x5C06;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x8DEF;&#x7531;&#x7684; this &#x90FD;&#x6307;&#x5411;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;</span>
+        <span class="hljs-comment">// &#x901A;&#x8FC7;&#x8C03;&#x7528; controller &#x65B9;&#x6CD5;&#x65F6;&#x4F20;&#x4E00;&#x4E2A;&#x521D;&#x503C;</span>
+        router[item.method](uripath, <span class="hljs-keyword">new</span> (controllerClass(item.action))().index)
+      })
+    }
+  }
+
+  func.get = (name, fn) =&gt; {
+    stores.push({ name: name, method: <span class="hljs-string">&apos;get&apos;</span>, action: fn })
+    <span class="hljs-keyword">return</span> func
+  }
+
+  func.post = (name, fn) =&gt; {
+    stores.push({ name: name, method: <span class="hljs-string">&apos;post&apos;</span>, action: fn })
+    <span class="hljs-keyword">return</span> func
+  }
+
+  <span class="hljs-comment">// delete &#x65B9;&#x6CD5;&#x8DDF;&#x539F;&#x751F;&#x65B9;&#x6CD5;&#x6709;&#x51B2;&#x7A81;&#x6240;&#x4EE5;&#x540D;&#x5B57;&#x5B9A;&#x4E49;&#x6210; drop</span>
+  func.drop = (name, fn) =&gt; {
+    stores.push({ name: name, method: <span class="hljs-string">&apos;delete&apos;</span>, action: fn })
+    <span class="hljs-keyword">return</span> func
+  }
+
+  func.put = (name, fn) =&gt; {
+    stores.push({ name: name, method: <span class="hljs-string">&apos;put&apos;</span>, action: fn })
+    <span class="hljs-keyword">return</span> func
+  }
+
+  func.patch = (name, fn) =&gt; {
+    stores.push({ name: name, method: <span class="hljs-string">&apos;patch&apos;</span>, action: fn })
+    <span class="hljs-keyword">return</span> func
+  }
+
+  <span class="hljs-keyword">return</span> func
+}
+
+<span class="hljs-comment">/**
+ * &#x63A7;&#x5236;&#x5668;&#x5B9E;&#x4F8B;&#x5316;&#x7C7B;
+ * @param {*} fn &#x8DEF;&#x7531;&#x65B9;&#x6CD5;
+ */</span>
+<span class="hljs-keyword">const</span> controllerClass = fn =&gt; {
+  <span class="hljs-keyword">var</span> func = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{}
+
+  func.prototype.index = fn
+
+  <span class="hljs-keyword">return</span> func
+}
+
+<span class="hljs-comment">/**
+ * &#x63A7;&#x5236;&#x5668;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;
+ * @param {*} name
+ */</span>
+<span class="hljs-keyword">const</span> controller = name =&gt; {
+  <span class="hljs-keyword">return</span> factory(name)
+}
+
+<span class="hljs-comment">/**
+ * &#x8DEF;&#x7531;&#x751F;&#x6210;&#x5668;&#x65B9;&#x6CD5;
+ * @param {*} app
+ * @param {*} base
+ * @param {*} currentpath
+ */</span>
+<span class="hljs-keyword">const</span> resolveRouters = (app, base, currentpath) =&gt; {
+  fs.readdirSync(pathUtl.join(base, currentpath)).forEach(dir =&gt; {
+    <span class="hljs-keyword">var</span> nextpath = pathUtl.join(base, currentpath, dir)
+
+    <span class="hljs-keyword">var</span> stat = fs.statSync(nextpath)
+
+    <span class="hljs-keyword">if</span> (stat.isFile()) {
+      <span class="hljs-built_in">require</span>(nextpath)()(
+        app,
+        nextpath                <span class="hljs-comment">// &#x53EF;&#x4EE5;&#x4E0D;&#x8FD9;&#x6837;&#x7528;&#xFF0C;&#x76F4;&#x63A5;&#x4ECE; stat &#x628A;&#x6587;&#x4EF6;&#x540D;&#x53D6;&#x51FA;&#x6765;</span>
+          .replace(base, <span class="hljs-string">&apos;&apos;</span>)
+          .split(<span class="hljs-string">&apos;/&apos;</span>)
+          .filter(val =&gt; {
+            <span class="hljs-keyword">return</span> val !== <span class="hljs-string">&apos;&apos;</span>
+          })
+          .map(val =&gt; {
+            <span class="hljs-keyword">return</span> val.replace(<span class="hljs-string">&apos;.js&apos;</span>, <span class="hljs-string">&apos;&apos;</span>)
+          })
+      )
+    }
+
+    <span class="hljs-keyword">if</span> (stat.isDirectory()) {
+      resolveRouters(app, base, nextpath.replace(base, <span class="hljs-string">&apos;&apos;</span>))
+    }
+  })
+}
+
+<span class="hljs-built_in">module</span>.exports = {
+  resolveRouters,
+  controller
+}
+</code></pre>
+<h3 id="router-&#x4E2D;&#x8C03;&#x7528;">router &#x4E2D;&#x8C03;&#x7528;</h3>
+<p>&#x5728; <code>router</code> &#x6587;&#x4EF6;&#x4E2D;&#x5F15;&#x7528;&#x811A;&#x672C;&#x6587;&#x4EF6;&#xFF0C;&#x76F4;&#x63A5;&#x8C03;&#x7528; <code>resolveRouters</code> &#x65B9;&#x6CD5;&#xFF0C;&#x4F20;&#x5165; <code>app</code> &#x5BF9;&#x8C61;&#x3001;&#x6839;&#x76EE;&#x5F55;&#x3001;&#x8DEF;&#x7531;&#x76EE;&#x5F55;</p>
+<p>&#x4F1A;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x57FA;&#x4E8E;&#x6839;&#x76EE;&#x5F55;&#x5F00;&#x59CB;&#x7684;&#x8BF7;&#x6C42;</p>
+<pre><code class="lang-javascript"><span class="hljs-meta">&apos;use strict&apos;</span>
+
+<span class="hljs-built_in">module</span>.exports = app =&gt; {
+  <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./router/autoRouter&apos;</span>).resolveRouters(app, __dirname, <span class="hljs-string">&apos;/api&apos;</span>)
+}
+</code></pre>
+<h3 id="controller-&#x5B9A;&#x4E49;">controller &#x5B9A;&#x4E49;</h3>
+<p>&#x5355;&#x72EC;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4F5C;&#x4E3A; <code>controller</code> &#x5E76;&#x5F15;&#x7528;&#x81EA;&#x52A8;&#x8DEF;&#x7531;&#x811A;&#x672C;&#x6587;&#x4EF6;&#xFF0C;&#x5148;&#x8C03;&#x7528; <code>controller</code> &#x65B9;&#x6CD5;&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x8DEF;&#x7531;&#x751F;&#x6210;&#x5668;&#xFF0C;&#x94FE;&#x5F0F;&#x8C03;&#x7528; <code>get</code> <code>post</code> <code>put</code> <code>patch</code> <code>delete</code> &#x65B9;&#x6CD5;&#x6784;&#x5EFA;&#x8DEF;&#x7531;&#x7684;&#x5B9A;&#x4E49;</p>
+<pre><code class="lang-javascript"><span class="hljs-meta">&apos;use strict&apos;</span>
+
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;../router/autoRouter&apos;</span>)
+  .controller()
+  .get(<span class="hljs-string">&apos;index/:id&apos;</span>, ctx =&gt; {
+    ctx.response.body = <span class="hljs-string">&apos;get is called&apos;</span> + ctx.params.id
+  })
+  .post(<span class="hljs-string">&apos;dopost&apos;</span>, ctx =&gt; {
+    ctx.response.body = <span class="hljs-string">&apos;post is called&apos;</span>
+  })
+  .drop(<span class="hljs-string">&apos;delete&apos;</span>, ctx =&gt; {
+    ctx.response.body = <span class="hljs-string">&apos;delete is called&apos;</span>
+  })
+</code></pre>
 
                                 
                                 </section>
@@ -612,7 +788,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"eggjs 动态路由","level":"1.8.1","depth":2,"next":{"title":"总结","level":"1.9","depth":1,"ref":"","articles":[{"title":"自我介绍","level":"1.9.1","depth":2,"path":"documents/总结/自我介绍.md","ref":"documents/总结/自我介绍.md","articles":[]},{"title":"2018-11-11","level":"1.9.2","depth":2,"path":"documents/总结/2018-11-11.md","ref":"documents/总结/2018-11-11.md","articles":[]},{"title":"2018-11-15","level":"1.9.3","depth":2,"path":"documents/总结/2018-11-15.md","ref":"documents/总结/2018-11-15.md","articles":[]},{"title":"2018-11-22","level":"1.9.4","depth":2,"path":"documents/总结/2018-11-22.md","ref":"documents/总结/2018-11-22.md","articles":[]},{"title":"2018-11-29","level":"1.9.5","depth":2,"path":"documents/总结/2018-11-29.md","ref":"documents/总结/2018-11-29.md","articles":[]},{"title":"2018-12-06","level":"1.9.6","depth":2,"path":"documents/总结/2018-12-06.md","ref":"documents/总结/2018-12-06.md","articles":[]},{"title":"2018-12-13","level":"1.9.7","depth":2,"path":"documents/总结/2018-12-13.md","ref":"documents/总结/2018-12-13.md","articles":[]},{"title":"2018-12-20","level":"1.9.8","depth":2,"path":"documents/总结/2018-12-20.md","ref":"documents/总结/2018-12-20.md","articles":[]},{"title":"云-2018-12-21","level":"1.9.9","depth":2,"path":"documents/总结/云-2018-12-20.md","ref":"documents/总结/云-2018-12-20.md","articles":[]}]},"previous":{"title":"NodeJs","level":"1.8","depth":1,"ref":"","articles":[{"title":"eggjs 动态路由","level":"1.8.1","depth":2,"path":"documents/NodeJs/eggjs动态路由.md","ref":"documents/NodeJs/eggjs动态路由.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"splitter":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"学习笔记","gitbook":"*"},"file":{"path":"documents/NodeJs/eggjs动态路由.md","mtime":"2018-12-26T14:51:17.362Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-27T02:12:06.662Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"eggjs 动态路由","level":"1.8.1","depth":2,"next":{"title":"总结","level":"1.9","depth":1,"ref":"","articles":[{"title":"自我介绍","level":"1.9.1","depth":2,"path":"documents/总结/自我介绍.md","ref":"documents/总结/自我介绍.md","articles":[]},{"title":"2018-11-11","level":"1.9.2","depth":2,"path":"documents/总结/2018-11-11.md","ref":"documents/总结/2018-11-11.md","articles":[]},{"title":"2018-11-15","level":"1.9.3","depth":2,"path":"documents/总结/2018-11-15.md","ref":"documents/总结/2018-11-15.md","articles":[]},{"title":"2018-11-22","level":"1.9.4","depth":2,"path":"documents/总结/2018-11-22.md","ref":"documents/总结/2018-11-22.md","articles":[]},{"title":"2018-11-29","level":"1.9.5","depth":2,"path":"documents/总结/2018-11-29.md","ref":"documents/总结/2018-11-29.md","articles":[]},{"title":"2018-12-06","level":"1.9.6","depth":2,"path":"documents/总结/2018-12-06.md","ref":"documents/总结/2018-12-06.md","articles":[]},{"title":"2018-12-13","level":"1.9.7","depth":2,"path":"documents/总结/2018-12-13.md","ref":"documents/总结/2018-12-13.md","articles":[]},{"title":"2018-12-20","level":"1.9.8","depth":2,"path":"documents/总结/2018-12-20.md","ref":"documents/总结/2018-12-20.md","articles":[]},{"title":"云-2018-12-21","level":"1.9.9","depth":2,"path":"documents/总结/云-2018-12-20.md","ref":"documents/总结/云-2018-12-20.md","articles":[]}]},"previous":{"title":"NodeJs","level":"1.8","depth":1,"ref":"","articles":[{"title":"eggjs 动态路由","level":"1.8.1","depth":2,"path":"documents/NodeJs/eggjs动态路由.md","ref":"documents/NodeJs/eggjs动态路由.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"splitter":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"学习笔记","gitbook":"*"},"file":{"path":"documents/NodeJs/eggjs动态路由.md","mtime":"2018-12-27T05:51:54.828Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-27T05:52:56.143Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

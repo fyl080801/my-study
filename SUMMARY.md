@@ -18,6 +18,8 @@
     * [nodejs 简单 http 转发](documents/网络/nodejs简单http转发.md)
 * 问题
     * [react 类型继承问题](documents/问题/react类型继承问题.md)
+* NodeJs
+    * [eggjs 动态路由](documents/NodeJs/eggjs动态路由.md)
 * 总结
     * [自我介绍](documents/总结/自我介绍.md)
     * [2018-11-11](documents/总结/2018-11-11.md)

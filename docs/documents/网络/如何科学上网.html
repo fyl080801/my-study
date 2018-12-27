@@ -25,7 +25,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-sunlight-highlighter/sunlight.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
                 
             
                 
@@ -370,6 +370,38 @@
                 <span>
             
                     
+                    NodeJs
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../NodeJs/eggjs动态路由.html">
+            
+                <a href="../NodeJs/eggjs动态路由.html">
+            
+                    
+                    eggjs 动态路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
                     总结
             
                 </span>
@@ -379,7 +411,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.8.1" data-path="../总结/自我介绍.html">
+        <li class="chapter " data-level="1.9.1" data-path="../总结/自我介绍.html">
             
                 <a href="../总结/自我介绍.html">
             
@@ -392,7 +424,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.2" data-path="../总结/2018-11-11.html">
+        <li class="chapter " data-level="1.9.2" data-path="../总结/2018-11-11.html">
             
                 <a href="../总结/2018-11-11.html">
             
@@ -405,7 +437,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.3" data-path="../总结/2018-11-15.html">
+        <li class="chapter " data-level="1.9.3" data-path="../总结/2018-11-15.html">
             
                 <a href="../总结/2018-11-15.html">
             
@@ -418,7 +450,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.4" data-path="../总结/2018-11-22.html">
+        <li class="chapter " data-level="1.9.4" data-path="../总结/2018-11-22.html">
             
                 <a href="../总结/2018-11-22.html">
             
@@ -431,7 +463,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.5" data-path="../总结/2018-11-29.html">
+        <li class="chapter " data-level="1.9.5" data-path="../总结/2018-11-29.html">
             
                 <a href="../总结/2018-11-29.html">
             
@@ -444,7 +476,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.6" data-path="../总结/2018-12-06.html">
+        <li class="chapter " data-level="1.9.6" data-path="../总结/2018-12-06.html">
             
                 <a href="../总结/2018-12-06.html">
             
@@ -457,7 +489,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.7" data-path="../总结/2018-12-13.html">
+        <li class="chapter " data-level="1.9.7" data-path="../总结/2018-12-13.html">
             
                 <a href="../总结/2018-12-13.html">
             
@@ -470,7 +502,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.8" data-path="../总结/2018-12-20.html">
+        <li class="chapter " data-level="1.9.8" data-path="../总结/2018-12-20.html">
             
                 <a href="../总结/2018-12-20.html">
             
@@ -483,7 +515,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.9" data-path="../总结/云-2018-12-20.html">
+        <li class="chapter " data-level="1.9.9" data-path="../总结/云-2018-12-20.html">
             
                 <a href="../总结/云-2018-12-20.html">
             
@@ -566,32 +598,24 @@
 <p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fx6j6k3a9aj31kw0lhjx4.jpg" alt=""></p>
 <h2 id="&#x521B;&#x5EFA;-shadowsocks-&#x670D;&#x52A1;">&#x521B;&#x5EFA; shadowsocks &#x670D;&#x52A1;</h2>
 <p>&#x2003;&#x2003;&#x5148;&#x7528; ip &#x767B;&#x9646;&#x865A;&#x62DF;&#x4E3B;&#x673A; <code>ssh root@&lt;&#x4F60;&#x7684;ip&#x5730;&#x5740;&gt;</code>&#xFF0C;&#x4E4B;&#x540E;&#x5B89;&#x88C5; shadowsocks &#x670D;&#x52A1;</p>
-<pre><code class="lang-bash+lineNumbers:false"><div class="sunlight-container sunlight-theme-dark"><div class="sunlight-code-container"><pre class="sunlight-highlight-bash sunlight-highlighted"><span class="sunlight-bash"><span class="sunlight-command">sudo</span>&#xA0;<span class="sunlight-ident">apt</span>&#xA0;<span class="sunlight-command">install</span>&#xA0;<span class="sunlight-ident">shadowsocks</span><span class="sunlight-operator">-</span><span class="sunlight-ident">libev</span>
-</span></pre></div></div></code></pre>
+<pre><code class="lang-bash+lineNumbers:false">sudo apt install shadowsocks-libev
+</code></pre>
 <p>&#x2003;&#x2003;&#x4E4B;&#x540E;&#x4FEE;&#x6539;&#x4E00;&#x4E0B; shadowsocks &#x670D;&#x52A1;&#x7AEF;&#x7684;&#x914D;&#x7F6E;</p>
-<pre><code class="lang-bash+lineNumbers:false"><div class="sunlight-container sunlight-theme-dark"><div class="sunlight-code-container"><pre class="sunlight-highlight-bash sunlight-highlighted"><span class="sunlight-bash"><span class="sunlight-command">sudo</span>&#xA0;<span class="sunlight-ident">vim</span>&#xA0;<span class="sunlight-operator">/</span><span class="sunlight-ident">etc</span><span class="sunlight-operator">/</span><span class="sunlight-ident">shadowsocks</span><span class="sunlight-operator">-</span><span class="sunlight-ident">libev</span><span class="sunlight-operator">/</span><span class="sunlight-ident">config</span><span class="sunlight-operator">.</span><span class="sunlight-ident">json</span>
-</span></pre></div></div></code></pre>
+<pre><code class="lang-bash+lineNumbers:false">sudo vim /etc/shadowsocks-libev/config.json
+</code></pre>
 <p>&#x2003;&#x2003;&#x914D;&#x7F6E;&#x5185;&#x5BB9;&#x5982;&#x4E0B;&#xFF0C;&#x5176;&#x4E2D; method &#x662F;&#x6307;&#x52A0;&#x5BC6;&#x65B9;&#x5F0F;&#xFF0C;&#x6700;&#x597D;&#x4F7F;&#x7528; aes-256-cfb&#xFF0C;&#x56E0;&#x4E3A; mac &#x4E0B;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x597D;&#x50CF;&#x652F;&#x6301;&#x7684;&#x534F;&#x8BAE;&#x6709;&#x9650;&#xFF0C;&#x8FD9;&#x4E2A;&#x80AF;&#x5B9A;&#x652F;&#x6301;&#x3002;</p>
-<pre><code class="lang-json"><div class="sunlight-container sunlight-theme-dark"><div class="sunlight-code-container" style="border-width: 1px; border-style: solid;"><div class="sunlight-line-number-margin"><a name="sunlight-27-line-1" href="#sunlight-27-line-1">1</a>
-<a name="sunlight-27-line-2" href="#sunlight-27-line-2">2</a>
-<a name="sunlight-27-line-3" href="#sunlight-27-line-3">3</a>
-<a name="sunlight-27-line-4" href="#sunlight-27-line-4">4</a>
-<a name="sunlight-27-line-5" href="#sunlight-27-line-5">5</a>
-<a name="sunlight-27-line-6" href="#sunlight-27-line-6">6</a>
-<a name="sunlight-27-line-7" href="#sunlight-27-line-7">7</a>
-<a name="sunlight-27-line-8" href="#sunlight-27-line-8">8</a>
-</div><pre class="sunlight-highlight-json sunlight-highlighted"><span class="sunlight-plaintext">{
-&#xA0;&#xA0;&#xA0;&#xA0;&quot;server&quot;:&#xA0;&quot;0.0.0.0&quot;,
-&#xA0;&#xA0;&#xA0;&#xA0;&quot;server_port&quot;:&#xA0;8388,
-&#xA0;&#xA0;&#xA0;&#xA0;&quot;local_port&quot;:&#xA0;1080,
-&#xA0;&#xA0;&#xA0;&#xA0;&quot;password&quot;:&#xA0;&quot;&lt;&#x4F60;&#x7684;&#x5BC6;&#x7801;&gt;&quot;,
-&#xA0;&#xA0;&#xA0;&#xA0;&quot;timeout&quot;:&#xA0;300,
-&#xA0;&#xA0;&#xA0;&#xA0;&quot;method&quot;:&#xA0;&quot;aes-256-cfb&quot;
+<pre><code class="lang-json">{
+    <span class="hljs-string">&quot;server&quot;</span>: <span class="hljs-string">&quot;0.0.0.0&quot;</span>,
+    <span class="hljs-string">&quot;server_port&quot;</span>: <span class="hljs-number">8388</span>,
+    <span class="hljs-string">&quot;local_port&quot;</span>: <span class="hljs-number">1080</span>,
+    <span class="hljs-string">&quot;password&quot;</span>: <span class="hljs-string">&quot;&lt;&#x4F60;&#x7684;&#x5BC6;&#x7801;&gt;&quot;</span>,
+    <span class="hljs-string">&quot;timeout&quot;</span>: <span class="hljs-number">300</span>,
+    <span class="hljs-string">&quot;method&quot;</span>: <span class="hljs-string">&quot;aes-256-cfb&quot;</span>
 }
-</span></pre></div></div></code></pre>
+</code></pre>
 <p>&#x2003;&#x2003;&#x90FD;&#x8BBE;&#x7F6E;&#x5B8C;&#x6210;&#x540E;&#x91CD;&#x542F;&#x4E00;&#x4E0B; shadowsocks &#x670D;&#x52A1;&#x4E4B;&#x540E;&#x5C31;&#x76F4;&#x63A5;&#x63A8;&#x51FA;&#x7EC8;&#x7AEF;&#x5C31;&#x884C;&#x4E86;</p>
-<pre><code class="lang-bash+lineNumbers:false"><div class="sunlight-container sunlight-theme-dark"><div class="sunlight-code-container"><pre class="sunlight-highlight-bash sunlight-highlighted"><span class="sunlight-bash"><span class="sunlight-command">sudo</span>&#xA0;<span class="sunlight-command">service</span>&#xA0;<span class="sunlight-ident">shadowsocks</span><span class="sunlight-operator">-</span><span class="sunlight-ident">libev</span>&#xA0;<span class="sunlight-ident">restart</span>
-</span></pre></div></div></code></pre>
+<pre><code class="lang-bash+lineNumbers:false">sudo service shadowsocks-libev restart
+</code></pre>
 <p>&#x2003;&#x2003;&#x4E5F;&#x53EF;&#x4EE5;&#x505A;&#x4E00;&#x4E2A; sh &#x811A;&#x672C;&#x4E00;&#x6B21;&#x6027;&#x5B8C;&#x6210;&#x4E0A;&#x9762;&#x7684;&#x914D;&#x7F6E;&#x8FC7;&#x7A0B;&#xFF0C;&#x7136;&#x540E;&#x653E;&#x5230;&#x7279;&#x5B9A;&#x7F51;&#x5740;&#x4E0A;&#xFF0C;&#x6BCF;&#x6B21;&#x521B;&#x5EFA;&#x597D;&#x670D;&#x52A1;&#x5668;&#x76F4;&#x63A5;&#x6267;&#x884C;&#x4E00;&#x4E0B;&#x8FD9;&#x4E2A;&#x811A;&#x672C;&#x5C31;&#x884C;&#x4E86;&#x3002;</p>
 <h2 id="&#x5B89;&#x88C5;&#x53CA;&#x8FD0;&#x884C;-shadowsocks-&#x5BA2;&#x6237;&#x7AEF;">&#x5B89;&#x88C5;&#x53CA;&#x8FD0;&#x884C; shadowsocks &#x5BA2;&#x6237;&#x7AEF;</h2>
 <p>&#x2003;&#x2003;&#x8FDE;&#x63A5; shadowsocks &#x670D;&#x52A1;&#x53EF;&#x4F7F;&#x7528;
@@ -642,7 +666,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"如何科学上网","level":"1.6.1","depth":2,"next":{"title":"nodejs 简单 http 转发","level":"1.6.2","depth":2,"path":"documents/网络/nodejs简单http转发.md","ref":"documents/网络/nodejs简单http转发.md","articles":[]},"previous":{"title":"网络","level":"1.6","depth":1,"ref":"","articles":[{"title":"如何科学上网","level":"1.6.1","depth":2,"path":"documents/网络/如何科学上网.md","ref":"documents/网络/如何科学上网.md","articles":[]},{"title":"nodejs 简单 http 转发","level":"1.6.2","depth":2,"path":"documents/网络/nodejs简单http转发.md","ref":"documents/网络/nodejs简单http转发.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters","-highlight","sunlight-highlighter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"sunlight-highlighter":{"theme":"dark","lineNumbers":true},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"学习笔记","gitbook":"*"},"file":{"path":"documents/网络/如何科学上网.md","mtime":"2018-11-15T06:03:24.785Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-21T10:23:42.931Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"如何科学上网","level":"1.6.1","depth":2,"next":{"title":"nodejs 简单 http 转发","level":"1.6.2","depth":2,"path":"documents/网络/nodejs简单http转发.md","ref":"documents/网络/nodejs简单http转发.md","articles":[]},"previous":{"title":"网络","level":"1.6","depth":1,"ref":"","articles":[{"title":"如何科学上网","level":"1.6.1","depth":2,"path":"documents/网络/如何科学上网.md","ref":"documents/网络/如何科学上网.md","articles":[]},{"title":"nodejs 简单 http 转发","level":"1.6.2","depth":2,"path":"documents/网络/nodejs简单http转发.md","ref":"documents/网络/nodejs简单http转发.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"splitter":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"学习笔记","gitbook":"*"},"file":{"path":"documents/网络/如何科学上网.md","mtime":"2018-11-15T06:03:24.785Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-27T02:12:06.662Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

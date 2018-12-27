@@ -1,16 +1,7 @@
 {
-    "title": "学习笔记",
-    "plugins": [
-        "splitter",
-        "expandable-chapters",
-        "-highlight",
-        "sunlight-highlighter"
-    ],
-    "pluginsConfig": {
-        "expandable-chapters": {},
-        "sunlight-highlighter": {
-            "theme": "dark",
-            "lineNumbers": true
-        }
-    }
+  "title": "学习笔记",
+  "plugins": ["splitter", "expandable-chapters"],
+  "pluginsConfig": {
+    "expandable-chapters": {}
+  }
 }

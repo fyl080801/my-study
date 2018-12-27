@@ -25,7 +25,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-sunlight-highlighter/sunlight.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
                 
             
                 
@@ -370,6 +370,38 @@
                 <span>
             
                     
+                    NodeJs
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../NodeJs/eggjs动态路由.html">
+            
+                <a href="../NodeJs/eggjs动态路由.html">
+            
+                    
+                    eggjs 动态路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
                     总结
             
                 </span>
@@ -379,7 +411,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.8.1" data-path="../总结/自我介绍.html">
+        <li class="chapter " data-level="1.9.1" data-path="../总结/自我介绍.html">
             
                 <a href="../总结/自我介绍.html">
             
@@ -392,7 +424,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.2" data-path="../总结/2018-11-11.html">
+        <li class="chapter " data-level="1.9.2" data-path="../总结/2018-11-11.html">
             
                 <a href="../总结/2018-11-11.html">
             
@@ -405,7 +437,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.3" data-path="../总结/2018-11-15.html">
+        <li class="chapter " data-level="1.9.3" data-path="../总结/2018-11-15.html">
             
                 <a href="../总结/2018-11-15.html">
             
@@ -418,7 +450,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.4" data-path="../总结/2018-11-22.html">
+        <li class="chapter " data-level="1.9.4" data-path="../总结/2018-11-22.html">
             
                 <a href="../总结/2018-11-22.html">
             
@@ -431,7 +463,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.5" data-path="../总结/2018-11-29.html">
+        <li class="chapter " data-level="1.9.5" data-path="../总结/2018-11-29.html">
             
                 <a href="../总结/2018-11-29.html">
             
@@ -444,7 +476,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.6" data-path="../总结/2018-12-06.html">
+        <li class="chapter " data-level="1.9.6" data-path="../总结/2018-12-06.html">
             
                 <a href="../总结/2018-12-06.html">
             
@@ -457,7 +489,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.7" data-path="../总结/2018-12-13.html">
+        <li class="chapter " data-level="1.9.7" data-path="../总结/2018-12-13.html">
             
                 <a href="../总结/2018-12-13.html">
             
@@ -470,7 +502,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.8" data-path="../总结/2018-12-20.html">
+        <li class="chapter " data-level="1.9.8" data-path="../总结/2018-12-20.html">
             
                 <a href="../总结/2018-12-20.html">
             
@@ -483,7 +515,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.9" data-path="../总结/云-2018-12-20.html">
+        <li class="chapter " data-level="1.9.9" data-path="../总结/云-2018-12-20.html">
             
                 <a href="../总结/云-2018-12-20.html">
             
@@ -548,23 +580,15 @@
                                 
                                 <h1 id="&#x6D4B;&#x8BD5;&#x7528;&#x6587;&#x6863;">&#x6D4B;&#x8BD5;&#x7528;&#x6587;&#x6863;</h1>
 <h2 id="&#x4EE3;&#x7801;&#x6D4B;&#x8BD5;">&#x4EE3;&#x7801;&#x6D4B;&#x8BD5;</h2>
-<pre><code class="lang-javascript"><div class="sunlight-container sunlight-theme-dark"><div class="sunlight-code-container" style="border-width: 1px; border-style: solid;"><div class="sunlight-line-number-margin"><a name="sunlight-14-line-1" href="#sunlight-14-line-1">1</a>
-<a name="sunlight-14-line-2" href="#sunlight-14-line-2">2</a>
-<a name="sunlight-14-line-3" href="#sunlight-14-line-3">3</a>
-<a name="sunlight-14-line-4" href="#sunlight-14-line-4">4</a>
-<a name="sunlight-14-line-5" href="#sunlight-14-line-5">5</a>
-<a name="sunlight-14-line-6" href="#sunlight-14-line-6">6</a>
-<a name="sunlight-14-line-7" href="#sunlight-14-line-7">7</a>
-<a name="sunlight-14-line-8" href="#sunlight-14-line-8">8</a>
-</div><pre class="sunlight-highlight-javascript sunlight-highlighted"><span class="sunlight-javascript"><span class="sunlight-keyword">var</span>&#xA0;<span class="sunlight-ident">x</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-string">&quot;aaa&quot;</span><span class="sunlight-punctuation">;</span>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> x = <span class="hljs-string">&quot;aaa&quot;</span>;
 
-<span class="sunlight-keyword">function</span>&#xA0;<span class="sunlight-named-ident">testFunc</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">params</span><span class="sunlight-punctuation">)</span>&#xA0;<span class="sunlight-punctuation">{</span>
-&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-comment">//&#xA0;&#x8FD9;&#x91CC;&#x7684;&#xA0;x&#xA0;&#x662F;&#x4E2A;&#x9677;&#x9631;&#xFF0C;&#x5148;&#x770B;&#x770B;&#x8D44;&#x6599;</span>
-&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">console</span><span class="sunlight-operator">.</span><span class="sunlight-ident">log</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">x</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
-&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-keyword">var</span>&#xA0;<span class="sunlight-ident">x</span>&#xA0;<span class="sunlight-operator">=</span>&#xA0;<span class="sunlight-number">123</span><span class="sunlight-punctuation">;</span>
-&#xA0;&#xA0;&#xA0;&#xA0;<span class="sunlight-ident">console</span><span class="sunlight-operator">.</span><span class="sunlight-ident">log</span><span class="sunlight-punctuation">(</span><span class="sunlight-ident">x</span><span class="sunlight-punctuation">)</span><span class="sunlight-punctuation">;</span>
-<span class="sunlight-punctuation">}</span>
-</span></pre></div></div></code></pre>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">testFunc</span>(<span class="hljs-params">params</span>) </span>{
+    <span class="hljs-comment">// &#x8FD9;&#x91CC;&#x7684; x &#x662F;&#x4E2A;&#x9677;&#x9631;&#xFF0C;&#x5148;&#x770B;&#x770B;&#x8D44;&#x6599;</span>
+    <span class="hljs-built_in">console</span>.log(x);
+    <span class="hljs-keyword">var</span> x = <span class="hljs-number">123</span>;
+    <span class="hljs-built_in">console</span>.log(x);
+}
+</code></pre>
 <ol>
 <li>sssssd</li>
 <li>ssdsdsdsd</li>
@@ -610,7 +634,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"测试用文档","level":"1.2.4","depth":2,"next":{"title":"ReactNative","level":"1.3","depth":1,"ref":"","articles":[{"title":"使用 vscode 调试 rn 应用","level":"1.3.1","depth":2,"path":"documents/ReactNative/使用vscode调试rn应用.md","ref":"documents/ReactNative/使用vscode调试rn应用.md","articles":[]},{"title":"部署 app 到 ios 模拟器","level":"1.3.2","depth":2,"path":"documents/ReactNative/部署app到ios模拟器.md","ref":"documents/ReactNative/部署app到ios模拟器.md","articles":[]}]},"previous":{"title":"typescript 类继承原理","level":"1.2.3","depth":2,"path":"documents/日常/typescript类继承原理.md","ref":"documents/日常/typescript类继承原理.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters","-highlight","sunlight-highlighter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"sunlight-highlighter":{"theme":"dark","lineNumbers":true},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"学习笔记","gitbook":"*"},"file":{"path":"documents/日常/测试用文档.md","mtime":"2018-11-13T07:00:47.028Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-21T10:23:42.931Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"测试用文档","level":"1.2.4","depth":2,"next":{"title":"ReactNative","level":"1.3","depth":1,"ref":"","articles":[{"title":"使用 vscode 调试 rn 应用","level":"1.3.1","depth":2,"path":"documents/ReactNative/使用vscode调试rn应用.md","ref":"documents/ReactNative/使用vscode调试rn应用.md","articles":[]},{"title":"部署 app 到 ios 模拟器","level":"1.3.2","depth":2,"path":"documents/ReactNative/部署app到ios模拟器.md","ref":"documents/ReactNative/部署app到ios模拟器.md","articles":[]}]},"previous":{"title":"typescript 类继承原理","level":"1.2.3","depth":2,"path":"documents/日常/typescript类继承原理.md","ref":"documents/日常/typescript类继承原理.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"splitter":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"学习笔记","gitbook":"*"},"file":{"path":"documents/日常/测试用文档.md","mtime":"2018-11-13T07:00:47.028Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-27T02:12:06.662Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

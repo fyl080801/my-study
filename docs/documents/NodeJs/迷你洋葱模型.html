@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>react 类型继承问题 · 学习笔记</title>
+        <title>迷你洋葱模型 · 学习笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -64,6 +64,8 @@
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
+    
+    <link rel="next" href="eggjs动态路由.html" />
     
     
 
@@ -345,9 +347,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.7.1" data-path="react类型继承问题.html">
+        <li class="chapter " data-level="1.7.1" data-path="../问题/react类型继承问题.html">
             
-                <a href="react类型继承问题.html">
+                <a href="../问题/react类型继承问题.html">
             
                     
                     react 类型继承问题
@@ -377,9 +379,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.8.1" data-path="../NodeJs/迷你洋葱模型.html">
+        <li class="chapter active" data-level="1.8.1" data-path="迷你洋葱模型.html">
             
-                <a href="../NodeJs/迷你洋葱模型.html">
+                <a href="迷你洋葱模型.html">
             
                     
                     迷你洋葱模型
@@ -390,9 +392,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.2" data-path="../NodeJs/eggjs动态路由.html">
+        <li class="chapter " data-level="1.8.2" data-path="eggjs动态路由.html">
             
-                <a href="../NodeJs/eggjs动态路由.html">
+                <a href="eggjs动态路由.html">
             
                     
                     eggjs 动态路由
@@ -574,7 +576,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >react 类型继承问题</a>
+        <a href="../.." >迷你洋葱模型</a>
     </h1>
 </div>
 
@@ -589,86 +591,73 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="react-&#x7C7B;&#x578B;&#x7EE7;&#x627F;&#x95EE;&#x9898;">react &#x7C7B;&#x578B;&#x7EE7;&#x627F;&#x95EE;&#x9898;</h1>
-<h2 id="&#x60C5;&#x51B5;-1---&#x4F7F;&#x7528;-reactcreateclass-&#x521B;&#x5EFA;&#x7684;&#x7C7B;&#x7528;-typescript-&#x5199;&#x6CD5;&#x5B9E;&#x73B0;&#x7EE7;&#x627F;">&#x60C5;&#x51B5; 1 - &#x4F7F;&#x7528; React.createClass &#x521B;&#x5EFA;&#x7684;&#x7C7B;&#x7528; typescript &#x5199;&#x6CD5;&#x5B9E;&#x73B0;&#x7EE7;&#x627F;</h2>
-<p>&#x73B0;&#x7528; React.createClass &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7C7B;&#xFF0C;&#x91CC;&#x9762;&#x6709;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5; testFunc</p>
-<pre><code class="lang-jsx"><span class="hljs-meta">&quot;use strict&quot;</span>;
+                                <h1 id="&#x8FF7;&#x4F60;&#x6D0B;&#x8471;&#x6A21;&#x578B;">&#x8FF7;&#x4F60;&#x6D0B;&#x8471;&#x6A21;&#x578B;</h1>
+<p>&#x4E0D;&#x591A;&#x8BF4;&#xFF0C;&#x76F4;&#x63A5;&#x4E0A;&#x4EE3;&#x7801;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> pipeline = funcs =&gt; {
+  <span class="hljs-keyword">return</span> scope =&gt; {
+    <span class="hljs-comment">// &#x5168;&#x5C40;&#x7D22;&#x5F15;</span>
+    <span class="hljs-keyword">let</span> index = <span class="hljs-number">-1</span>;
 
-<span class="hljs-keyword">const</span> React = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;react&quot;</span>);
+    <span class="hljs-comment">// &#x7D22;&#x5F15;&#x904D;&#x5386;&#x7684;&#x9012;&#x5F52;&#x59D4;&#x6258;&#xFF0C;&#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x7D22;&#x5F15;&#x51FD;&#x6570;&#x6267;&#x884C;&#x7684; Promise &#x5BF9;&#x8C61;</span>
+    <span class="hljs-keyword">const</span> dispatch = i =&gt; {
+      <span class="hljs-comment">// &#x5168;&#x5C40;&#x7D22;&#x5F15;&#x6BD4;&#x5F53;&#x524D;&#x7D22;&#x5F15;&#x5927;&#xFF0C;&#x8BF4;&#x660E;&#x5DF2;&#x7ECF;&#x6267;&#x884C;&#x8FC7;&#x4E00;&#x6B21;&#x65B9;&#x6CD5;&#x4E86;&#xFF0C;&#x5168;&#x5C40;&#x7D22;&#x5F15;&#x5DF2;&#x7ECF;&#x88AB;&#x52A0; 1</span>
+      <span class="hljs-keyword">if</span> (index &gt;= i) <span class="hljs-keyword">return</span> <span class="hljs-built_in">Promise</span>.reject(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;next &#x6267;&#x884C;&#x4E86;&#x591A;&#x6B21;&quot;</span>));
 
-<span class="hljs-built_in">module</span>.exports = React.createClass({
-    render: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.testFunc();
-    },
+      <span class="hljs-comment">// &#x66F4;&#x65B0;&#x5168;&#x5C40;&#x7D22;&#x5F15;</span>
+      index = i;
 
-    testFunc: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-        <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>js &#x57FA;&#x7C7B;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>;
-    }
-});
+      <span class="hljs-comment">// &#x4E0B;&#x4E2A;&#x65B9;&#x6CD5;&#x59D4;&#x6258;&#xFF0C;&#x8FD4;&#x56DE;&#x7D22;&#x5F15;&#x904D;&#x5386;&#x7684;&#x9012;&#x5F52;&#x59D4;&#x6258;&#x6267;&#x884C;&#x7ED3;&#x679C;</span>
+      <span class="hljs-keyword">const</span> next = () =&gt; {
+        <span class="hljs-comment">// &#x6267;&#x884C;&#x65F6;&#x7D22;&#x5F15;&#x52A0; 1</span>
+        <span class="hljs-keyword">return</span> dispatch(i + <span class="hljs-number">1</span>);
+      };
+
+      <span class="hljs-comment">// &#x65B9;&#x6CD5;&#x6267;&#x884C;&#x5F53;&#x524D;&#x7D22;&#x5F15;&#x662F;&#x5426;&#x8D85;&#x8FC7;&#x51FD;&#x6570;&#x6570;&#x7EC4;&#x7D22;&#x5F15;</span>
+      <span class="hljs-comment">// &#x5982;&#x679C;&#x8D85;&#x8FC7;&#x4E86;&#x5219;&#x5F53;&#x524D;&#x51FD;&#x6570;&#x662F;&#x7A7A;</span>
+      <span class="hljs-comment">// &#x5426;&#x5219;&#x6307;&#x9488;&#x79FB;&#x5230;&#x5F53;&#x524D;&#x7D22;&#x5F15;&#x4F4D;&#x7F6E;&#xFF0C;&#x5F97;&#x5230;&#x5F53;&#x524D;&#x9700;&#x8981;&#x6267;&#x884C;&#x7684;&#x51FD;&#x6570;</span>
+      <span class="hljs-keyword">let</span> currentFn = i &gt;= funcs.length ? <span class="hljs-literal">null</span> : funcs[i];
+
+      <span class="hljs-comment">// &#x5F53;&#x524D;&#x51FD;&#x6570;&#x662F;&#x7A7A;&#x7684;&#xFF0C;&#x8BF4;&#x660E;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x7D22;&#x5F15;&#x7684;&#x51FD;&#x6570;&#x5DF2;&#x7ECF;&#x6267;&#x884C;&#x5B8C;&#x6BD5;</span>
+      <span class="hljs-keyword">if</span> (!currentFn) <span class="hljs-keyword">return</span> <span class="hljs-built_in">Promise</span>.resolve();
+
+      <span class="hljs-comment">// &#x8FD4;&#x56DE;&#x4E00;&#x4E2A; Promise &#x5BF9;&#x8C61;&#xFF0C;&#x4EFB;&#x52A1;&#x662F;&#x6267;&#x884C;&#x5F53;&#x524D;&#x6307;&#x9488;&#x5904;&#x7684;&#x51FD;&#x6570;</span>
+      <span class="hljs-comment">// &#x5C06;&#x4E0A;&#x4E0B;&#x6587;&#x5BF9;&#x8C61;&#x548C;&#x8FD4;&#x56DE;&#x4E0B;&#x4E2A;&#x65B9;&#x6CD5;&#x7684;&#x59D4;&#x6258;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x8FDB;&#x53BB;</span>
+      <span class="hljs-keyword">return</span> <span class="hljs-built_in">Promise</span>.resolve(currentFn(scope, next));
+    };
+
+    <span class="hljs-comment">// &#x4F20;&#x9012;&#x7D22;&#x5F15; 0 &#x5F00;&#x59CB;&#x6267;&#x884C;&#x7D22;&#x5F15;&#x904D;&#x5386;&#x9012;&#x5F52;&#x59D4;&#x6258;</span>
+    <span class="hljs-keyword">return</span> dispatch(<span class="hljs-number">0</span>);
+  };
+};
 </code></pre>
-<p>&#x73B0;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6D3E;&#x751F;&#x7C7B;&#xFF0C;&#x91CC;&#x9762; override &#x65B9;&#x6CD5; testFunc</p>
-<pre><code class="lang-tsx">import * as React from &quot;react&quot;;
+<p>&#x8C03;&#x7528;&#x65B9;&#x6CD5;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> func = pipeline([
+  (scope, next) =&gt; {
+    <span class="hljs-built_in">console</span>.log(scope + <span class="hljs-number">1</span>);
+    next();
+  },
+  (scope, next) =&gt; {
+    <span class="hljs-built_in">console</span>.log(scope + <span class="hljs-number">2</span>);
+    next();
+  },
+  (scope, next) =&gt; {
+    next();
+    <span class="hljs-built_in">console</span>.log(scope + <span class="hljs-number">3</span>);
+  },
+  scope =&gt; {
+    <span class="hljs-built_in">console</span>.log(scope + <span class="hljs-number">4</span>);
+  }
+]);
 
-const JsBase = require(&quot;./JsBase&quot;);
-
-export class JsClass extends JsBase {
-    testFunc() {
-        return (
-            &lt;div&gt;
-                {super.testFunc()}
-                &lt;div&gt;js &#x6D3E;&#x751F;&lt;/div&gt;
-            &lt;/div&gt;
-        );
-    }
-}
-</code></pre>
-<p>&#x8F93;&#x51FA;&#x7ED3;&#x679C;</p>
-<pre><code>js &#x57FA;&#x7C7B;
-</code></pre><h2 id="&#x60C5;&#x51B5;-2---&#x4F7F;&#x7528;-typescript-&#x5199;&#x6CD5;&#x521B;&#x5EFA;&#x7684;&#x7C7B;&#x7528;-typescript-&#x5199;&#x6CD5;&#x5B9E;&#x73B0;&#x7EE7;&#x627F;">&#x60C5;&#x51B5; 2 - &#x4F7F;&#x7528; typescript &#x5199;&#x6CD5;&#x521B;&#x5EFA;&#x7684;&#x7C7B;&#x7528; typescript &#x5199;&#x6CD5;&#x5B9E;&#x73B0;&#x7EE7;&#x627F;</h2>
-<p>&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x7C7B;&#x3002;&#x91CC;&#x9762;&#x6709;&#x4E00;&#x4E2A; testFunc &#x65B9;&#x6CD5;</p>
-<pre><code class="lang-tsx">import { Component } from &quot;react&quot;;
-import * as React from &quot;react&quot;;
-
-export class TsBase extends Component {
-    render() {
-        return this.testFunc();
-    }
-
-    testFunc() {
-        return &lt;div&gt;ts &#x57FA;&#x7C7B;&lt;/div&gt;;
-    }
-}
-</code></pre>
-<p>&#x73B0;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6D3E;&#x751F;&#x7C7B;&#xFF0C;&#x91CC;&#x9762; override &#x65B9;&#x6CD5; testFunc</p>
-<pre><code class="lang-tsx">export class TsClass extends TsBase {
-    testFunc() {
-        return (
-            &lt;div&gt;
-                {super.testFunc()}
-                &lt;div&gt;ts &#x6D3E;&#x751F;&lt;/div&gt;
-            &lt;/div&gt;
-        );
-    }
-}
+func(<span class="hljs-string">&quot;init &quot;</span>);
 </code></pre>
 <p>&#x8F93;&#x51FA;&#x7ED3;&#x679C;</p>
-<pre><code>ts &#x57FA;&#x7C7B;
-ts &#x6D3E;&#x751F;
-</code></pre><h2 id="&#x95EE;&#x9898;">&#x95EE;&#x9898;</h2>
-<p>&#x8BE5;&#x7A0B;&#x5E8F;&#x5DF2;&#x7ECF;&#x96C6;&#x6210;&#x4E86; tsc&#xFF0C;&#x4E0D;&#x7528;&#x7BA1; ts &#x7F16;&#x8BD1;</p>
-<p>&#x73B0;&#x6709;&#x95EE;&#x9898;&#x5982;&#x4E0B;</p>
-<blockquote>
-<ol>
-<li>&#x4E3A;&#x4EC0;&#x4E48;&#x4F7F;&#x7528; React.createClass &#x521B;&#x5EFA;&#x7684;&#x7C7B;&#x6D3E;&#x751F;&#x540E;&#x4E0D;&#x8D70; override &#x65B9;&#x6CD5; testFunc</li>
-<li><p>&#x4E3A;&#x4EC0;&#x4E48;&#x4F7F;&#x7528; class &#x5B9A;&#x4E49;&#x7684;&#x7C7B;&#x6D3E;&#x751F;&#x540E;&#x53EF;&#x4EE5;&#x8D70; override &#x65B9;&#x6CD5;</p>
-</li>
-<li><p>&#x6211;&#x77E5;&#x9053;&#x8FD9;&#x4E2A;&#x8DDF;&#x7528;&#x4E0D;&#x7528; ts &#x5199;&#x6CA1;&#x5173;&#x7CFB;&#xFF0C;&#x4F46;&#x5C31;&#x662F;&#x60F3;&#x77E5;&#x9053;&#x4E3A;&#x4EC0;&#x4E48; React.createClass &#x7684;&#x4E0D;&#x884C;&#xFF0C;&#x8FD8;&#x6709; js &#x6D3E;&#x751F;&#x7684;&#x539F;&#x7406;&#xFF0C;&#x662F;&#x4E0D;&#x662F;&#x50CF;<a href="https://fyl080801.github.io/my-study/documents/%E6%97%A5%E5%B8%B8/typescript%E7%B1%BB%E7%BB%A7%E6%89%BF%E5%8E%9F%E7%90%86.html" target="_blank">&#x4E4B;&#x524D;&#x5206;&#x6790;&#x7684;&#x90A3;&#x6837;</a>&#xFF0C;&#x7EE7;&#x627F;&#x662F;&#x4ECE; prototype &#x6765;&#x7684;&#xFF0C;React.createClass &#x521B;&#x5EFA;&#x5B8C;&#x540E; prototype &#x6CA1;&#x6709; testFunc</p>
-</li>
-</ol>
-</blockquote>
-<p>&#x83B7;&#x53D6;&#x9879;&#x76EE;</p>
-<pre><code>git clone https://github.com/fyl080801/react-inherit-test.git
+<pre><code class="lang-bash">init 1
+init 2
+init 4
+init 3
 </code></pre>
+
                                 
                                 </section>
                             
@@ -696,6 +685,10 @@ ts &#x6D3E;&#x751F;
             
                 
                 
+                <a href="eggjs动态路由.html" class="navigation navigation-next navigation-unique" aria-label="Next page: eggjs 动态路由">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
             
         
     </div>
@@ -703,7 +696,7 @@ ts &#x6D3E;&#x751F;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"react 类型继承问题","level":"1.7.1","depth":2,"next":{"title":"NodeJs","level":"1.8","depth":1,"ref":"","articles":[{"title":"迷你洋葱模型","level":"1.8.1","depth":2,"path":"documents/NodeJs/迷你洋葱模型.md","ref":"documents/NodeJs/迷你洋葱模型.md","articles":[]},{"title":"eggjs 动态路由","level":"1.8.2","depth":2,"path":"documents/NodeJs/eggjs动态路由.md","ref":"documents/NodeJs/eggjs动态路由.md","articles":[]}]},"previous":{"title":"问题","level":"1.7","depth":1,"ref":"","articles":[{"title":"react 类型继承问题","level":"1.7.1","depth":2,"path":"documents/问题/react类型继承问题.md","ref":"documents/问题/react类型继承问题.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"splitter":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"学习笔记","gitbook":"*"},"file":{"path":"documents/问题/react类型继承问题.md","mtime":"2018-11-15T16:22:42.187Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-27T17:33:25.585Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"迷你洋葱模型","level":"1.8.1","depth":2,"next":{"title":"eggjs 动态路由","level":"1.8.2","depth":2,"path":"documents/NodeJs/eggjs动态路由.md","ref":"documents/NodeJs/eggjs动态路由.md","articles":[]},"previous":{"title":"NodeJs","level":"1.8","depth":1,"ref":"","articles":[{"title":"迷你洋葱模型","level":"1.8.1","depth":2,"path":"documents/NodeJs/迷你洋葱模型.md","ref":"documents/NodeJs/迷你洋葱模型.md","articles":[]},{"title":"eggjs 动态路由","level":"1.8.2","depth":2,"path":"documents/NodeJs/eggjs动态路由.md","ref":"documents/NodeJs/eggjs动态路由.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"expandable-chapters":{},"splitter":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"学习笔记","gitbook":"*"},"file":{"path":"documents/NodeJs/迷你洋葱模型.md","mtime":"2018-12-27T17:19:29.133Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-27T17:33:25.585Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

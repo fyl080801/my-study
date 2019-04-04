@@ -20,6 +20,7 @@
 * 问题
     * [react 类型继承问题](documents/问题/react类型继承问题.md)
 * NodeJs
+    * [迷你洋葱模型](documents/NodeJs/迷你洋葱模型.md)
     * [eggjs 动态路由](documents/NodeJs/eggjs动态路由.md)
 * 总结
     * [自我介绍](documents/总结/自我介绍.md)

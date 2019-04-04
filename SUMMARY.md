@@ -11,6 +11,7 @@
     * [部署 app 到 ios 模拟器](documents/ReactNative/部署app到ios模拟器.md)
 * Flutter
     * [开发环境搭建](documents/Flutter/环境搭建.md)
+    * [构建和发布](documents/Flutter/构建和发布.md)
 * JDReact
     * [JDRouter 实例共享](documents/JDReact/JDRouter实例共享.md)
 * 网络
